@@ -1,0 +1,1411 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class TurnsController
+   | Example Unity documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class TurnsController
+   | Example Unity documentation ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../LogoSacred.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Timba.SacredTails.Arena.TurnsController">
+  
+  
+  <h1 id="Timba_SacredTails_Arena_TurnsController" data-uid="Timba.SacredTails.Arena.TurnsController" class="text-break">Class TurnsController
+  </h1>
+  <div class="markdown level0 summary"><p>This class handles the flow of the battle once it has started.
+Things like sending turns, recieving the match state and executing the turns with vfx are done/delegated here.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">TurnsController</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Timba.SacredTails.Arena.html">Timba.SacredTails.Arena</a></h6>
+  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h5 id="Timba_SacredTails_Arena_TurnsController_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TurnsController : MonoBehaviour</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_TurnsController_alteredStates" data-uid="Timba.SacredTails.Arena.TurnsController.alteredStates">alteredStates</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;BattleAlteredStateBase&gt; alteredStates</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Global.BattleAlteredStateBase.html">BattleAlteredStateBase</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_TurnsController_battleEnemyCurrentActions" data-uid="Timba.SacredTails.Arena.TurnsController.battleEnemyCurrentActions">battleEnemyCurrentActions</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;BattleActionData&gt; battleEnemyCurrentActions</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Global.BattleActionData.html">BattleActionData</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_TurnsController_battlePlayerCurrentActions" data-uid="Timba.SacredTails.Arena.TurnsController.battlePlayerCurrentActions">battlePlayerCurrentActions</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;BattleActionData&gt; battlePlayerCurrentActions</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Global.BattleActionData.html">BattleActionData</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_TurnsController_calculateEndMatchAgain" data-uid="Timba.SacredTails.Arena.TurnsController.calculateEndMatchAgain">calculateEndMatchAgain</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool calculateEndMatchAgain</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_TurnsController_camManager" data-uid="Timba.SacredTails.Arena.TurnsController.camManager">camManager</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CameraPlaneController camManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CameraPlaneController</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_TurnsController_cardToTest" data-uid="Timba.SacredTails.Arena.TurnsController.cardToTest">cardToTest</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int cardToTest</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_TurnsController_deathTime" data-uid="Timba.SacredTails.Arena.TurnsController.deathTime">deathTime</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int deathTime</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_TurnsController_isEnemySleep" data-uid="Timba.SacredTails.Arena.TurnsController.isEnemySleep">isEnemySleep</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isEnemySleep</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_TurnsController_isPlayerSleep" data-uid="Timba.SacredTails.Arena.TurnsController.isPlayerSleep">isPlayerSleep</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isPlayerSleep</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_TurnsController_isViewingMatch" data-uid="Timba.SacredTails.Arena.TurnsController.isViewingMatch">isViewingMatch</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool isViewingMatch</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_TurnsController_localPlayer" data-uid="Timba.SacredTails.Arena.TurnsController.localPlayer">localPlayer</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CombatPlayer localPlayer</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Timba.SacredTails.Arena.CombatPlayer.html">CombatPlayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_TurnsController_matchEnded" data-uid="Timba.SacredTails.Arena.TurnsController.matchEnded">matchEnded</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool matchEnded</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_TurnsController_testMatchSendTurnAutomatically" data-uid="Timba.SacredTails.Arena.TurnsController.testMatchSendTurnAutomatically">testMatchSendTurnAutomatically</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool testMatchSendTurnAutomatically</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_TurnsController_turnActionsDatabase" data-uid="Timba.SacredTails.Arena.TurnsController.turnActionsDatabase">turnActionsDatabase</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;BattleActionsBase&gt; turnActionsDatabase</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Global.BattleActionsBase.html">BattleActionsBase</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_TurnsController_turnActionsDatabaseDictionary" data-uid="Timba.SacredTails.Arena.TurnsController.turnActionsDatabaseDictionary">turnActionsDatabaseDictionary</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;ActionTypeEnum, BattleActionsBase&gt; turnActionsDatabaseDictionary</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="Global.ActionTypeEnum.html">ActionTypeEnum</a>, <a class="xref" href="Global.BattleActionsBase.html">BattleActionsBase</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_TurnsController_uiCards" data-uid="Timba.SacredTails.Arena.TurnsController.uiCards">uiCards</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;CardUI&gt; uiCards</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Timba.SacredTails.Arena.CardUI.html">CardUI</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_TurnsController_vfxPositions" data-uid="Timba.SacredTails.Arena.TurnsController.vfxPositions">vfxPositions</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;VFXPositionData&gt; vfxPositions</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Global.VFXPositionData.html">VFXPositionData</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_TurnsController_vfxPositionsDictionary" data-uid="Timba.SacredTails.Arena.TurnsController.vfxPositionsDictionary">vfxPositionsDictionary</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;VFXPositionEnum, Transform&gt; vfxPositionsDictionary</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="Global.VFXPositionEnum.html">VFXPositionEnum</a>, <span class="xref">Transform</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_TurnsController_vfxsActionType" data-uid="Timba.SacredTails.Arena.TurnsController.vfxsActionType">vfxsActionType</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;VFXTypeData&gt; vfxsActionType</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Global.VFXTypeData.html">VFXTypeData</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_BtnSendTurn_" data-uid="Timba.SacredTails.Arena.TurnsController.BtnSendTurn*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_BtnSendTurn_System_Int32_" data-uid="Timba.SacredTails.Arena.TurnsController.BtnSendTurn(System.Int32)">BtnSendTurn(Int32)</h4>
+  <div class="markdown level1 summary"><p>Method that will be called by the cards buttons.
+This method will start sending a turn to the server with the SendMyTurn method.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void BtnSendTurn(int indexCard)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">indexCard</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_CalculateEnergyRegen_" data-uid="Timba.SacredTails.Arena.TurnsController.CalculateEnergyRegen*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_CalculateEnergyRegen_Shinsei_Timba_SacredTails_Arena_ResourceBarValues_System_Collections_Generic_List_BattleActionData__System_Int32_" data-uid="Timba.SacredTails.Arena.TurnsController.CalculateEnergyRegen(Shinsei,Timba.SacredTails.Arena.ResourceBarValues,System.Collections.Generic.List{BattleActionData},System.Int32)">CalculateEnergyRegen(Shinsei, ResourceBarValues, List&lt;BattleActionData&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Calculates the amount of energy that a shinsei restores after the turn passes</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CalculateEnergyRegen(Shinsei playerShinsei, ResourceBarValues energyBar, List&lt;BattleActionData&gt; playersActions, int playerIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Global.Shinsei.html">Shinsei</a></td>
+        <td><span class="parametername">playerShinsei</span></td>
+        <td><p>Shinsei of the player</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Timba.SacredTails.Arena.ResourceBarValues.html">ResourceBarValues</a></td>
+        <td><span class="parametername">energyBar</span></td>
+        <td><p>Energy bar of the shinsei </p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Global.BattleActionData.html">BattleActionData</a>&gt;</td>
+        <td><span class="parametername">playersActions</span></td>
+        <td><p>Player turn</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">playerIndex</span></td>
+        <td><p>Index of the player 0=local, 1=enemy</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_CalculateIncomingActions_" data-uid="Timba.SacredTails.Arena.TurnsController.CalculateIncomingActions*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_CalculateIncomingActions_System_Collections_Generic_List_BattleActionData___System_Int32_System_Int32_" data-uid="Timba.SacredTails.Arena.TurnsController.CalculateIncomingActions(System.Collections.Generic.List{BattleActionData}@,System.Int32,System.Int32)">CalculateIncomingActions(ref List&lt;BattleActionData&gt;, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Execute the action of the target player on this turn, uses the battleaction dictionary to execute the pending actions
+from the player.  Finally it checks if the shinseis are all dead in order to end the match.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CalculateIncomingActions(ref List&lt;BattleActionData&gt; currentActionsData, int playerIndex, int ppCost)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Global.BattleActionData.html">BattleActionData</a>&gt;</td>
+        <td><span class="parametername">currentActionsData</span></td>
+        <td><p>Actions executed this turn</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">playerIndex</span></td>
+        <td><p>Index of user</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">ppCost</span></td>
+        <td><p>ppCost of card</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_CheckAlteredStates_" data-uid="Timba.SacredTails.Arena.TurnsController.CheckAlteredStates*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_CheckAlteredStates_System_Boolean_ActionCardDto_" data-uid="Timba.SacredTails.Arena.TurnsController.CheckAlteredStates(System.Boolean,ActionCardDto)">CheckAlteredStates(Boolean, ActionCardDto)</h4>
+  <div class="markdown level1 summary"><p>Check the player altered states, execute them with the aid of the
+alteredStateControllers classes found in the alteredStates list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CheckAlteredStates(bool isPlayer, ActionCardDto playerTurn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">isPlayer</span></td>
+        <td><p>Is the Local Player altered states</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Global.ActionCardDto.html">ActionCardDto</a></td>
+        <td><span class="parametername">playerTurn</span></td>
+        <td><p>turn of the player checking the actions</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_CheckDeadTime_" data-uid="Timba.SacredTails.Arena.TurnsController.CheckDeadTime*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_CheckDeadTime_System_Int32_System_Int32_" data-uid="Timba.SacredTails.Arena.TurnsController.CheckDeadTime(System.Int32,System.Int32)">CheckDeadTime(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Check the dead time in order to make the InitTurnsFlow() wait that time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CheckDeadTime(int healthOwner, int healthOther)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">healthOwner</span></td>
+        <td><p>health of current shinsei of the owner checking the actions</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">healthOther</span></td>
+        <td><p>helth of other player current shinsei </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_CheckEndMatch_" data-uid="Timba.SacredTails.Arena.TurnsController.CheckEndMatch*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_CheckEndMatch_System_Boolean_Timba_SacredTails_Arena_UserInfo_" data-uid="Timba.SacredTails.Arena.TurnsController.CheckEndMatch(System.Boolean,Timba.SacredTails.Arena.UserInfo)">CheckEndMatch(Boolean, UserInfo)</h4>
+  <div class="markdown level1 summary"><p>Check if the match has ended due to all the shinseis beign death</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CheckEndMatch(bool isLocalPlayer, UserInfo otherPlayer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">isLocalPlayer</span></td>
+        <td><p>Is the player asking, the current player</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Timba.SacredTails.Arena.UserInfo.html">UserInfo</a></td>
+        <td><span class="parametername">otherPlayer</span></td>
+        <td><p>Player to check if shinseis are death</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_CheckEnergyBarsAndInitNextTurn_" data-uid="Timba.SacredTails.Arena.TurnsController.CheckEnergyBarsAndInitNextTurn*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_CheckEnergyBarsAndInitNextTurn" data-uid="Timba.SacredTails.Arena.TurnsController.CheckEnergyBarsAndInitNextTurn">CheckEnergyBarsAndInitNextTurn()</h4>
+  <div class="markdown level1 summary"><p>After executing actions update energyBars and init next turn.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CheckEnergyBarsAndInitNextTurn()</code></pre>
+  </div>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_CheckIfAnyoneSurrendered_" data-uid="Timba.SacredTails.Arena.TurnsController.CheckIfAnyoneSurrendered*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_CheckIfAnyoneSurrendered_System_Collections_Generic_List_ActionCardDto__System_Boolean_" data-uid="Timba.SacredTails.Arena.TurnsController.CheckIfAnyoneSurrendered(System.Collections.Generic.List{ActionCardDto},System.Boolean)">CheckIfAnyoneSurrendered(List&lt;ActionCardDto&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Check if the enemy has surrender, if it has then end match.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CheckIfAnyoneSurrendered(List&lt;ActionCardDto&gt; playersTurnIndexCard, bool isLocalFirst)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Global.ActionCardDto.html">ActionCardDto</a>&gt;</td>
+        <td><span class="parametername">playersTurnIndexCard</span></td>
+        <td><p>Players turns</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">isLocalFirst</span></td>
+        <td><p>Is the local player surrendering first</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_CurrentActionsHasSkipTurnForEnemy_" data-uid="Timba.SacredTails.Arena.TurnsController.CurrentActionsHasSkipTurnForEnemy*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_CurrentActionsHasSkipTurnForEnemy" data-uid="Timba.SacredTails.Arena.TurnsController.CurrentActionsHasSkipTurnForEnemy">CurrentActionsHasSkipTurnForEnemy()</h4>
+  <div class="markdown level1 summary"><p>Checks the actions of both players to see if any of the both 
+has a skip turn directed to the enemy player</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CurrentActionsHasSkipTurnForEnemy()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>Enemy has skip turn </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_CurrentActionsHasSkipTurnForLocalPlayer_" data-uid="Timba.SacredTails.Arena.TurnsController.CurrentActionsHasSkipTurnForLocalPlayer*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_CurrentActionsHasSkipTurnForLocalPlayer" data-uid="Timba.SacredTails.Arena.TurnsController.CurrentActionsHasSkipTurnForLocalPlayer">CurrentActionsHasSkipTurnForLocalPlayer()</h4>
+  <div class="markdown level1 summary"><p>Checks the actions of both players to see if any of the both 
+has a skip turn directed to the local player</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CurrentActionsHasSkipTurnForLocalPlayer()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>Player has skip turn </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_ExecuteServerAction_" data-uid="Timba.SacredTails.Arena.TurnsController.ExecuteServerAction*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_ExecuteServerAction_System_Collections_Generic_List_ActionCardDto__System_Boolean_" data-uid="Timba.SacredTails.Arena.TurnsController.ExecuteServerAction(System.Collections.Generic.List{ActionCardDto},System.Boolean)">ExecuteServerAction(List&lt;ActionCardDto&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Execute enemy actions that we bringed earlier from the cloud.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Action ExecuteServerAction(List&lt;ActionCardDto&gt; turns, bool isEnemy = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Global.ActionCardDto.html">ActionCardDto</a>&gt;</td>
+        <td><span class="parametername">turns</span></td>
+        <td><p>Turns of the players</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">isEnemy</span></td>
+        <td><p>Is the enemy the one who want to execute his action?</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_ForbiddenActionCheck_" data-uid="Timba.SacredTails.Arena.TurnsController.ForbiddenActionCheck*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_ForbiddenActionCheck_Timba_SacredTails_Arena_ActionCard_" data-uid="Timba.SacredTails.Arena.TurnsController.ForbiddenActionCheck(Timba.SacredTails.Arena.ActionCard)">ForbiddenActionCheck(ActionCard)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ForbiddenActionCheck(ActionCard actionCard)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Timba.SacredTails.Arena.ActionCard.html">ActionCard</a></td>
+        <td><span class="parametername">actionCard</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_GetTrueIndexCard_" data-uid="Timba.SacredTails.Arena.TurnsController.GetTrueIndexCard*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_GetTrueIndexCard_System_Int32_" data-uid="Timba.SacredTails.Arena.TurnsController.GetTrueIndexCard(System.Int32)">GetTrueIndexCard(Int32)</h4>
+  <div class="markdown level1 summary"><p>Get the index of a card in the cardDatabase 
+by passing the index of the card in the shinsei</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetTrueIndexCard(int indexCard)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">indexCard</span></td>
+        <td><p>index of the card in the shinsei</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Timba_SacredTails_Arena_TurnsController_GetTrueIndexCard_System_Int32__examples">Examples</h5>
+  <p>0,1,2,3 is for the first 4 cards of the shinsei.
+4,5,6 is for the shinsei change 
+7 is for skipping turn
+8 is for surrender </p>
+
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_Init_" data-uid="Timba.SacredTails.Arena.TurnsController.Init*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_Init_Timba_SacredTails_Arena_BattleGameMode_System_Boolean_" data-uid="Timba.SacredTails.Arena.TurnsController.Init(Timba.SacredTails.Arena.BattleGameMode,System.Boolean)">Init(BattleGameMode, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Initialize turns controller by setting the vfx positions(enemy, center and player),
+then  initialize a dictionary with of the battleActions(attack,buffdebuff,etc)
+Also it susbscribe to the change of turn to execute the InitNewTurn.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Init(BattleGameMode battleGameMode, bool isViewing = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Timba.SacredTails.Arena.BattleGameMode.html">BattleGameMode</a></td>
+        <td><span class="parametername">battleGameMode</span></td>
+        <td><p>Reference to the battlemode in order to acces the users data i.e: shisneis</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">isViewing</span></td>
+        <td><p>if the user is watching a match or participating in the match</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_InitCountDown_" data-uid="Timba.SacredTails.Arena.TurnsController.InitCountDown*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_InitCountDown" data-uid="Timba.SacredTails.Arena.TurnsController.InitCountDown">InitCountDown()</h4>
+  <div class="markdown level1 summary"><p>Init turn countdown shown in the match to show max time before 
+having a strike or ending the match by disconnection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InitCountDown()</code></pre>
+  </div>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_InitNewTurn_" data-uid="Timba.SacredTails.Arena.TurnsController.InitNewTurn*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_InitNewTurn" data-uid="Timba.SacredTails.Arena.TurnsController.InitNewTurn">InitNewTurn()</h4>
+  <div class="markdown level1 summary"><p>Init new turn checking if any player has a sleep in his battleActions 
+in order to execute an automatic skipturn. This is temporal logic.
+The sleep logic should be it&apos;s own BattleAction/AlteredState.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InitNewTurn()</code></pre>
+  </div>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_InitTurnFlow_" data-uid="Timba.SacredTails.Arena.TurnsController.InitTurnFlow*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_InitTurnFlow_System_Boolean_Action_Action_Action_" data-uid="Timba.SacredTails.Arena.TurnsController.InitTurnFlow(System.Boolean,Action,Action,Action)">InitTurnFlow(Boolean, Action, Action, Action)</h4>
+  <div class="markdown level1 summary"><p>Manage the turn execution flow executing the turns in the order the server executed them.
+Check if otherPlayer shinsei dies. If so, then doesn&apos;t execute his action.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InitTurnFlow(bool ownerOfActionIsLocal, Action userAction, Action enemyAction, Action callback)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">ownerOfActionIsLocal</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Action</span></td>
+        <td><span class="parametername">userAction</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Action</span></td>
+        <td><span class="parametername">enemyAction</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Action</span></td>
+        <td><span class="parametername">callback</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_ReduceForbiddenActionsDuration_" data-uid="Timba.SacredTails.Arena.TurnsController.ReduceForbiddenActionsDuration*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_ReduceForbiddenActionsDuration" data-uid="Timba.SacredTails.Arena.TurnsController.ReduceForbiddenActionsDuration">ReduceForbiddenActionsDuration()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ReduceForbiddenActionsDuration()</code></pre>
+  </div>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_SendMyTurn_" data-uid="Timba.SacredTails.Arena.TurnsController.SendMyTurn*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_SendMyTurn_System_Int32_" data-uid="Timba.SacredTails.Arena.TurnsController.SendMyTurn(System.Int32)">SendMyTurn(Int32)</h4>
+  <div class="markdown level1 summary"><p>Prepare my turn with the card selected, execute it in local(cameras,ui) and send it to the other player.
+Also check if the card has been forbideen by other card effect, if so then shows a popup explaining that.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SendMyTurn(int indexCard)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">indexCard</span></td>
+        <td><p>Index of card</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_SendTurnRequest_" data-uid="Timba.SacredTails.Arena.TurnsController.SendTurnRequest*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_SendTurnRequest_System_Int32_System_Int32_" data-uid="Timba.SacredTails.Arena.TurnsController.SendTurnRequest(System.Int32,System.Int32)">SendTurnRequest(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Main function to send turn. Takes the index card and send a petition to the server to register this turn in the database.
+the server process it and then with the server response we continue to the WaitOponentTurn() method in order to wait for the other
+player to also send a turn</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SendTurnRequest(int indexCard, int timesTryingToSendTurn = 0)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">indexCard</span></td>
+        <td><p>Index of the card to send in the shinsei card list i.e(0,1,2,3)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">timesTryingToSendTurn</span></td>
+        <td><p>Times trying to send a turn, more than 5 is consider a player disconnect</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_SetForbiddenActions_" data-uid="Timba.SacredTails.Arena.TurnsController.SetForbiddenActions*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_SetForbiddenActions_Timba_SacredTails_Arena_ActionCard_" data-uid="Timba.SacredTails.Arena.TurnsController.SetForbiddenActions(Timba.SacredTails.Arena.ActionCard)">SetForbiddenActions(ActionCard)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetForbiddenActions(ActionCard actionCard)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Timba.SacredTails.Arena.ActionCard.html">ActionCard</a></td>
+        <td><span class="parametername">actionCard</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_TestSendTurn_" data-uid="Timba.SacredTails.Arena.TurnsController.TestSendTurn*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_TestSendTurn" data-uid="Timba.SacredTails.Arena.TurnsController.TestSendTurn">TestSendTurn()</h4>
+  <div class="markdown level1 summary"><p>For testing only, this method will send an automatic turn to a bot player in the server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void TestSendTurn()</code></pre>
+  </div>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_WaitForSeconds_" data-uid="Timba.SacredTails.Arena.TurnsController.WaitForSeconds*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_WaitForSeconds_System_Single_Action_" data-uid="Timba.SacredTails.Arena.TurnsController.WaitForSeconds(System.Single,Action)">WaitForSeconds(Single, Action)</h4>
+  <div class="markdown level1 summary"><p>Wait for X seconds before executing some logic</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator WaitForSeconds(float time, Action callback)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">time</span></td>
+        <td><p>Time before executing logic</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Action</span></td>
+        <td><span class="parametername">callback</span></td>
+        <td><p>Logic to execute</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Timba_SacredTails_Arena_TurnsController_WaitOponentTurn_" data-uid="Timba.SacredTails.Arena.TurnsController.WaitOponentTurn*"></a>
+  <h4 id="Timba_SacredTails_Arena_TurnsController_WaitOponentTurn" data-uid="Timba.SacredTails.Arena.TurnsController.WaitOponentTurn">WaitOponentTurn()</h4>
+  <div class="markdown level1 summary"><p>Bring data and actions from the server and execute them. Checks altered states, terrains and players actions and 
+delegate all of those to be executed in order.
+It also checks if the match has already ended on the server in orded to force the ending in the
+client too. </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator WaitOponentTurn()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Example Unity documentation
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

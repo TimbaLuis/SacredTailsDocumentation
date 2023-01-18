@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Shinsei Generator | Example Unity documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Shinsei Generator | Example Unity documentation ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../LogoSacred.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="shinsei-generator">Shinsei Generator</h1>
+
+<p>The objective of this document is to provide a clear and detailed guide of the Shinsei generation process and the main components of the tool so that any programmer can develop the content generation activity for Sacred Tails NFTs.</p>
+<h2 id="setup">SetUp:</h2>
+<ul>
+<li>Unity version: 2020.3.23.f1</li>
+<li>Repository branch: Feat_NFTVideoGen</li>
+<li>Scene: Character Generator</li>
+</ul>
+<p><img src="../resources/Generation1.png" alt="Generation1"></p>
+<h2 id="structure-and-components-of-the-scene">Structure and components of the scene</h2>
+<p>The scene is divided into 3 main components: Environment, Lighting, and Core.</p>
+<p><img src="../resources/Generation2.png" alt="Generation2"></p>
+<h2 id="environment">Environment:</h2>
+<p>Contains the props and assets that make up the scene in which the Shinsei generator videos are captured and processed, and it is organized as follows:</p>
+<p><img src="../resources/Generation3.png" alt="Generation3"></p>
+<p>The main elements of the stage are separated by category, vegetation, props (buildings and accessories), particle systems, and the sprites that make up the horizon. The Shinsei Gate is outside of the containers because it contains the flag that indicates the type of Shinsei. This flag is the only object in the environment that has a reference within the &quot;ShinseiGenerator.cs&quot; script, which will be detailed later.</p>
+<h2 id="lighting">Lighting:</h2>
+<p> The lighting within the scene is handled by different sources to keep in mind in case changes are required. The distribution of lights within the scene is as follows:</p>
+<p><img src="../resources/Generation4.png" alt="Generation4"></p>
+<p>The main thing to keep in mind is the directional light controller, which contains the directional light source of the scene, and the light manager, which contains the components necessary to control the time of day and the sky tones.</p>
+<p><img src="../resources/Generation5.png" alt="Generation5"></p>
+<p>The other light sources are located according to the elements of the scene that they affect, in Shinsei only lights and Flag Only lights are light sources that only affect the shinsei and the flag respectively. while the support light is only an auxiliary light that affects all elements within the scene.</p>
+<h2 id="core">Core:</h2>
+<p> Contains the elements responsible for the generation and recording of shinseis. And these are its main elements:</p>
+<p><img src="../resources/Generation6.png" alt="Generation6"></p>
+<p>Shinsei Generation Manager is the object that contains the ShinseiGenerator.cs class and is where all the actions of generating shinseis, recording videos and storing JSONs are performed. There are 2 cameras, one responsible for recording the content (Video Capture) and another that only serves the purpose of showing us the content of the scene in the game view. The ShinseiWardrobe is responsible for changing the parts of the Skinned_Shinsei_Atlas according to the DNA and is referenced within the ShinseiGenerator.cs, while the color swapper is responsible for assigning the correct color palette to the shinsei in question.</p>
+<h2 id="inicialization">Inicialization:</h2>
+<p> To start, the types of Shinseis that are going to be generated in the pool of types within the CharacterGenerator.cs in the Shinsei generation manager must be established.</p>
+<p><img src="../resources/Generation7.png" alt="Generation7"></p>
+<p><img src="../resources/Generation8.png" alt="Generation8"></p>
+<p>In this example, the corresponding families for the second generation of Shinseis are set, so that the Shinseis that will be generated do not have parts of foreign families. Subsequently, the scriptable objects that will contain the generated Shinseis must be created. The name of the scriptable object is &quot;Generated Shinsei Container&quot; which is a database of Shinseis. It is recommended to use this structure for ease of management.</p>
+<p>Create a shinsei container per rarity-type of shinsei included in the sale, more or less in the following way:</p>
+<p><img src="../resources/Generation9.png" alt="Generation9"></p>
+<h2 id="shinsei-generation">Shinsei Generation:</h2>
+<p>To begin generating the shinseis that will be released, you must first drag one of the Generated Shinsei Containers to the InputSO and OutputSO fields in the Shinsei Generator manager, then set the number of shinseis that will be generated (Shinseis to generate) and the index with which the new shinsei count should start (Last Index), this index should be the value of the last shinsei generated in the previous sale or in the last batch of generated shinseis (for example, if the last shinsei in the previous sale has an index of 2999, the Last Index should be assigned as 3000).</p>
+<p><img src="../resources/Generation10.png" alt="Generation10"></p>
+<p>Once this is established, you must proceed to enter play mode, and there choose the type and rarity of the Shinseis that will be generated to fill that Generated Shinsei Container. Once the type and rarity are chosen, within playmode you must activate the &quot;Invoke&quot; button within the component.</p>
+<p><img src="../resources/Generation11.png" alt="Generation11"></p>
+<p>If the Shinsei type (Desired Type) is not contained within the type pool, then the function will not be executed and a warning log will be displayed. To generate Shinseis of celestial type, only tiers from legendary1 to legendary2 can be chosen.</p>
+<p>Repeat this process for all SOs created for the sale.</p>
+<h2 id="note">Note:</h2>
+<p>As the scriptable objects (Generated shinsei container) are filled in runtime, they are never saved in git changes. It is suggested that after generating a batch, add and remove an element from the scriptable and then save the project to ensure they are included in the changes.</p>
+<h1 id="generation-of-content-for-minting">Generation of content for Minting</h1>
+<h2 id="generation-of-videos">Generation of videos</h2>
+<p>To generate videos, first a path must be assigned in the VideoCaptureManager and VideoCapture components within the object in the scene called VideoCapture. (Here you can also modify the desired resolution and frame rate.)</p>
+<p><img src="../resources/Generation12.png" alt="Generation12"></p>
+<p><img src="../resources/Generation13.png" alt="Generation13"></p>
+<p>Once the path is set, you must select the Generated Shinsei Container from which the videos will be generated and drag it to the InputSO and OutputSO fields of the ShinseiGenerator in the shinsei generation manager.</p>
+<p><img src="../resources/Generation14.png" alt="Generation14"></p>
+<p>Then, enter play mode and press the record button within the component. The editor will take approximately 30 seconds per shinsei, and will generate the videos in the specified folder. Once finished with a batch, another shinsei container should be assigned and the button pressed again to continue the task until all videos are generated.</p>
+<p>Upload to IPFS: Once all videos are generated, they must be uploaded to the timba drive, specifically in the following path: Instinct&gt;SacredTails&gt;Mint&gt;Videos&gt;Folder with the sale number, all while having a backup of the information. Then, from a single PC, all videos must be downloaded and then uploaded to an IPFS folder (IPFS desktop is recommended).</p>
+<p><img src="../resources/Generation15.png" alt="Generation15"></p>
+<p>Once there, you must copy the CID of the folder and give it to the client, so that they can import the files to pinata. During this process, the computer that uploaded the files must be kept on and have a stable internet connection. (It is of vital importance to verify that the videos do not require corrections and are correct before the next step). If all files are found and it is certain that no video needs to be corrected, the next step is to copy that CID of the folder and paste it within the ShinseiGenerator.cs script as the value of the string ipfsCID in the following line.</p>
+<p><img src="../resources/Generation16.png" alt="Generation16"></p>
+<p>Make sure to save changes in the script.</p>
+<p>Generation of Metadata: To generate the metadata JSONs, all the Shinsei containers that were used for video generation must be dragged to the following list in the ShinseiGenerator.cs.</p>
+<p><img src="../resources/Generation17.png" alt="Generation17"></p>
+<p>Subsequently, enter playmode and press the Save Json Files button of the component in question.</p>
+<p><img src="../resources/Generation18.png" alt="Generation18"></p>
+<p>The editor will appear to freeze for a brief moment, and when it finishes generating the Jsons, the files will be found in the following path of the project: SacredTails(root)&gt;GeneratedShinseis&gt;JSON&gt; Hoardable/OpenSea. It is recommended to compress these folders and send them to the client when the process is finished, they should be responsible for using them for the minting process.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ifalvarez/SacredTails/blob/Dev/Documentation/manual/12.shinseiGenerator.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Example Unity documentation
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
