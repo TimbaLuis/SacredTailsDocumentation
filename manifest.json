@@ -10,7 +10,7 @@
     "changefreq": "weekly"
   },
   "homepages": [],
-  "source_base_path": "D:/Archivos/Trabajo/Timba/Repositorios/SacredTails/Documentation",
+  "source_base_path": "D:/Files/Work/Timba/Repo/SacredTails/Documentation",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -352,7 +352,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BattleActionStatSwap.html",
-          "hash": "FMtwLtRLeqzvW3bpo4ttw4OD4zCfjbnEGvs4m1FoPx8="
+          "hash": "2lBd52wPRNFrOOp+HxSsZY0rqr/yISc7wmDGlo0g6VA="
         }
       },
       "is_incremental": false,
@@ -6028,7 +6028,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/11.server.html",
-          "hash": "SwDnOPNc0+/SM2sBWbo+BfpHwfcsbKwHsC7E1Er2zIo="
+          "hash": "Rd+djOnyTufGCC9dqRoQLr+iiR+4MORuubEwVJZaeWs="
         }
       },
       "is_incremental": false,
@@ -6589,11 +6589,11 @@
     {
       "status": {
         "can_incremental": false,
-        "details": "Cannot build incrementally because last build didn't contain group .",
+        "details": "Cannot build incrementally because config changed.",
         "incrementalPhase": "build",
         "total_file_count": 0,
         "skipped_file_count": 0,
-        "full_build_reason_code": "NoAvailableGroupCache"
+        "full_build_reason_code": "ConfigChanged"
       },
       "processors": {
         "ConceptualDocumentProcessor": {

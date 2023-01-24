@@ -82,11 +82,583 @@
 <p>Sacred Tails uses Microsoft Azure and PlayFab systems to function, PlayFab to save account data, battle data, and even manage the game lobby, and Azure to allow players to make requests and interact with others, as it is a serverless system that bills based on usage.</p>
 <p><img src="../resources/Server.png" alt="Server"></p>
 <h1 id="battle-server">Battle Server</h1>
+<h2 id="init-match-flow">Init Match Flow</h2>
+<h3 id="create-match-and-delete-match"><strong>Create Match and Delete Match</strong></h3>
+<p>These functions serve to create what is known as Share Group in Azure, the fights in sacred tails are Sharegroups where the two contenders are added, it has a key name that identifies it and saves both the turns and the results.</p>
+<p>Create Match creates a new match and Delete deletes it, but the deletes only happens by a manual request from the admin. The matches doesn&#39;t self-delete themself .</p>
+<p>The create match payload look something like this: </p>
+<pre><code class="lang-json">{
+  &quot;CustomTags&quot;: null,
+  &quot;Entity&quot;: null,
+  &quot;FunctionName&quot;: &quot;BattleServer_CreateMatch&quot;,
+  &quot;FunctionParameter&quot;: {
+    &quot;Keys&quot;: {
+      &quot;MatchId&quot;: &quot;2C332300EEA8B647_B2DF0D8F88E6053E_3655&quot;
+    }
+  },
+  &quot;GeneratePlayStreamEvent&quot;: null,
+  &quot;AuthenticationContext&quot;: null
+}
+</code></pre><p>And its response something like this:</p>
+<pre><code class="lang-json">{
+  &quot;Error&quot;: null,
+  &quot;ExecutionTimeMilliseconds&quot;: 1022,
+  &quot;FunctionName&quot;: &quot;BattleServer_CreateMatch&quot;,
+  &quot;FunctionResult&quot;: {
+    &quot;success&quot;: true,
+    &quot;code&quot;: 19,
+    &quot;message&quot;: &quot;Match created successfully&quot;,
+    &quot;data&quot;: null
+  },
+  &quot;FunctionResultTooLarge&quot;: null,
+  &quot;Request&quot;: {
+    &quot;CustomTags&quot;: null,
+    &quot;Entity&quot;: null,
+    &quot;FunctionName&quot;: &quot;BattleServer_CreateMatch&quot;,
+    &quot;FunctionParameter&quot;: {
+      &quot;Keys&quot;: {
+        &quot;MatchId&quot;: &quot;2C332300EEA8B647_B2DF0D8F88E6053E_3655&quot;
+      }
+    },
+    &quot;GeneratePlayStreamEvent&quot;: null,
+    &quot;AuthenticationContext&quot;: null
+  },
+  &quot;CustomData&quot;: null
+}
+</code></pre><p>This is an example of a Share Group of a fight.</p>
+<p><img src="../resources/MatchExample.png" alt="Example"></p>
+<h3 id="match-confirm-state"><strong>Match Confirm State</strong></h3>
+<p>This function is responsible for verify if both users already confirm the combat, first verify if already choose a combat zone base on the position of users if not, use the nearly combat position then return it at last check if both players call this function and if it is true return succes true, after that the client is responsible for locate the players.</p>
+<p>This is an example of petition to the server</p>
+<pre><code class="lang-json">    {
+        &quot;CallerEntityProfile&quot;: {
+            &quot;Lineage&quot;: {
+            &quot;MasterPlayerAccountId&quot;: &quot;This will be filled by unity&quot;
+            }
+        },
+        &quot;FunctionArgument&quot;: {
+            &quot;Keys&quot;: {
+            &quot;MatchId&quot;: &quot;Match ID&quot;,
+            &quot;SpawnPoint&quot;: &quot;xyz&quot;
+            }
+        }
+    }
+</code></pre><p>This is an example of response of the server
+Positive Response</p>
+<pre><code class="lang-json">    {
+        success: true,
+        code: 25,
+        message: &quot;Match confirmed by both players&quot;,
+        data: { matchSpawnPoint: matchSpawnPoint } 
+    }     
+</code></pre><p>Negative Response</p>
+<pre><code class="lang-json">    {
+        success: false,
+        code: 23,
+        message: &quot;Match hasn&#39;t been confirmed&quot;,
+        data: null 
+    }
+</code></pre><h3 id="select-shinsei"><strong>Select Shinsei</strong></h3>
+<p>Once the match is confirmed, the player is asked to select his shinseis. The three shinseis are selected and then the client sent the petition to the server, here its an example of that petition:</p>
+<pre><code class="lang-json">{
+  &quot;CustomTags&quot;: null,
+  &quot;Entity&quot;: null,
+  &quot;FunctionName&quot;: &quot;BattleServer_SelectShinseis&quot;,
+  &quot;FunctionParameter&quot;: {
+    &quot;Keys&quot;: {
+      &quot;MatchId&quot;: &quot;2C332300EEA8B647_B2DF0D8F88E6053E_7396&quot;,
+      &quot;ShinseiIdList&quot;: [
+        0,
+        1,
+        2
+      ],
+      &quot;PlayerMatchData&quot;:&quot;{\r\n  \&quot;DisplayName\&quot;: \&quot;jiufen312\&quot;,\r\n  \&quot;shinseisSelected\&quot;: true,\r\n  \&quot;hasSurrender\&quot;: false,\r\n  \&quot;confirmState\&quot;: true,\r\n  \&quot;strikes\&quot;: 0,\r\n  \&quot;forbidenActions\&quot;: {},\r\n  \&quot;playFabId\&quot;: \&quot;54BB079356042E83\&quot;,\r\n  \&quot;currentShinsei\&quot;: 0\r\n}&quot;
+    }
+  },
+  &quot;GeneratePlayStreamEvent&quot;: null,
+  &quot;AuthenticationContext&quot;: null
+}
+</code></pre><p>The server recieves this information and continues to process it. If the player disconnects, we update the data of the disconnected player and then endthematch, like so:</p>
+<pre><code class="lang-js">    if (shinseisId.includes(-1)) {
+        let newTurnData = {};
+        newTurnData[&quot;PlayerMatchData&quot; + &quot;_&quot; + playFabId] = &quot;Disconnect&quot;;
+
+
+        //Get members
+        let getMembersRequest = { SharedGroupId: matchId, Keys: [], GetMembers: true }
+        PlayFabServer.GetSharedGroupData(
+            getMembersRequest,
+            (error, resultMembers) =&gt; {
+                if (error !== null) {
+                    context.res = { status: 200, body: { success: false, code: 30, message: &#39;Error disconnecting&#39;, data: null } };
+                    context.done();
+                }
+                else {
+                    let updateRequest = {
+                        SharedGroupId: matchId,
+                        data: newTurnData
+                    }
+
+                    PlayFabServer.UpdateSharedGroupData(
+                        updateRequest,
+                        (error, result) =&gt; {
+                            if (error !== null) {
+                                context.res = { status: 200, body: { success: false, code: 30, message: &#39;Error disconnecting&#39;, data: null } };
+                                context.done();
+                            }
+                            else {
+                                let members = resultMembers.data.Members;
+
+                                let enemyId = members.find((member) =&gt; member != playFabId);
+                                endGameAction.EndGame(context, matchId, playFabId, enemyId, null, { success: true, code: 25, message: &#39;You have disconnected from match&#39;, data: null });
+                            }
+                        }
+                    );
+                }
+            });
+    }
+</code></pre><p>Otherwise, we get the selected indexes of the shinseis for the player, get the shinseis data from the userData in playfab and write them, among the data sent by the client, in the respective player data field of the match sharedGroup.</p>
+<pre><code class="lang-js">        let getShinseiKeys = [];
+        shinseisId.forEach(
+            shinseiId =&gt; {
+                if (shinseiId &gt;= 0 &amp;&amp; shinseiId &lt; 6) {
+                    if (shinseiId == 0)
+                        getShinseiKeys.push(&quot;ShinseiCompanion&quot;);
+                    else
+                        getShinseiKeys.push(&quot;ShinseiSlot&quot; + parseInt(shinseiId));
+                }
+                else {
+                    context.res = { status: 200, body: { success: false, code: 28, message: &#39;Shinseis selected not valid&#39;, data: null } };
+                    return context.done();
+                }
+            }
+        );
+
+        let getShinseiData = {
+            PlayFabId: playFabId,
+            Keys: getShinseiKeys,
+        };
+        PlayFabServer.GetUserData(
+            getShinseiData,
+            (error, result) =&gt; {
+                if (error !== null) {
+                    context.res = { status: 200, body: { success: false, code: 29, message: &quot;Error selecting shinseis&quot;, data: null } };
+                    context.done();
+                }
+                else {
+                    let playerData = JSON.parse(req.body.FunctionArgument.Keys.PlayerMatchData);
+                    playerData.playFabId = playFabId;
+                    playerData.ShinseiParty = []
+                    getShinseiKeys.forEach((shinseiKey) =&gt; {
+                        let shinsei = JSON.parse(result.data.Data[shinseiKey].Value);
+                        shinsei.shinseiHealth = shinsei.ShinseiOriginalStats.Health;
+                        shinsei.shinseiEnergy = shinsei.ShinseiOriginalStats.Energy;
+                        playerData.ShinseiParty.push(shinsei);
+                    });
+
+                    let newTurnData = {};
+                    playerData.currentShinsei = 0;
+                    newTurnData[&quot;PlayerMatchData&quot; + &quot;_&quot; + playFabId] = JSON.stringify(playerData);
+                    newTurnData[&quot;IsCalculatingTurn&quot;] = 1;
+                    newTurnData[&quot;firstTimeStamp&quot;] = Date.now();
+
+                    let updateRequest = {
+                        SharedGroupId: matchId,
+                        data: newTurnData
+                    }
+
+                    PlayFabServer.UpdateSharedGroupData(
+                        updateRequest,
+                        (error, result) =&gt; {
+                            if (error !== null)
+                                context.res = { status: 200, body: { success: false, code: 30, message: &#39;Error selecting shisneis&#39;, data: null } };
+                            else
+                                context.res = { status: 200, body: { success: true, code: 26, message: &quot;Shinsei Selection success&quot;, data: null } };
+
+                            context.done();
+                        }
+                    );
+                }
+            });
+</code></pre><p>Finally here is an example of the server response:</p>
+<pre><code class="lang-json">{
+  &quot;Error&quot;: null,
+  &quot;ExecutionTimeMilliseconds&quot;: 471,
+  &quot;FunctionName&quot;: &quot;BattleServer_SelectShinseis&quot;,
+  &quot;FunctionResult&quot;: {
+    &quot;success&quot;: true,
+    &quot;code&quot;: 26,
+    &quot;message&quot;: &quot;Shinsei Selection success&quot;,
+    &quot;data&quot;: null
+  },
+  &quot;FunctionResultTooLarge&quot;: null,
+  &quot;Request&quot;: {
+    &quot;CustomTags&quot;: null,
+    &quot;Entity&quot;: null,
+    &quot;FunctionName&quot;: &quot;BattleServer_SelectShinseis&quot;,
+    &quot;FunctionParameter&quot;: {
+      &quot;Keys&quot;: {
+        &quot;MatchId&quot;: &quot;2C332300EEA8B647_B2DF0D8F88E6053E_7396&quot;,
+        &quot;ShinseiIdList&quot;: [
+          0,
+          1,
+          2
+        ],
+        &quot;PlayerMatchData&quot;: &quot;{\r\n  \&quot;DisplayName\&quot;: \&quot;jiufen\&quot;,\r\n  \&quot;shinseisSelected\&quot;: true,\r\n  \&quot;hasSurrender\&quot;: false,\r\n  \&quot;confirmState\&quot;: false,\r\n  \&quot;strikes\&quot;: 0,\r\n  \&quot;forbidenActions\&quot;: {},\r\n  \&quot;ShinseiParty\&quot;: [\r\n    {\r\n      \&quot;shinseiName\&quot;: \&quot;\&quot;,\r\n      \&quot;ShinseiDna\&quot;: \&quot;10090030011012007000101000000210020000031010003004010\&quot;,\r\n      \&quot;generation\&quot;: \&quot;\&quot;,\r\n      \&quot;ShinseiActionsIndex\&quot;: [\r\n        46,\r\n        15,\r\n        8,\r\n        32\r\n      ],\r\n      \&quot;shinseiType\&quot;: 10,\r\n      \&quot;alteredStates\&quot;: {},\r\n      \&quot;reflectDamage\&quot;: 0,\r\n      \&quot;shinseiRarity\&quot;: 2,\r\n      \&quot;ShinseiOriginalStats\&quot;: {\r\n        \&quot;Attack\&quot;: 38.0,\r\n        \&quot;Defence\&quot;: 143.0,\r\n        \&quot;Speed\&quot;: 38.0,\r\n        \&quot;Stamina\&quot;: 91.0,\r\n        \&quot;Vigor\&quot;: 83.0,\r\n        \&quot;Health\&quot;: 560,\r\n        \&quot;Energy\&quot;: 157\r\n      },\r\n      \&quot;shinseiHealth\&quot;: 0,\r\n      \&quot;shinseiEnergy\&quot;: 0,\r\n      \&quot;evadeChance\&quot;: 0\r\n    },\r\n    {\r\n      \&quot;shinseiName\&quot;: \&quot;\&quot;,\r\n      \&quot;ShinseiDna\&quot;: \&quot;10120080011011002000100700200210090000031007003004007\&quot;,\r\n      \&quot;generation\&quot;: \&quot;\&quot;,\r\n      \&quot;ShinseiActionsIndex\&quot;: [\r\n        11,\r\n        4,\r\n        36,\r\n        33\r\n      ],\r\n      \&quot;shinseiType\&quot;: 7,\r\n      \&quot;alteredStates\&quot;: {},\r\n      \&quot;reflectDamage\&quot;: 0,\r\n      \&quot;shinseiRarity\&quot;: 2,\r\n      \&quot;ShinseiOriginalStats\&quot;: {\r\n        \&quot;Attack\&quot;: 72.0,\r\n        \&quot;Defence\&quot;: 143.0,\r\n        \&quot;Speed\&quot;: 48.0,\r\n        \&quot;Stamina\&quot;: 60.0,\r\n        \&quot;Vigor\&quot;: 84.0,\r\n        \&quot;Health\&quot;: 564,\r\n        \&quot;Energy\&quot;: 110\r\n      },\r\n      \&quot;shinseiHealth\&quot;: 0,\r\n      \&quot;shinseiEnergy\&quot;: 0,\r\n      \&quot;evadeChance\&quot;: 0\r\n    },\r\n    {\r\n      \&quot;shinseiName\&quot;: \&quot;\&quot;,\r\n      \&quot;ShinseiDna\&quot;: \&quot;10040010011001004000100500300210070030031009002004001\&quot;,\r\n      \&quot;generation\&quot;: \&quot;\&quot;,\r\n      \&quot;ShinseiActionsIndex\&quot;: [\r\n        49,\r\n        22,\r\n        43,\r\n        11\r\n      ],\r\n      \&quot;shinseiType\&quot;: 1,\r\n      \&quot;alteredStates\&quot;: {},\r\n      \&quot;reflectDamage\&quot;: 0,\r\n      \&quot;shinseiRarity\&quot;: 3,\r\n      \&quot;ShinseiOriginalStats\&quot;: {\r\n        \&quot;Attack\&quot;: 117.0,\r\n        \&quot;Defence\&quot;: 54.0,\r\n        \&quot;Speed\&quot;: 88.0,\r\n        \&quot;Stamina\&quot;: 100.0,\r\n        \&quot;Vigor\&quot;: 76.0,\r\n        \&quot;Health\&quot;: 532,\r\n        \&quot;Energy\&quot;: 170\r\n      },\r\n      \&quot;shinseiHealth\&quot;: 0,\r\n      \&quot;shinseiEnergy\&quot;: 0,\r\n      \&quot;evadeChance\&quot;: 0\r\n    }\r\n  ]\r\n}&quot;
+      }
+    },
+    &quot;GeneratePlayStreamEvent&quot;: null,
+    &quot;AuthenticationContext&quot;: null
+  },
+  &quot;CustomData&quot;: null
+}
+</code></pre><h3 id="confirm-shinsei-selection"><strong>Confirm Shinsei selection</strong></h3>
+<p>The client after selecting it&#39;s shinieis, he continues by asking each X seconds if the other player already selected/disconnected. This petition is made by the CheckShinseisChoosed petiton and its payload is a basic one that takes only the matchId, it looks something like this:</p>
+<pre><code class="lang-json">{
+  &quot;CallerEntityProfile&quot;: {
+    &quot;Lineage&quot;: {
+      &quot;MasterPlayerAccountId&quot;: &quot;2C332300EEA8B647&quot;
+    }
+  },
+  &quot;FunctionArgument&quot;: {
+    &quot;Keys&quot;: {
+      &quot;MatchId&quot;: &quot;MatchId&quot;
+    }
+  }
+}
+</code></pre><p>On the server, we process the data we have in the sharedgroup to verify if both players has already choosed or disconnected. If someone disconnected we return to the players the respective code for them to process it, otherwise if both players choosed. </p>
+<pre><code class="lang-js">await PlayfabHelpers.GetMatchMembers(matchId).then(async (membersData) =&gt; {
+    let members = membersData.data.Members;
+
+    let getPlayersDataKeys = [];
+    members.forEach(member =&gt; {
+        getPlayersDataKeys.push(&quot;PlayerMatchData_&quot; + member)
+    });
+
+    let getPlayerDataRequest = {
+        SharedGroupId: matchId,
+        Keys: getPlayersDataKeys,
+    };
+
+    PlayFabServer.GetSharedGroupData(
+        getPlayerDataRequest,
+        (error, result) =&gt; {
+            if (error !== null)
+                context.res = { status: 200, body: { success: false, code: 33, message: &quot;Error selecting shinseis&quot;, data: null } };
+            else {
+                let playersData = []
+                Object.keys(result.data.Data).forEach((playerDataKey) =&gt; {
+                    let playerData;
+                    if (result.data.Data[playerDataKey].Value == &quot;Disconnect&quot;)
+                        playerData = result.data.Data[playerDataKey].Value;
+                    else
+                        playerData = JSON.parse(result.data.Data[playerDataKey].Value);
+
+                    let playerTrimmedKey = playerDataKey.replace(&quot;PlayerMatchData_&quot;, &quot;&quot;)
+                    if (playerTrimmedKey == playFabId)
+                        playersData.unshift(playerData);
+                    else
+                        playersData.push(playerData);
+                });
+
+
+                if (playersData.length == 2) {
+
+                    if (playersData.includes(&quot;Disconnect&quot;)) {
+                        context.res = { status: 200, body: { success: true, code: 30, message: &quot;Player disconnected&quot;, data: null } };
+                    }
+                    else {
+                        context.res = { status: 200, body: { success: true, code: 31, message: &quot;Shinseis sucessfully selected by both players&quot;, data: playersData } };
+                    }
+                }
+                else
+                    context.res = { status: 200, body: { success: false, code: 34, message: &quot;Shinseis hasn&#39;t been selected&quot;, data: null } };
+            }
+
+            context.done();
+        });
+    });
+</code></pre><p>Then we return the data of both players, in order for the clients to fill their data. The data looks like this:</p>
+<pre><code class="lang-json">{
+  &quot;success&quot;: true,
+  &quot;code&quot;: 31,
+  &quot;message&quot;: &quot;Shinseis sucessfully selected by both players&quot;,
+  &quot;data&quot;: [
+    {
+      &quot;DisplayName&quot;: &quot;&quot;,
+      &quot;shinseisSelected&quot;: true,
+      &quot;hasSurrender&quot;: false,
+      &quot;confirmState&quot;: false,
+      &quot;strikes&quot;: 0,
+      &quot;forbidenActions&quot;: {},
+      &quot;ShinseiParty&quot;: [
+        {
+          &quot;shinseiName&quot;: &quot;&quot;,
+          &quot;ShinseiDna&quot;: &quot;10080040011003001000100700000210010000031005002004003&quot;,
+          &quot;generation&quot;: &quot;&quot;,
+          &quot;ShinseiActionsIndex&quot;: [
+            61,
+            56,
+            39,
+            45
+          ],
+          &quot;shinseiType&quot;: 3,
+          &quot;reflectDamage&quot;: 0,
+          &quot;shinseiRarity&quot;: 1,
+          &quot;ShinseiOriginalStats&quot;: {
+            &quot;Attack&quot;: 24,
+            &quot;Defence&quot;: 75,
+            &quot;Speed&quot;: 24,
+            &quot;Stamina&quot;: 227.85,
+            &quot;Vigor&quot;: 50,
+            &quot;Health&quot;: 428,
+            &quot;Energy&quot;: 241
+          },
+          &quot;shinseiIcon&quot;: {
+            &quot;instanceID&quot;: -295248
+          },
+          &quot;shinseiHealth&quot;: 428,
+          &quot;shinseiEnergy&quot;: 19,
+          &quot;evadeChance&quot;: 0,
+          &quot;ShinseiNormalizedStats&quot;: {
+            &quot;Attack&quot;: 24,
+            &quot;Defence&quot;: 75,
+            &quot;Speed&quot;: 24,
+            &quot;Stamina&quot;: 227.85,
+            &quot;Vigor&quot;: 50,
+            &quot;Health&quot;: 428,
+            &quot;Energy&quot;: 241
+          }
+        },
+        {
+          &quot;shinseiName&quot;: &quot;&quot;,
+          &quot;ShinseiDna&quot;: &quot;10070030011001000000101200900210100000031009002004001&quot;,
+          &quot;generation&quot;: &quot;&quot;,
+          &quot;ShinseiActionsIndex&quot;: [
+            12,
+            19,
+            20,
+            8
+          ],
+          &quot;shinseiType&quot;: 1,
+          &quot;reflectDamage&quot;: 0,
+          &quot;shinseiRarity&quot;: 2,
+          &quot;ShinseiOriginalStats&quot;: {
+            &quot;Attack&quot;: 155,
+            &quot;Defence&quot;: 99,
+            &quot;Speed&quot;: 30,
+            &quot;Stamina&quot;: 39,
+            &quot;Vigor&quot;: 63,
+            &quot;Health&quot;: 480,
+            &quot;Energy&quot;: 79
+          },
+          &quot;shinseiIcon&quot;: {
+            &quot;instanceID&quot;: -295194
+          },
+          &quot;shinseiHealth&quot;: 480,
+          &quot;shinseiEnergy&quot;: 79,
+          &quot;evadeChance&quot;: 0,
+          &quot;ShinseiNormalizedStats&quot;: {
+            &quot;Attack&quot;: 155,
+            &quot;Defence&quot;: 99,
+            &quot;Speed&quot;: 30,
+            &quot;Stamina&quot;: 39,
+            &quot;Vigor&quot;: 63,
+            &quot;Health&quot;: 480,
+            &quot;Energy&quot;: 79
+          }
+        },
+        {
+          &quot;shinseiName&quot;: &quot;&quot;,
+          &quot;ShinseiDna&quot;: &quot;10090030011005004000101200600210100030031009000004009&quot;,
+          &quot;generation&quot;: &quot;&quot;,
+          &quot;ShinseiActionsIndex&quot;: [
+            36,
+            8,
+            14,
+            6
+          ],
+          &quot;shinseiType&quot;: 9,
+          &quot;reflectDamage&quot;: 0,
+          &quot;shinseiRarity&quot;: 3,
+          &quot;ShinseiOriginalStats&quot;: {
+            &quot;Attack&quot;: 62,
+            &quot;Defence&quot;: 87,
+            &quot;Speed&quot;: 116,
+            &quot;Stamina&quot;: 117,
+            &quot;Vigor&quot;: 51,
+            &quot;Health&quot;: 432,
+            &quot;Energy&quot;: 196
+          },
+          &quot;shinseiIcon&quot;: {
+            &quot;instanceID&quot;: -295208
+          },
+          &quot;shinseiHealth&quot;: 432,
+          &quot;shinseiEnergy&quot;: 196,
+          &quot;evadeChance&quot;: 0,
+          &quot;ShinseiNormalizedStats&quot;: {
+            &quot;Attack&quot;: 62,
+            &quot;Defence&quot;: 87,
+            &quot;Speed&quot;: 116,
+            &quot;Stamina&quot;: 117,
+            &quot;Vigor&quot;: 51,
+            &quot;Health&quot;: 432,
+            &quot;Energy&quot;: 196
+          }
+        }
+      ],
+      &quot;playFabId&quot;: &quot;2C332300EEA8B647&quot;,
+      &quot;currentShinsei&quot;: 0,
+      &quot;tempCalculateShinseiIndex&quot;: 0
+    },
+    {
+      &quot;DisplayName&quot;: &quot;jiufen&quot;,
+      &quot;shinseisSelected&quot;: true,
+      &quot;hasSurrender&quot;: false,
+      &quot;confirmState&quot;: true,
+      &quot;ShinseiParty&quot;: [
+        {
+          &quot;shinseiName&quot;: &quot;&quot;,
+          &quot;ShinseiDna&quot;: &quot;10060030011006003000100200400210100020031000002004006&quot;,
+          &quot;generation&quot;: &quot;&quot;,
+          &quot;ShinseiActionsIndex&quot;: [
+            57,
+            53,
+            25,
+            14
+          ],
+          &quot;shinseiType&quot;: 6,
+          &quot;shinseiRarity&quot;: 3,
+          &quot;ShinseiOriginalStats&quot;: {
+            &quot;Health&quot;: 452,
+            &quot;Attack&quot;: 170,
+            &quot;Deffense&quot;: 66,
+            &quot;Speed&quot;: 51,
+            &quot;Stamina&quot;: 110,
+            &quot;Vigor&quot;: 56,
+            &quot;Energy&quot;: 185
+          },
+          &quot;shinseiIcon&quot;: {
+            &quot;instanceID&quot;: 0
+          },
+          &quot;shinseiHealth&quot;: null,
+          &quot;shinseiEnergy&quot;: 0,
+          &quot;evadeChance&quot;: 0,
+          &quot;ShinseiNormalizedStats&quot;: {
+            &quot;Health&quot;: 452,
+            &quot;Attack&quot;: 170,
+            &quot;Deffense&quot;: 66,
+            &quot;Speed&quot;: 51,
+            &quot;Stamina&quot;: 110,
+            &quot;Vigor&quot;: 56,
+            &quot;Energy&quot;: 185
+          }
+        },
+        {
+          &quot;shinseiName&quot;: &quot;&quot;,
+          &quot;ShinseiDna&quot;: &quot;10010000011003003000100900400210070030031004002004003&quot;,
+          &quot;generation&quot;: &quot;&quot;,
+          &quot;ShinseiActionsIndex&quot;: [
+            13,
+            4,
+            9,
+            46
+          ],
+          &quot;shinseiType&quot;: 3,
+          &quot;shinseiRarity&quot;: 2,
+          &quot;ShinseiOriginalStats&quot;: {
+            &quot;Health&quot;: 408,
+            &quot;Attack&quot;: 69,
+            &quot;Deffense&quot;: 24,
+            &quot;Speed&quot;: 57,
+            &quot;Stamina&quot;: 177,
+            &quot;Vigor&quot;: 45,
+            &quot;Energy&quot;: 286
+          },
+          &quot;shinseiIcon&quot;: {
+            &quot;instanceID&quot;: 0
+          },
+          &quot;shinseiHealth&quot;: 408,
+          &quot;shinseiEnergy&quot;: 286,
+          &quot;evadeChance&quot;: 0,
+          &quot;ShinseiNormalizedStats&quot;: {
+            &quot;Health&quot;: 408,
+            &quot;Attack&quot;: 69,
+            &quot;Deffense&quot;: 24,
+            &quot;Speed&quot;: 57,
+            &quot;Stamina&quot;: 177,
+            &quot;Vigor&quot;: 45,
+            &quot;Energy&quot;: 286
+          }
+        },
+        {
+          &quot;shinseiName&quot;: &quot;&quot;,
+          &quot;ShinseiDna&quot;: &quot;10050000011012006000100000000210080010031001000004012&quot;,
+          &quot;generation&quot;: &quot;&quot;,
+          &quot;ShinseiActionsIndex&quot;: [
+            47,
+            16,
+            28,
+            31
+          ],
+          &quot;shinseiType&quot;: 12,
+          &quot;shinseiRarity&quot;: 1,
+          &quot;ShinseiOriginalStats&quot;: {
+            &quot;Health&quot;: 488,
+            &quot;Attack&quot;: 105,
+            &quot;Deffense&quot;: 105,
+            &quot;Speed&quot;: 68,
+            &quot;Stamina&quot;: 93,
+            &quot;Vigor&quot;: 65,
+            &quot;Energy&quot;: 160
+          },
+          &quot;shinseiIcon&quot;: {
+            &quot;instanceID&quot;: 0
+          },
+          &quot;shinseiHealth&quot;: 488,
+          &quot;shinseiEnergy&quot;: 160,
+          &quot;evadeChance&quot;: 0,
+          &quot;ShinseiNormalizedStats&quot;: {
+            &quot;Health&quot;: 488,
+            &quot;Attack&quot;: 105,
+            &quot;Deffense&quot;: 105,
+            &quot;Speed&quot;: 68,
+            &quot;Stamina&quot;: 93,
+            &quot;Vigor&quot;: 65,
+            &quot;Energy&quot;: 160
+          }
+        }
+      ],
+      &quot;playFabId&quot;: &quot;5352E306ACAB3F9B&quot;,
+      &quot;currentShinsei&quot;: 1,
+      &quot;tempCalculateShinseiIndex&quot;: 0,
+      &quot;KONODIODA&quot;: 52631,
+      &quot;strikeTimer&quot;: &quot;Min:0Sec:52&quot;
+    }
+  ]
+}
+</code></pre><p>Once this is done, the match starts.</p>
+<h2 id="combat-flow">Combat Flow</h2>
 <p>The combat system works in several stages, in the first stage it checks if both players have successfully connected, then both clients verify that they are ready, a countdown starts to choose the Shinsei that will be taken to the combat out of the 6 you can take with you all the time, once chosen the main loop of the combat begins which consists of each player sending their turn, using SendTurn.</p>
-<h2 id="send-turn">Send Turn</h2>
+<h3 id="send-turn"><strong>Send Turn</strong></h3>
 <p>Here from the client, the button pressed is indicated, existing from 0 to 3 for the current Shinsei cards, from 4 to 6 to change Shinsei, 7 to skip turn, 8 to surrender. This is done to prevent malicious users from manipulating the RAM and using attacks that are not assigned or breaking the game in any other way.</p>
 <p>The client is responsible for calling the Azure Function SendTurn.js, this first makes necessary checks for the combat such as checking if there is already a winner, then it checks if the other player is writing their turn to avoid writing at the same time. After the checks are passed, it checks the number that the player sent, if it is greater than 0 and less than 4 it is an attack, then it checks the combat data and looks for the attack that corresponds to the received position, and adds the turn with that action.</p>
-<pre><code class="lang-js">let indexOfCard = req.body.FunctionArgument.Keys.indexCard;
+<p>This is an example of a petition the server recieves when the client send the turn:</p>
+<pre><code class="lang-json">
+{
+  &quot;CustomTags&quot;: null,
+  &quot;Entity&quot;: null,
+  &quot;FunctionName&quot;: &quot;BattleServer_SendTurn&quot;,
+  &quot;FunctionParameter&quot;: {
+    &quot;Keys&quot;: {
+      &quot;MatchId&quot;: &quot;2C332300EEA8B647_B2DF0D8F88E6053E_7396&quot;,
+      &quot;indexCard&quot;: 2
+    }
+  },
+  &quot;GeneratePlayStreamEvent&quot;: null,
+  &quot;AuthenticationContext&quot;: null
+}
+</code></pre><pre><code class="lang-js">let indexOfCard = req.body.FunctionArgument.Keys.indexCard;
 
     let turnToSend
     if (indexOfCard &gt;= 0) {
@@ -111,9 +683,82 @@
 
                 sendTurnHelper.SendTurnWithCard(turnToSend, matchId, currentTurnKey, newTurnIndex, playFabId, shinseiCardIndex, context);
             });
+</code></pre><p>And this is an example of the server response</p>
+<pre><code class="lang-json">{
+  &quot;Error&quot;: null,
+  &quot;ExecutionTimeMilliseconds&quot;: 739,
+  &quot;FunctionName&quot;: &quot;BattleServer_SendTurn&quot;,
+  &quot;FunctionResult&quot;: {
+    &quot;success&quot;: true,
+    &quot;code&quot;: 35,
+    &quot;message&quot;: &quot;Send turn correct&quot;,
+    &quot;data&quot;: {
+      &quot;cardType&quot;: 10,
+      &quot;isComingFromCopyIndex&quot;: -1,
+      &quot;PpCost&quot;: 120,
+      &quot;name&quot;: &quot;BlackRay&quot;,
+      &quot;hideFlags&quot;: 0,
+      &quot;BattleActions&quot;: [
+        {
+          &quot;actionType&quot;: 2,
+          &quot;turnsDuration&quot;: 1,
+          &quot;amount&quot;: 344,
+          &quot;isSelfInflicted&quot;: false,
+          &quot;cardSkipTurn&quot;: true,
+          &quot;bonusPercent&quot;: 24,
+          &quot;statBonusDamage&quot;: 2,
+          &quot;applyEachTurn&quot;: false,
+          &quot;isPercertange&quot;: true,
+          &quot;numberOfTimesBuffApplied&quot;: 0,
+          &quot;changeMinAndMaxStats&quot;: false,
+          &quot;stat1&quot;: 0,
+          &quot;stat2&quot;: 0,
+          &quot;activateAlteredState&quot;: false,
+          &quot;alteredStateToActivate&quot;: 0,
+          &quot;criticsPercentChange&quot;: 0,
+          &quot;actionElementType&quot;: 10,
+          &quot;criticsRoll&quot;: &quot;0.67&quot;,
+          &quot;evadeRoll&quot;: &quot;0.04&quot;,
+          &quot;turnsPassed&quot;: 0,
+          &quot;evadedTurns&quot;: 0
+        }
+      ],
+      &quot;timeStamp&quot;: &quot;2023-01-23T21:52:14.802Z&quot;,
+      &quot;indexCard&quot;: 8
+    }
+  },
+  &quot;FunctionResultTooLarge&quot;: null,
+  &quot;Request&quot;: {
+    &quot;CustomTags&quot;: null,
+    &quot;Entity&quot;: null,
+    &quot;FunctionName&quot;: &quot;BattleServer_SendTurn&quot;,
+    &quot;FunctionParameter&quot;: {
+      &quot;Keys&quot;: {
+        &quot;MatchId&quot;: &quot;2C332300EEA8B647_B2DF0D8F88E6053E_7396&quot;,
+        &quot;indexCard&quot;: 2
+      }
+    },
+    &quot;GeneratePlayStreamEvent&quot;: null,
+    &quot;AuthenticationContext&quot;: null
+  },
+  &quot;CustomData&quot;: null
+}
 </code></pre><p>When the players have already sent their corresponding turns, they begin listening to the server to check if the other has already sent their data and the server was able to process the turn, this is done in the Azure Function GetMatchState.</p>
-<h2 id="getmatchstatejs-and-calculateturnjs">GetMatchState.js And CalculateTurn.js</h2>
-<p>Get match state is responsible for checking if the data from both players is already uploaded and, in case it is, it calculates them using Calculate Turn.</p>
+<h3 id="getmatchstatejs-and-calculateturnjs"><strong>GetMatchState.js And CalculateTurn.js</strong></h3>
+<p>This is an example of a petition the server recieves when the client checks every X seconds the state of the server in order to proccess the turns once they had been sended:</p>
+<pre><code class="lang-json">{
+    &quot;CallerEntityProfile&quot;: {
+        &quot;Lineage&quot;: {
+            &quot;MasterPlayerAccountId&quot;: &quot;54BB079356042E83&quot;
+        }
+    },
+    &quot;FunctionArgument&quot;: {
+        &quot;Keys&quot;: {
+            &quot;MatchId&quot;: &quot;ExampleMatchId&quot;
+        }
+    }
+}
+</code></pre><p>Get match state is responsible for checking if the data from both players is already uploaded and, in case it is, it calculates them using Calculate Turn.</p>
 <p>Calculate turn is the heart of the combat, it is responsible for applying all the modifications to the data to save them in PlayFab. It first verifies that only one of the two players is manipulating the data, then it verifies which of the two Shinsei that are currently in combat has more speed to apply their actions first.</p>
 <p>Having decided the order of execution of actions, it verifies a special case that is CopyCat, an attack that allows you to use the same attack as the opponent, then it checks if either of them decided to surrender, and finally, it verifies if the time limit for the combat has not been exceeded. After passing all these filters, the turn is processed using the ExecuteTurn function.</p>
 <pre><code class="lang-js">function ExecuteTurn(context, matchId, actionsOrdered, turnsOrdered, players, playfabIds, ppCosts, turnsData, goFirst) {
@@ -146,7 +791,90 @@
     RegenerateEnergy(actionsOrdered, players, 1);
 }
 </code></pre><p>In execute turn, first, the altered states are calculated. These can be Burned, Rooted, Bleeding or Reflecting and their effects are applied. Finally, the effects of the card chosen by the player are applied and the energy of the Shinsei is regenerated at the end of the process. If it turns out that a Shinsei died in the process, it is changed to the next one, or simply if there are no more available, the next time GetMatchState is called, the end of the game will be calculated.</p>
-<h1 id="battle-actions">Battle Actions</h1>
+<p>And at the end the server responds something like this:</p>
+<pre><code class="lang-json">{
+  &quot;success&quot;: true,
+  &quot;code&quot;: 42,
+  &quot;message&quot;: &quot;Turn correctly proccessed, check data.&quot;,
+  &quot;data&quot;: {
+    &quot;playersTurn&quot;: [
+      {
+        &quot;cardType&quot;: 0,
+        &quot;isComingFromCopyIndex&quot;: -1,
+        &quot;PpCost&quot;: 0,
+        &quot;name&quot;: &quot;SkipTurn&quot;,
+        &quot;hideFlags&quot;: 0,
+        &quot;BattleActions&quot;: [
+          {
+            &quot;actionType&quot;: 6,
+            &quot;turnsDuration&quot;: 1,
+            &quot;isSelfInflicted&quot;: true,
+            &quot;cardSkipTurn&quot;: false,
+            &quot;bonusPercent&quot;: 0,
+            &quot;applyEachTurn&quot;: false,
+            &quot;isPercertange&quot;: true,
+            &quot;numberOfTimesBuffApplied&quot;: 0,
+            &quot;changeMinAndMaxStats&quot;: false,
+            &quot;stat1&quot;: 0,
+            &quot;stat2&quot;: 0,
+            &quot;activateAlteredState&quot;: false,
+            &quot;alteredStateToActivate&quot;: 0,
+            &quot;criticsPercentChange&quot;: 0,
+            &quot;actionElementType&quot;: 0,
+            &quot;criticsRoll&quot;: &quot;0.10&quot;,
+            &quot;evadeRoll&quot;: &quot;0.71&quot;,
+            &quot;turnsPassed&quot;: 0,
+            &quot;evadedTurns&quot;: 0
+          }
+        ],
+        &quot;timeStamp&quot;: &quot;2023-01-23T20:36:29.060Z&quot;,
+        &quot;indexCard&quot;: 0
+      },
+      {
+        &quot;cardType&quot;: 0,
+        &quot;isComingFromCopyIndex&quot;: -1,
+        &quot;PpCost&quot;: 0,
+        &quot;name&quot;: &quot;SkipTurn&quot;,
+        &quot;hideFlags&quot;: 0,
+        &quot;BattleActions&quot;: [
+          {
+            &quot;actionType&quot;: 6,
+            &quot;turnsDuration&quot;: 1,
+            &quot;isSelfInflicted&quot;: true,
+            &quot;cardSkipTurn&quot;: false,
+            &quot;bonusPercent&quot;: 0,
+            &quot;applyEachTurn&quot;: false,
+            &quot;isPercertange&quot;: true,
+            &quot;numberOfTimesBuffApplied&quot;: 0,
+            &quot;changeMinAndMaxStats&quot;: false,
+            &quot;stat1&quot;: 0,
+            &quot;stat2&quot;: 0,
+            &quot;activateAlteredState&quot;: false,
+            &quot;alteredStateToActivate&quot;: 0,
+            &quot;criticsPercentChange&quot;: 0,
+            &quot;actionElementType&quot;: 0,
+            &quot;criticsRoll&quot;: &quot;0.10&quot;,
+            &quot;evadeRoll&quot;: &quot;0.71&quot;,
+            &quot;turnsPassed&quot;: 0,
+            &quot;evadedTurns&quot;: 0
+          }
+        ],
+        &quot;timeStamp&quot;: &quot;2023-01-23T20:36:29.060Z&quot;,
+        &quot;indexCard&quot;: 0
+      }
+    ],
+    &quot;isOwnerLocal&quot;: true,
+    &quot;turnTimes&quot;: {
+      &quot;lastUpdatedTurn1&quot;: &quot;2023-01-23T21:30:15.969Z&quot;,
+      &quot;lastUpdatedTurn2&quot;: &quot;2023-01-23T21:30:16.008Z&quot;,
+      &quot;startMatchTime&quot;: &quot;1674509208000&quot;
+    },
+    &quot;lastUpdated&quot;: &quot;2023-01-23T21:30:15.903Z&quot;,
+    &quot;currentTerrain&quot;: null,
+    &quot;currentTurn&quot;: &quot;4&quot;
+  }
+}
+</code></pre><h3 id="battle-actions"><strong>Battle Actions</strong></h3>
 <p>Each action within the game is represented by a class that is responsible for knowing how to process itself.
 In the current game, the following actions exist:</p>
 <ul>
@@ -161,7 +889,7 @@ In the current game, the following actions exist:</p>
 <li>StatSwap</li>
 <li>EndGame</li>
 </ul>
-<h2 id="block">Block</h2>
+<h4 id="block"><strong>Block</strong></h4>
 <p>Block allows the Shinsei to evade the damage from the next attack of its opponent. Some cards bring this action as a secondary effect.</p>
 <pre><code class="lang-js">function BlockActionType(moveData, userData, otherData) {
     //check who gets the movement block
@@ -173,7 +901,7 @@ In the current game, the following actions exist:</p>
         targetPlayerData.forbidenActions[moveData.amount]=moveData.turnsDuration
     }
 }
-</code></pre><h2 id="buff-and-debuff">Buff and Debuff</h2>
+</code></pre><h4 id="buff-and-debuff"><strong>Buff and Debuff</strong></h4>
 <p>Buffs increase the statistics of a Shinsei, whether its attack, defense, vigor, stamina or damage, debuffs are the opposite by decreasing the stats.</p>
 <pre><code class="lang-js">function ExecuteBuffDebuff(buffDebuffData, userData, otherData) {
     if (buffDebuffData.applyEachTurn || (!buffDebuffData.applyEachTurn &amp;&amp; buffDebuffData.turnsPassed == 0)) {
@@ -217,7 +945,7 @@ In the current game, the following actions exist:</p>
         }
     }
 }
-</code></pre><h2 id="change-shinsei">Change Shinsei</h2>
+</code></pre><h4 id="change-shinsei"><strong>Change Shinsei</strong></h4>
 <p>This defines the action of changing the current Shinsei.</p>
 <pre><code class="lang-js">function ExecuteChangeShinsei(changeShinseiData, userData, otherData, actionsOrdered,userIndexes) {
     let targetPlayerData = changeShinseiData.isSelfInflicted ? userData : otherData;
@@ -226,7 +954,7 @@ In the current game, the following actions exist:</p>
     targetPlayerData.currentShinsei = changeShinseiData.amount &gt;= targetPlayerData.ShinseiParty.length ? targetPlayerData.currentShinsei : changeShinseiData.amount
     actionsOrdered[targetIndex] = [];
 }
-</code></pre><h2 id="copy-cat">Copy Cat</h2>
+</code></pre><h4 id="copy-cat"><strong>Copy Cat</strong></h4>
 <p>Copy Cat is a special case where the opponent&#39;s ability is used.</p>
 <pre><code class="lang-js">function ExecuteCopyCat(turnsOrdered, actionsOrdered, userIndex, otherIndex) {
     //Check if its copycat and add actions to the players action list
@@ -246,7 +974,7 @@ In the current game, the following actions exist:</p>
         }
     }
 }
-</code></pre><h2 id="damage">Damage</h2>
+</code></pre><h4 id="damage"><strong>Damage</strong></h4>
 <p>This is the simplest type of action because it only processes the damage with the current Shinsei&#39;s stats and applies it.</p>
 <pre><code class="lang-js">function ExecuteDamage(damageData, userData, otherData) {
     let targetPlayerData = damageData.isSelfInflicted ? userData : otherData;
@@ -284,7 +1012,7 @@ In the current game, the following actions exist:</p>
         targetPlayerData.ShinseiParty[targetPlayerData.currentShinsei].shinseiHealth = Math.max(targetPlayerData.ShinseiParty[targetPlayerData.currentShinsei].shinseiHealth - finalDamageInt, 0);
     }
 }
-</code></pre><h2 id="heal">Heal</h2>
+</code></pre><h4 id="heal"><strong>Heal</strong></h4>
 <p>Heal is the same process as above but increasing the health stat.</p>
 <pre><code class="lang-cs">function ExecuteHeal(healData, userData, otherData) {
     let targetPlayerData = healData.isSelfInflicted ? userData : otherData;
@@ -293,7 +1021,7 @@ In the current game, the following actions exist:</p>
     let maxHealth = targetPlayerData.ShinseiParty[targetPlayerData.currentShinsei].ShinseiOriginalStats.Health;
     targetPlayerData.ShinseiParty[targetPlayerData.currentShinsei].shinseiHealth = Math.min(maxHealth, Math.floor((currentHealth + healData.amount + bonusHeal)));
 }
-</code></pre><h2 id="reflect-damage">Reflect Damage</h2>
+</code></pre><h4 id="reflect-damage"><strong>Reflect Damage</strong></h4>
 <p>Reflect Damage is a special status in which the damage that would be received is applied to the opponent.</p>
 <pre><code class="lang-js">function ReflectDamage(reflectDamageData, userData, otherData) {
     //check who gets the movement block
@@ -305,21 +1033,313 @@ In the current game, the following actions exist:</p>
     else
         targetPlayerData.ShinseiParty[targetPlayerData.currentShinsei].reflectDamageLeft += 1;
 }
-</code></pre><h2 id="skip-turn">Skip Turn</h2>
+</code></pre><h4 id="skip-turn"><strong>Skip Turn</strong></h4>
 <p>This function is used both to wait for energy to recover and to apply effects such as Rooted, creates an empty turn.</p>
-<h2 id="statswap">StatSwap</h2>
+<pre><code class="lang-js">function ExecuteSkip(actionData, playerData, otherData, actionOrdered, turnsData, userIndexes) {
+    if (!actionData.isSelfInflicted) {
+      // If is a card someone else set on me, then we proceed set its skipTurnVariable in the shinsei
+      // to the turns duration of the card. Is set on the shinseis in order to remembr the skip turn 
+      // in the case we change shinsei.
+        otherData.ShinseiParty[otherData.currentShinsei].skipTurnsLeft = actionData.turnsDuration;
+    }
+    else {
+        var lastDate = ParseDate(turnsData.lastUpdated);
+        var turn1SentDate = ParseDate(turnsData.playersTurn[0].timeStamp);
+
+        var turn1ElapsedTime = ...;
+        var turn1TotalMinutes = ...;
+        var turn1TotalSeconds = ...;
+
+        // If the minutes passed the threshold, i.e: 1min for the player to send turn
+        // we update the strikes of the player
+        if (turn1TotalMinutes &gt;= 1) {
+            if (playerData.strikes == null)
+                playerData.strikes = 1;
+            else
+                playerData.strikes++;
+        }
+
+        // If the player has reached 3 strikes already we kill all his shinseis in order to end the match.
+        if (playerData.strikes &gt;= 3)
+            playerData.ShinseiParty.forEach(element =&gt; element.shinseiHealth = 0);
+    }
+
+    //If the card is a skip to other player we proceed to  add the other player that skip turn for the next turn.
+    if (actionData.cardSkipTurn &amp;&amp; actionData.turnsPassed == 0) {
+        actionOrdered.push({
+            isSelfInflicted: true,
+            actionType: 6,
+            turnsDuration: 2,
+            cardSkipTurn: true,
+            turnsPassed: 2
+        });
+
+}
+</code></pre><h4 id="statswap"><strong>StatSwap</strong></h4>
 <p>Swaps the value of two stats temporarily, for example, a Shinsei with high defense could convert its defense into damage</p>
-<h2 id="endgameaction">EndGameAction</h2>
-<p>This action is special because it is called when the calculation decides that the game has ended, then it is responsible for delivering the virtual currency prizes, updating data in the tournament status and writing in the respective places who was the winner.</p>
-<h2 id="create-match-and-delete-match">Create Match and Delete Match</h2>
-<p>These functions serve to create what is known as Share Group in Azure, the fights in sacred tails are Sharegroups where the two contenders are added, it has a key name that identifies it and saves both the turns and the results.</p>
-<p>Create Match creates a new match and Delete deletes it.</p>
-<p><img src="../resources/MatchExample.png" alt="Example"></p>
-<p>This is an example of a Share Group of a fight.</p>
-<h1 id="lobby">Lobby</h1>
+<pre><code class="lang-js">function ExecuteStatSwap(statSwapData, userData, otherData) {
+    let targetPlayerData = statSwapData.isSelfInflicted ? userData : otherData;
+    if (statSwapData.turnsPassed == 0) {
+        let attackEvaded = statSwapData.evadeRoll &lt; battleStatisticsCalculator.ApplyEvationCritics(targetPlayerData.ShinseiParty[targetPlayerData.currentShinsei].evadeChance);
+        if (!attackEvaded) {
+            if (statSwapData.changeMinAndMaxStats) {
+                let statMax = -1;
+                let statMin = -1;
+                let maxValue = 0;
+                let minValue = 999999;
+
+                Object.entries(targetPlayerData.ShinseiParty[targetPlayerData.currentShinsei].ShinseiOriginalStats).forEach(entry =&gt; {
+                    let stat = entry[0];
+                    let value = entry[1];
+                    if (stat != &quot;Health&quot; &amp;&amp; stat != &quot;Energy&quot; &amp;&amp; stat != &quot;-1&quot;) {
+                        if (value &gt; maxValue) {
+                            statMax = stat;
+                            maxValue = value;
+                        }
+                        else if (value &lt; minValue) {
+                            statMin = stat;
+                            minValue = value;
+                        }
+                    }
+                });
+
+                targetPlayerData.ShinseiParty[targetPlayerData.currentShinsei].ShinseiOriginalStats[statMax] = minValue;
+                targetPlayerData.ShinseiParty[targetPlayerData.currentShinsei].ShinseiOriginalStats[statMin] = maxValue;
+
+                statSwapData.stat1 = statMax;
+                statSwapData.stat2 = statMin;
+            }
+            else {
+                let stat1 = GetStat(statSwapData.stat1);
+                let stat2 = GetStat(statSwapData.stat2);
+
+                let value1Temp = targetPlayerData.ShinseiParty[targetPlayerData.currentShinsei].ShinseiOriginalStats[stat1];
+                targetPlayerData.ShinseiParty[targetPlayerData.currentShinsei].ShinseiOriginalStats[stat1] = targetPlayerData.ShinseiParty[targetPlayerData.currentShinsei].ShinseiOriginalStats[stat2];
+                targetPlayerData.ShinseiParty[targetPlayerData.currentShinsei].ShinseiOriginalStats[stat2] = value1Temp;
+            }
+
+            SetNormalizedStats(targetPlayerData);
+        }
+        else {
+            if (statSwapData.evadedTurns == null)
+                statSwapData.evadedTurns = 1;
+            else
+                statSwapData.evadedTurns++;
+        }
+    }
+}
+</code></pre><h4 id="endgameaction"><strong>EndGameAction</strong></h4>
+<p>This action is special because it is called when the calculation decides that the game has ended, then it is responsible for delivering the virtual currency prizes, updating data in the tournament status and writing in the respective places who was the winner. Note that this only happens on calculation, it doesn&#39;t happend if the player it&#39;s not the one calculating, later we will see this case.</p>
+<p><em>Before that, it can be of value reuse the turnsData payload, in order to make the paylod not as extensive, so this is the response of a turns data:</em></p>
+<blockquote><h5 id="turnsdata">TurnsData</h5>
+<pre><code class="lang-json">&quot;turnsData&quot;:
+</code></pre></blockquote>
+<p>[
+  {
+    &quot;cardType&quot;: 0,
+    &quot;isComingFromCopyIndex&quot;: -1,
+    &quot;PpCost&quot;: 0,
+    &quot;name&quot;: &quot;BlackRay&quot;,
+    &quot;hideFlags&quot;: 0,
+    &quot;BattleActions&quot;: [
+      {
+        &quot;actionType&quot;: 2,
+        &quot;turnsDuration&quot;: 1,
+        &quot;isSelfInflicted&quot;: true,
+        &quot;cardSkipTurn&quot;: true,
+        &quot;bonusPercent&quot;: 0,
+        &quot;applyEachTurn&quot;: false,
+        &quot;isPercertange&quot;: true,
+        &quot;numberOfTimesBuffApplied&quot;: 0,
+        &quot;changeMinAndMaxStats&quot;: false,
+        &quot;stat1&quot;: 0,
+        &quot;stat2&quot;: 0,
+        &quot;activateAlteredState&quot;: false,
+        &quot;alteredStateToActivate&quot;: 0,
+        &quot;criticsPercentChange&quot;: 0,
+        &quot;actionElementType&quot;: 0,
+        &quot;criticsRoll&quot;: &quot;0.42&quot;,
+        &quot;evadeRoll&quot;: &quot;0.69&quot;,
+        &quot;turnsPassed&quot;: 0,
+        &quot;evadedTurns&quot;: 0
+      }
+    ],
+    &quot;timeStamp&quot;: &quot;2023-01-06T13:30:26.836Z&quot;,
+    &quot;indexCard&quot;: 2
+  },
+  {
+    &quot;cardType&quot;: 0,
+    &quot;isComingFromCopyIndex&quot;: -1,
+    &quot;PpCost&quot;: 0,
+    &quot;name&quot;: &quot;Eclipse&quot;,
+    &quot;hideFlags&quot;: 0,
+    &quot;BattleActions&quot;: [
+      {
+        &quot;actionType&quot;: 0,
+        &quot;turnsDuration&quot;: 1,
+        &quot;isSelfInflicted&quot;: true,
+        &quot;cardSkipTurn&quot;: true,
+        &quot;bonusPercent&quot;: 0,
+        &quot;applyEachTurn&quot;: false,
+        &quot;isPercertange&quot;: true,
+        &quot;numberOfTimesBuffApplied&quot;: 0,
+        &quot;changeMinAndMaxStats&quot;: false,
+        &quot;stat1&quot;: 0,
+        &quot;stat2&quot;: 0,
+        &quot;activateAlteredState&quot;: false,
+        &quot;alteredStateToActivate&quot;: 0,
+        &quot;criticsPercentChange&quot;: 0,
+        &quot;actionElementType&quot;: 0,
+        &quot;criticsRoll&quot;: &quot;0.10&quot;,
+        &quot;evadeRoll&quot;: &quot;0.51&quot;,
+        &quot;turnsPassed&quot;: 0,
+        &quot;evadedTurns&quot;: 0
+      }
+    ],
+    &quot;timeStamp&quot;: &quot;2023-01-06T13:30:24.066Z&quot;,
+    &quot;indexCard&quot;: 2
+  }
+]</p>
+<pre><code>
+There can be multiple responses from the EndgameAction.
+
+This is the successful ones, it could be due to the ending of the timei of the match, due to the flow, or due to the surrender of the players, lets take a look at the response:
+
+&gt; Successful endgame, match ending by time or by natural flow or surrenders
+
+```json
+{
+  &quot;status&quot;: 200,
+  &quot;body&quot;: {
+    &quot;success&quot;: true,
+    &quot;code&quot;: 44,
+    &quot;message&quot;: &quot;End match successfully&quot;,
+    &quot;data&quot;: {
+      &quot;playersTurn&quot;: {
+        &quot;turnsData&quot;: turnsData
+      &quot;lastUpdated&quot;: &quot;2023-01-06T13:29:27.056Z&quot;,
+      &quot;currentTerrain&quot;: null,
+      &quot;currentTurn&quot;: &quot;14&quot;,
+      &quot;winnerId&quot;: &quot;5AB7BC46EA4AB58E&quot;,
+      &quot;loserId&quot;: &quot;B2DF0D8F88E6053E&quot;,
+      &quot;playerWritedLastTurn&quot;: false
+    }
+  }
+}
+</code></pre><p>But the unsuccesful cases are the following:</p>
+<blockquote><p> Can&#39;t update ELO of winner</p>
+</blockquote>
+<pre><code class="lang-json">{
+  &quot;code&quot;: 441,
+  &quot;message&quot;: &quot;Error updating player elo&quot;,
+  &quot;data&quot;: turnsData 
+}
+</code></pre><blockquote><p> Can&#39;t update tournament state</p>
+</blockquote>
+<pre><code class="lang-json">{
+  &quot;code&quot;: 446,
+  &quot;message&quot;: &quot;Error getting shared group data&quot;,
+  &quot;data&quot;: turnsData 
+}
+</code></pre><p>or</p>
+<pre><code class="lang-json">{
+  &quot;code&quot;: 447,
+  &quot;message&quot;: &quot;Error updating brackets winnerId&quot;,
+  &quot;data&quot;: turnsData 
+}
+</code></pre><blockquote><p> Can&#39;t update virtual currency of winner</p>
+</blockquote>
+<pre><code class="lang-json">{
+  &quot;code&quot;: 443,
+  &quot;message&quot;: &quot;Error updating virtual currency&quot;,
+  &quot;data&quot;: turnsData 
+}
+</code></pre><p>All of these errors will be handle by the client by making the petition again. He tries this 2 times and the if it isn&#39;t working he continues with the local state he had, in order to not lock the flow of the game.</p>
+<h3 id="endgame-for-player-who-isnt-calculating"><strong>EndGame for player who isn&#39;t calculating</strong></h3>
+<p>As we said in the previous version, if the player isn&#39;t calculating then we doesn&#39;t recieve the responses from the previous section. In this case the server looks for the winnerId variable written by the previous player that did calculate the match. Let&#39;s take a look at the pseudo code of that part:</p>
+<pre><code class="lang-js">var data = dataFromPlayfab;
+if (hasWinner) {
+    if (!hasLastTurnData) {
+        lastTurnData.winnerId = data[&quot;matchWinner&quot;];
+        lastTurnData.loserId = data[&quot;matchLoser&quot;];
+
+        // If the match ended but it doesn&#39;t have last turn data,
+        // we try to generate that data again.Until the client send us
+        // that it has been too many tries with the
+        // calculateEndMatchAgain variable
+        if (calculateEndMatchAgain != null &amp;&amp; calculateEndMatchAgain){
+            endGameAction.UpdateAllEndMatch();
+        }
+        // If the client has too many tries then we procceed to tell him that the winner and losers
+        // and proceed to end the match
+        else {
+            ResponseToClient(&quot;Match has already ended, when it doen&#39;t have last turn data.&quot;);
+            // End flow of function
+            context.done();
+        }
+        return;
+    }
+
+    lastTurnData = getLastTurnDataFromDataInSharedGroup();
+    lastTurnData.winnerId = data[&quot;matchWinner&quot;];
+    lastTurnData.loserId = data[&quot;matchLoser&quot;];
+
+    //If the server has a turn and nobody is calculating the turns, we proceed to write if the
+    // player that wrote that turn was this player. This is done to tell the player if the data 
+    //wroten on the shared group as the last turns follows the order of [playerData, enemyData] or 
+    //if he has to reverse it in the client.
+    if (data[&quot;IsCalculatingTurn&quot;] != null &amp;&amp; !IsATurn(data[&quot;IsCalculatingTurn&quot;].Value))
+        lastTurnData.playerWritedLastTurn = data[&quot;IsCalculatingTurn&quot;].Value == playFabId;
+
+    let firstTimeStamp = getTimeStampOfInitMatchFromData()
+    // We check if the match has reached his limit.
+    if (matchTimeLimitHelper.CheckMatchTimeLimit(firstTimeStamp)) {
+
+        // If it has then we say to the client
+        ResponseToClient(&quot;Match has already ended, when it doen&#39;t have last turn data.&quot;);
+        //End flow
+        context.done();
+    }
+    else {
+        if (calculateEndMatchAgain != null &amp;&amp; calculateEndMatchAgain)
+            endGameAction.UpdateAllEndMatch();
+        else {
+            ResponseToClient(&quot;Match has already ended, normal match, player that didn&#39;t proccess it.&quot;);
+            // End flow of function
+            context.done();
+        }
+    }
+}
+else if (player turn does not match with match turn) {
+  var attempts = ...;
+  // 35 attemps is 1:45 minutes. Each attemp is made every 3 seconds.
+  // So if the player hasn&#39;t sent anything in a timespan of 1:45 seg (max time to play is 1:30),
+  // then we proceed to end the game with him as a lose
+  if (attempts &gt;= 35) {
+      if (turnIndexes[0] &gt; turnIndexes[1])
+          endGameAction.EndGame(context, matchId, enemyPlayfabId, playFabId);
+      else
+          endGameAction.EndGame(context, matchId, playFabId, enemyPlayfabId);
+  } else {
+      attempts++;
+
+      //We update the current attempts
+      PlayFabServer.UpdateSharedGroupData(getAttemps, ()=&gt;{
+        //We tell him that the turns doesn&#39;t match yet. Keep asking.
+        ResponseToClient(&quot;Turns doesn&#39;t match yet, keep asking.&quot;);
+        //End flow
+        context.done();
+      });
+  }
+}
+// If none of the above happens we proceed to calculate the turn.
+else {
+    calculateTurn.CalculateTurn(context, data, keys, [playFabId, enemyPlayfabId], matchId, turnIndexes[0]);
+}
+</code></pre><h1 id="lobby">Lobby</h1>
 <p>A large part of the lobby processing is done via server, this is responsible for saving and delivering the positions of all players.</p>
 <p>The first step to be part of a lobby is to connect</p>
-<h2 id="connecttolobby">ConnectToLobby</h2>
+<h3 id="connecttolobby"><strong>ConnectToLobby</strong></h3>
 <p>Connect to lobby first checks that the player who is trying to connect is using the latest version of the game to avoid corrupting data to other players, then it checks if the ID provided is truly a lobby and if it is, it checks if it has space for more players.</p>
 <p>When connecting, it checks if the player has ELO among his data, if not, it sets the default ELO value and informs the player that he was able to connect correctly.</p>
 <h1 id="tournaments">Tournaments</h1>
@@ -327,11 +1347,11 @@ In the current game, the following actions exist:</p>
 <h2 id="create-tournament">Create Tournament</h2>
 <p>This function creates a sharegroup and initializes the necessary values to add a user to this tournament.</p>
 <pre><code class="lang-js">module.exports = function (context, req) {
-    if (!req.body) {
-        context.res = { status: 200, body: { success: false, code: 20, message: &#39;Please send valid data&#39;, data: null } };
-        return context.done();
-    }
-    playfabController.Init();
+if (!req.body) {
+context.res = { status: 200, body: { success: false, code: 20, message: &#39;Please send valid data&#39;, data: null } };
+return context.done();
+}
+playfabController.Init();
 
     let tournamentId = req.body.FunctionArgument.Keys.tournamentId;
     let request = {

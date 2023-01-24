@@ -1270,6 +1270,22 @@ references:
   commentId: T:Global.BattleActionStatSwap
   fullName: BattleActionStatSwap
   nameWithType: BattleActionStatSwap
+- uid: Global.BattleActionStatSwap.CheckBuffDebuffTargets(System.String,System.String,System.Collections.Generic.List{BattleActionData})
+  name: CheckBuffDebuffTargets(String, String, List<BattleActionData>)
+  href: api/Global.BattleActionStatSwap.html#Global_BattleActionStatSwap_CheckBuffDebuffTargets_System_String_System_String_System_Collections_Generic_List_BattleActionData__
+  commentId: M:Global.BattleActionStatSwap.CheckBuffDebuffTargets(System.String,System.String,System.Collections.Generic.List{BattleActionData})
+  name.vb: CheckBuffDebuffTargets(String, String, List(Of BattleActionData))
+  fullName: BattleActionStatSwap.CheckBuffDebuffTargets(System.String, System.String, System.Collections.Generic.List<BattleActionData>)
+  fullName.vb: BattleActionStatSwap.CheckBuffDebuffTargets(System.String, System.String, System.Collections.Generic.List(Of BattleActionData))
+  nameWithType: BattleActionStatSwap.CheckBuffDebuffTargets(String, String, List<BattleActionData>)
+  nameWithType.vb: BattleActionStatSwap.CheckBuffDebuffTargets(String, String, List(Of BattleActionData))
+- uid: Global.BattleActionStatSwap.CheckBuffDebuffTargets*
+  name: CheckBuffDebuffTargets
+  href: api/Global.BattleActionStatSwap.html#Global_BattleActionStatSwap_CheckBuffDebuffTargets_
+  commentId: Overload:Global.BattleActionStatSwap.CheckBuffDebuffTargets
+  isSpec: "True"
+  fullName: BattleActionStatSwap.CheckBuffDebuffTargets
+  nameWithType: BattleActionStatSwap.CheckBuffDebuffTargets
 - uid: Global.BattleActionStatSwap.EndAction(System.Boolean,UserInfo,UserInfo,BattleActionData)
   name: EndAction(Boolean, UserInfo, UserInfo, BattleActionData)
   href: api/Global.BattleActionStatSwap.html#Global_BattleActionStatSwap_EndAction_System_Boolean_UserInfo_UserInfo_BattleActionData_
