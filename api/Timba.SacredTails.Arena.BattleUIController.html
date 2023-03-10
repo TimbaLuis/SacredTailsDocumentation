@@ -319,6 +319,33 @@
   </h3>
   
   
+  <a id="Timba_SacredTails_Arena_BattleUIController_AddPing_" data-uid="Timba.SacredTails.Arena.BattleUIController.AddPing*"></a>
+  <h4 id="Timba_SacredTails_Arena_BattleUIController_AddPing_System_Int32_" data-uid="Timba.SacredTails.Arena.BattleUIController.AddPing(System.Int32)">AddPing(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddPing(int amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">amount</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="Timba_SacredTails_Arena_BattleUIController_ApplyEnergyChange_" data-uid="Timba.SacredTails.Arena.BattleUIController.ApplyEnergyChange*"></a>
   <h4 id="Timba_SacredTails_Arena_BattleUIController_ApplyEnergyChange_System_Int32_System_Int32_" data-uid="Timba.SacredTails.Arena.BattleUIController.ApplyEnergyChange(System.Int32,System.Int32)">ApplyEnergyChange(Int32, Int32)</h4>
   <div class="markdown level1 summary"></div>
@@ -382,6 +409,48 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">indexBar</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Timba_SacredTails_Arena_BattleUIController_EndMatchCheck_" data-uid="Timba.SacredTails.Arena.BattleUIController.EndMatchCheck*"></a>
+  <h4 id="Timba_SacredTails_Arena_BattleUIController_EndMatchCheck_System_Boolean_" data-uid="Timba.SacredTails.Arena.BattleUIController.EndMatchCheck(System.Boolean)">EndMatchCheck(Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EndMatchCheck(bool isLocalPlayerHealthBars)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">isLocalPlayerHealthBars</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -579,12 +648,12 @@
   
   
   <a id="Timba_SacredTails_Arena_BattleUIController_ToggleWaitingPrompt_" data-uid="Timba.SacredTails.Arena.BattleUIController.ToggleWaitingPrompt*"></a>
-  <h4 id="Timba_SacredTails_Arena_BattleUIController_ToggleWaitingPrompt_System_Boolean_" data-uid="Timba.SacredTails.Arena.BattleUIController.ToggleWaitingPrompt(System.Boolean)">ToggleWaitingPrompt(Boolean)</h4>
+  <h4 id="Timba_SacredTails_Arena_BattleUIController_ToggleWaitingPrompt_System_Boolean_System_Boolean_" data-uid="Timba.SacredTails.Arena.BattleUIController.ToggleWaitingPrompt(System.Boolean,System.Boolean)">ToggleWaitingPrompt(Boolean, Boolean)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ToggleWaitingPrompt(bool isWaiting)</code></pre>
+    <pre><code class="lang-csharp hljs">public void ToggleWaitingPrompt(bool isWaiting, bool isSkipTurn = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -599,6 +668,38 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">isWaiting</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">isSkipTurn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Timba_SacredTails_Arena_BattleUIController_UpdatePing_" data-uid="Timba.SacredTails.Arena.BattleUIController.UpdatePing*"></a>
+  <h4 id="Timba_SacredTails_Arena_BattleUIController_UpdatePing_System_Int32_" data-uid="Timba.SacredTails.Arena.BattleUIController.UpdatePing(System.Int32)">UpdatePing(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdatePing(int amount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">amount</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -638,12 +739,12 @@
   
   
   <a id="Timba_SacredTails_Arena_BattleUIController_UpdateTimer_" data-uid="Timba.SacredTails.Arena.BattleUIController.UpdateTimer*"></a>
-  <h4 id="Timba_SacredTails_Arena_BattleUIController_UpdateTimer_System_Single_System_String_" data-uid="Timba.SacredTails.Arena.BattleUIController.UpdateTimer(System.Single,System.String)">UpdateTimer(Single, String)</h4>
+  <h4 id="Timba_SacredTails_Arena_BattleUIController_UpdateTimer_System_Single_System_String_System_Boolean_" data-uid="Timba.SacredTails.Arena.BattleUIController.UpdateTimer(System.Single,System.String,System.Boolean)">UpdateTimer(Single, String, Boolean)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void UpdateTimer(float timeInSeconds, string colorText = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public void UpdateTimer(float timeInSeconds, string colorText = null, bool didEnemyDisconnect = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -663,6 +764,11 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
         <td><span class="parametername">colorText</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">didEnemyDisconnect</span></td>
         <td></td>
       </tr>
     </tbody>

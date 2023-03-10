@@ -10,7 +10,7 @@
     "changefreq": "weekly"
   },
   "homepages": [],
-  "source_base_path": "D:/Files/Work/Timba/Repo/SacredTails/Documentation",
+  "source_base_path": "E:/DANIEL/PROJECTS/UNITY/TIMBA/SacredTails/SacredTails/Documentation",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -64,7 +64,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.ActionTypeEnum.html",
-          "hash": "uQmSrUD/EvFqXTslyucNYb5zCu9oxQbcm3b17HwbknE="
+          "hash": "60mAvm0ppX2LpL9Y7+8glrNrVP+Ws2ADCKoQcQF7niM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.AlteredStateController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.AlteredStateController.html",
+          "hash": "XxuaKk1TYiHvJSVFRD//RiD/tRMCyZ4KDXuI3MUj4A4="
         }
       },
       "is_incremental": false,
@@ -76,7 +88,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.AlteredStateData.html",
-          "hash": "7g+LUgLVzMYKJ6IJS58EKsA6VlTzgospSzgzxwae7Mw="
+          "hash": "AEo6jsVLpeSS8HTJGShQCH97G/GJnYDnkJYIlY4d02U="
         }
       },
       "is_incremental": false,
@@ -292,7 +304,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BattleActionData.html",
-          "hash": "4h8ycafBWaUJV0Bec9QO6gJDTIrDkKt+bz//y4q+zBA="
+          "hash": "Y0K3GeI0NlEl1lu/aTVRWR7b2OGIYlRmJAqrdQieztA="
         }
       },
       "is_incremental": false,
@@ -388,7 +400,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BattleAlteredStateBase.html",
-          "hash": "RomvOUHkVuJwWxYa7+V0ICbH840GgDrWqxwopEuoGow="
+          "hash": "M4Mzuf2rzzPzz6Yc+eUh/NOXlugXPe02oFUCk1/U0KE="
         }
       },
       "is_incremental": false,
@@ -400,7 +412,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BattleAlteredStateBleeding.html",
-          "hash": "TPgwkLTR4ahUxYpOtPLPEtpPTU5RnnWXPW88+F6NRSc="
+          "hash": "MjZOA2xW9d1iGp61d3TkCSRU+Kug3wnTtrJUTAGZatY="
         }
       },
       "is_incremental": false,
@@ -412,7 +424,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BattleAlteredStateDataSO.html",
-          "hash": "2mu89XQ3a8CqBQkTHQybCC+eIZGPS1OlQkyIAi9Yg7c="
+          "hash": "jDiY/9EkkF+/5VMawv9sr9PG06AtjQhTqcLvn2nsI1w="
         }
       },
       "is_incremental": false,
@@ -424,7 +436,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BattleAlteredStateEvasionChange.html",
-          "hash": "t5pqEhbFcwfnkiCuvkM+09K0/Y9MbI5ViU5R4+at7IA="
+          "hash": "5muoAwbPwsWkK07GUqJ2yXL91aP4gzk/TuvKiZDPYgQ="
         }
       },
       "is_incremental": false,
@@ -436,7 +448,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BattleAlteredStateIgnited.html",
-          "hash": "ucL2f+MxnvQ9B3bxvd0UPbQEvdFwJtWUd+/OtEStvNw="
+          "hash": "JUEywQrjWbn3g/+ttRU93yiy1cu4PtYCXPKDEZiQMDo="
         }
       },
       "is_incremental": false,
@@ -448,7 +460,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BattleAlteredStateRoot.html",
-          "hash": "4hQPruHw4BeSn8+1u2bgBLU4ji/yGc5CWIM1EGyXaQI="
+          "hash": "RCLvPpI60F1+uBQvno1AOEDW5YS8qvanV5dP0Qwy1Ag="
         }
       },
       "is_incremental": false,
@@ -540,6 +552,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.BotPlayfabIdsList.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.BotPlayfabIdsList.html",
+          "hash": "ztzHeYSS4yd3/7psREhfnj9qMoPYtOrEJofxvk3FF4A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Global.BracketsData.yml",
       "output": {
         ".html": {
@@ -556,7 +580,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.BracketsTournamentManager.html",
-          "hash": "3StriySd2mDbDwKXgfExmzKRkWTzvSyg3HMpFxPxfEo="
+          "hash": "SY0YDOI98+qwokYbhQyT0Gex5QfSwk0iTtxESTka79M="
         }
       },
       "is_incremental": false,
@@ -616,7 +640,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.ChallengePlayerController.html",
-          "hash": "YLVj0yTzW5CThalUXYrLmvBEhNVEEU+SEExBaA0XkfY="
+          "hash": "BlODP5RkrTMTwb+APSpe0RqJOcSNi3QgJFGOe9jqOWg="
         }
       },
       "is_incremental": false,
@@ -808,7 +832,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.CheckTournamentStateController.html",
-          "hash": "8fOJSjUE3eAHQCKmNstZFfXGJb+Cjj7Ck2AZ3aGlHv4="
+          "hash": "j7M87ak8/zNSlYrVi19DUMoykeiooMu9OOA4Ek5yqoM="
         }
       },
       "is_incremental": false,
@@ -864,18 +888,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.CombatFirebasePetitions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.CombatFirebasePetitions.html",
-          "hash": "nGna7liFXseNWta0ebWt+C/oXG7tc6nHea/5p91IFmE="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.Constants.yml",
       "output": {
         ".html": {
@@ -905,6 +917,18 @@
         ".html": {
           "relative_path": "api/Global.Courtain.html",
           "hash": "BMOeBjZbrpq6LbFk/ygb+WfhPUeZMplB5Ge0YubKhb4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.CreateBotsController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.CreateBotsController.html",
+          "hash": "K9gkEGcoWBLHYrwf4w0jSW68pLqZcpTLPDnfKxCo9yo="
         }
       },
       "is_incremental": false,
@@ -1104,11 +1128,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.Extensions.yml",
+      "source_relative_path": "api/Global.EndpointsForBots.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Global.Extensions.html",
-          "hash": "Fd2umHW4+Ram+S/lo1kTNKc58K23y2waqRhG7688dj0="
+          "relative_path": "api/Global.EndpointsForBots.html",
+          "hash": "sqQhQu4jumV24xamxM8FVoXCJRPd2b8AV5Npty8kdxc="
         }
       },
       "is_incremental": false,
@@ -1116,11 +1140,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.FirebasePetitionType.yml",
+      "source_relative_path": "api/Global.Extensions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Global.FirebasePetitionType.html",
-          "hash": "Xhx6xgW6KDMpL95YoK9LnfzspyPCMQuRjrdns6U3JO4="
+          "relative_path": "api/Global.Extensions.html",
+          "hash": "Fd2umHW4+Ram+S/lo1kTNKc58K23y2waqRhG7688dj0="
         }
       },
       "is_incremental": false,
@@ -1300,7 +1324,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.IBracketsTournament.html",
-          "hash": "GXDLOQFotax2ehAjogbDfapcjDq2US8kJaolhMMrLYs="
+          "hash": "V21WTyFCyCkIgJVUrgLhk4hq6wwd1HYuTKzvTCEOYo0="
         }
       },
       "is_incremental": false,
@@ -1368,42 +1392,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.LeaderBoardManager.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.LeaderBoardManager.html",
-          "hash": "vGG1ag/ok3FrNTtw1EmsN8RVo/E1YH6TkDf7w6d4Jic="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.LeaderboardEntry.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.LeaderboardEntry.html",
-          "hash": "ZLFnSnHGFkwZ5P4GFZf1M/neVp6bnZgHnqViA0fMMww="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.LeaderboardEntryResult.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.LeaderboardEntryResult.html",
-          "hash": "5SMIcK+4h1dTarjkaN5KCmaxNoa7GLKu04/qH0XFxzM="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.LightFlickerEffect.yml",
       "output": {
         ".html": {
@@ -1421,18 +1409,6 @@
         ".html": {
           "relative_path": "api/Global.LobbyChatView.html",
           "hash": "Tlo9FgdZ+d7ZfsR8zMawJdqApg9mSvYlMeSaDP7hktQ="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.LobbyCompanionPanel.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.LobbyCompanionPanel.html",
-          "hash": "3RoOJbesVdpVRVbeYuCTktZ3RgWLNvUi3RShaU+hh6I="
         }
       },
       "is_incremental": false,
@@ -1576,7 +1552,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.MatchState.html",
-          "hash": "CM++EPYeO81xajZN7Gb1XZcsOltxuQnvU434H4UVEfg="
+          "hash": "ScskgJj3BOOfT04lBr9oxB+DRuIxGYyd29/VqmJbwfo="
         }
       },
       "is_incremental": false,
@@ -1788,42 +1764,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.OrderListener.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.OrderListener.html",
-          "hash": "t2HtT9ShhxIdXQdTkNHEFCDsQhVL+Rl1vfhNXJzAFJc="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.OrderMessage.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.OrderMessage.html",
-          "hash": "DTjPqbTG2lmXoyPGI87SA8R2tsAbz6P5Asckypl8lZI="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.OrderMessageType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.OrderMessageType.html",
-          "hash": "Q3b4ncmLXzjmFbJ9zpDmnx5cg6qALX7b31igFnZDadA="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.OwnBattleTracker.PromediumObject.yml",
       "output": {
         ".html": {
@@ -2016,47 +1956,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.PlayFabGetLeaderboard.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.PlayFabGetLeaderboard.html",
-          "hash": "UEqG8lGqnRRoXQlPchenOt0g8HWZpSEiURMv8+pytEw="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.PlayFabGetLeaderboardAroundPlayer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.PlayFabGetLeaderboardAroundPlayer.html",
-          "hash": "aQOdpBM5u2ci6yi1+rqcJKZV11CgEJFbAlaO7r2iTDQ="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.PlayFabUpdatePlayerStatistics.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.PlayFabUpdatePlayerStatistics.html",
-          "hash": "+vWyXcTXI5BtYoRzlEOCNTxy1xV1G9v4H1zZPaBS9Uo="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.PlayerDataManager.yml",
       "output": {
         ".html": {
           "relative_path": "api/Global.PlayerDataManager.html",
-          "hash": "NDMUNqbLNqswLFX9OPVE1ozdOzLeAzjGqkMCUCMsvTA="
+          "hash": "mDip938hIxwWLdcjcEwccP88fRL6G3OQQhzEipO2YMQ="
         }
       },
       "is_incremental": false,
@@ -2092,7 +1996,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.PlayfabManager.html",
-          "hash": "2f9M4t4tJ6B4+VC6Tb1Wc+kAjUOMIhU1DHa1GM0oI+U="
+          "hash": "xEl2wTE5SnulpIHqWTgdec8Ic1zhV3de5AVkbYecOTg="
         }
       },
       "is_incremental": false,
@@ -2160,18 +2064,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.RandomAnim.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.RandomAnim.html",
-          "hash": "Xhdnx6m+Mt4wzduFIQRBdyUFmSLzOmgxF4poBtRjGeM="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.RankRewardDto.yml",
       "output": {
         ".html": {
@@ -2225,18 +2117,6 @@
         ".html": {
           "relative_path": "api/Global.RecolorBehavior.html",
           "hash": "3O4J+4v+c+cNOG6QjWH7dyHAFe0TBDisaypegPM9c2I="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.RecolorBtn.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.RecolorBtn.html",
-          "hash": "13zh7FGUwGs9X8pFXetX4VRgEZ36GqtfP7hPbUc0siY="
         }
       },
       "is_incremental": false,
@@ -2309,6 +2189,18 @@
         ".html": {
           "relative_path": "api/Global.RotatorPillow.html",
           "hash": "wZkUSOtKX0cUUWvAR/jqPqAaabuyilfkrc/ZumYyc/8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.SacredTailsLog.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.SacredTailsLog.html",
+          "hash": "rpjSHIwTsTXKI6qqiMbJMC5/bkyE8E5mmpey1X351Es="
         }
       },
       "is_incremental": false,
@@ -2392,7 +2284,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Global.Shinsei.html",
-          "hash": "zB0iYVdbqrkWZjpYwEAMISn2yLOzb7G44f4HBbGbFAI="
+          "hash": "fVDTbXeXKLVrQbUwsdBF42X9Iumoyde922KNK7vgfSQ="
         }
       },
       "is_incremental": false,
@@ -2604,18 +2496,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.TaskManager.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.TaskManager.html",
-          "hash": "zeN/uUCaw/VF4HZDerjZBbQ3IqCcW9xE98hNh1t7ij8="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.TerrainChangesDataSO.yml",
       "output": {
         ".html": {
@@ -2628,11 +2508,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.TestExplorer.yml",
+      "source_relative_path": "api/Global.TestBotController.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Global.TestExplorer.html",
-          "hash": "/pyjHOe/BYk/FBQOG7cr0jvJIEk4JcFQbwQN8JLopXw="
+          "relative_path": "api/Global.TestBotController.html",
+          "hash": "wEn5tlCrXDYUQdLHvqbRptFMO4UONtl+fTD0so14s3Y="
         }
       },
       "is_incremental": false,
@@ -2681,18 +2561,6 @@
         ".html": {
           "relative_path": "api/Global.TournamentCamera.html",
           "hash": "kFQLHz3/8l491tjv4Bf/tAVh5ME53kmSva4YlhOvBqA="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.TrackSwitcher.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.TrackSwitcher.html",
-          "hash": "zX2nXDFv6a216x11+uYODshgqotgrfq7SUHVZe6htRo="
         }
       },
       "is_incremental": false,
@@ -2849,18 +2717,6 @@
         ".html": {
           "relative_path": "api/Global.UnlockedCharacterStyleInfo.html",
           "hash": "81DMC4LSoyW9b4TOeqI6a9KKabRkMR6vE4sQPDKqNmQ="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.UpdateTurnData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.UpdateTurnData.html",
-          "hash": "gL1ZFsA77Z4gTxEkLBz84N22jF8TKjMQMkH8EGTBSEg="
         }
       },
       "is_incremental": false,
@@ -3360,35 +3216,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.tasks.task.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.tasks.task.html",
-          "hash": "kfDi1xFqkk1EzqUXhuDe1LNkER9ri5/PrsNZSaez63E="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Global.tasks.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Global.tasks.html",
-          "hash": "32KOdYkoD61GdhcVRlWAAsz4A7o7a8kGZEuSKZpKm44="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Global.yml",
       "output": {
         ".html": {
           "relative_path": "api/Global.html",
-          "hash": "5vIaFemsd+oUvlyVYhNxYbzUyQb0+asjsVhEdnAGlSg="
+          "hash": "zOXgOfC2uHl7LC3w2mXCsNVpoQ56KGRiIwRjUD659lE="
         }
       },
       "is_incremental": false,
@@ -3545,30 +3377,6 @@
         ".html": {
           "relative_path": "api/Timba.Games.DynamicCamera.html",
           "hash": "rVzjONGQ1KH+NhgBQUv0dzDt7l/+SIuHC/v4d1q8KXw="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Timba.Games.Networking.Testing.NetworkingTestUI.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Timba.Games.Networking.Testing.NetworkingTestUI.html",
-          "hash": "gTY8QV7eUHfHfvpS3Q6mJ+OoTwaHiDDeDKv1AAzy3qA="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Timba.Games.Networking.Testing.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Timba.Games.Networking.Testing.html",
-          "hash": "c6yy8a8FrMRFz2w3toFMnJmPJdYAohfUKDaoBWSjeDI="
         }
       },
       "is_incremental": false,
@@ -4528,7 +4336,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Timba.SacredTails.Arena.BattleUIController.html",
-          "hash": "7QbVVt2icUkjbYvbeypzCPTl5pa8ZQ8Lg+2oxatbkBA="
+          "hash": "p1u+jMXccx1twU4LzQOBzngJmy4tf5oKL02s/l4y80s="
         }
       },
       "is_incremental": false,
@@ -4624,7 +4432,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Timba.SacredTails.Arena.GameSceneManager.html",
-          "hash": "dnYD7e3RJSSKIHvJJ9F/8wWEN9cRrMlOg4K5BDtrnBU="
+          "hash": "BZCyfNl+6xpimtneIqfeUzlMrNbUg9qQmqG6ivMjdhI="
         }
       },
       "is_incremental": false,
@@ -4744,7 +4552,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Timba.SacredTails.Arena.TurnsController.html",
-          "hash": "Euw2le839gDfHd7b09JnBZPDMzFN7vTeFDBEHbaNl3g="
+          "hash": "ZEkL90JuLjkPVTPJstTH2JYfyT0upQk1jVvE7TpjL9U="
         }
       },
       "is_incremental": false,
@@ -4768,7 +4576,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Timba.SacredTails.Arena.VfxInfo.html",
-          "hash": "Xdd2BCgEHGac3N1F4HH/NwrL4RLhIB/iKBoPy2X4U70="
+          "hash": "w7E/4f5+6WYPTZLon/XN6YeasS2d0suNGcwToQt+58o="
         }
       },
       "is_incremental": false,
@@ -5212,7 +5020,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Timba.SacredTails.Database.AuthController.html",
-          "hash": "W5FFTvJOhnWeTwP8GAzSb+c3ko3LKtyvUHMQRzzYWt0="
+          "hash": "ITaLamk+pVhK5NRouGvNylHG9nhpXlHnMqWRklWiyZA="
         }
       },
       "is_incremental": false,
@@ -5584,7 +5392,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Timba.SacredTails.TournamentBehavior.TournamentCreationController.html",
-          "hash": "7DaNMB3nslpusAsQs8AOxC6/o4y7UH4OyExqGlCiQBU="
+          "hash": "Qv9Ps0LD4Zd8BjC8VCkAidUaQ6xuNUbxmwK+Y74g5nM="
         }
       },
       "is_incremental": false,
@@ -5608,7 +5416,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Timba.SacredTails.TournamentBehavior.TournamentReadyController.html",
-          "hash": "biIozexRhc8DKrn5bIPjixY+VrVUMW7rgHcn1LF01Pc="
+          "hash": "JDOq5f50hMqcf8Uj3TQ6GeKYbAL3AhF+rzLnwW5t1YI="
         }
       },
       "is_incremental": false,
@@ -5956,7 +5764,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Timba.SacredTails.VFXController.VFXInstancer.html",
-          "hash": "QdH/mLirPdHOc6A2PS5OYPXqXxgQx5W5GTL74YKrsho="
+          "hash": "kgZ+YGL6NLmQgPqUMyUCLZx9QV3DjEwDrPQMnPImDDw="
         }
       },
       "is_incremental": false,
@@ -5980,7 +5788,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "q0HhPVL2GwHgWOrJYJD7/3iUB6e6s9xipwFWlUNnVn0="
+          "hash": "dlUOljwFFJzcX7+FnTAPuZAAl/KI5gJdaX0NIeg+q7E="
         }
       },
       "is_incremental": false,
@@ -5988,11 +5796,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "manual/01.battleSystem.md",
+      "source_relative_path": "manual/0a.Introduction.md",
       "output": {
         ".html": {
-          "relative_path": "manual/01.battleSystem.html",
-          "hash": "lSZAxWpCAv+XlNqZCOch+d/dCm1NvrL67S7JJku96fw="
+          "relative_path": "manual/0a.Introduction.html",
+          "hash": "s/YYoSeuHDWpAvZn8PIpiareK3VDiuR0Ba1ce5EPEZo="
         }
       },
       "is_incremental": false,
@@ -6000,11 +5808,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "manual/1.lobbySystem.md",
+      "source_relative_path": "manual/0a.projectOrganization.md",
       "output": {
         ".html": {
-          "relative_path": "manual/1.lobbySystem.html",
-          "hash": "YGGJxQMpupsK804zOBD6Upc9WA+J69M6iNSJgVXKUM4="
+          "relative_path": "manual/0a.projectOrganization.html",
+          "hash": "jvLo+zXJJprIx7PRu3ZDjMS/av2nVZfqOYvqFDLLAYM="
         }
       },
       "is_incremental": false,
@@ -6012,11 +5820,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "manual/10.bar.md",
+      "source_relative_path": "manual/0b.sceneOrganization.md",
       "output": {
         ".html": {
-          "relative_path": "manual/10.bar.html",
-          "hash": "GD/AeW4jyk0onEZW037OMp+sSHIMsassSrb463Pmeng="
+          "relative_path": "manual/0b.sceneOrganization.html",
+          "hash": "5AHcw8AS+AJHwkLvOA8XxGGbC00xU5Q0zJHSMNRYFYc="
         }
       },
       "is_incremental": false,
@@ -6024,11 +5832,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "manual/11.server.md",
+      "source_relative_path": "manual/1.glosary.md",
       "output": {
         ".html": {
-          "relative_path": "manual/11.server.html",
-          "hash": "Rd+djOnyTufGCC9dqRoQLr+iiR+4MORuubEwVJZaeWs="
+          "relative_path": "manual/1.glosary.html",
+          "hash": "qPStS53IdN+sk5crp/X/lSdjaUtWrjn8iHB+GRhTNXc="
         }
       },
       "is_incremental": false,
@@ -6036,11 +5844,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "manual/12.shinseiGenerator.md",
+      "source_relative_path": "manual/2.lobbySystem.md",
       "output": {
         ".html": {
-          "relative_path": "manual/12.shinseiGenerator.html",
-          "hash": "pNS9WRYzV/VTWMQA8uFUHyauyixv4Am3d5vyizkD+5Y="
+          "relative_path": "manual/2.lobbySystem.html",
+          "hash": "2cIdly3iSaEu4PdSfyEN7cyXy57T8zWiE1Orsi1Jx6w="
         }
       },
       "is_incremental": false,
@@ -6048,11 +5856,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "manual/2.seeOthers.md",
+      "source_relative_path": "manual/2a.seeOthers.md",
       "output": {
         ".html": {
-          "relative_path": "manual/2.seeOthers.html",
-          "hash": "dlw+zoOKLg8roLCKIHudsJwHV6NdhO1PcMImlDrEiAQ="
+          "relative_path": "manual/2a.seeOthers.html",
+          "hash": "phyU+XvuDzDwQGnC5WtGay69mXTzSBhwu7Y5dmH+5Fk="
         }
       },
       "is_incremental": false,
@@ -6060,11 +5868,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "manual/3.chatSystem.md",
+      "source_relative_path": "manual/2b.chatSystem.md",
       "output": {
         ".html": {
-          "relative_path": "manual/3.chatSystem.html",
-          "hash": "NUnovdismUvun0LV6nIiXIUsw404Z4EIVFHNDH5Ws2E="
+          "relative_path": "manual/2b.chatSystem.html",
+          "hash": "IrvKYxFwrj1ihNrlfl4cpEgT2hU6v04SbaOPIKN+Em8="
         }
       },
       "is_incremental": false,
@@ -6072,11 +5880,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "manual/4.challenge.md",
+      "source_relative_path": "manual/2c.challenge.md",
       "output": {
         ".html": {
-          "relative_path": "manual/4.challenge.html",
-          "hash": "y0ZC/LGNfRV+ZHyyCpjgSCadbNVTTCIghOqNfq3aQck="
+          "relative_path": "manual/2c.challenge.html",
+          "hash": "TJ3/nGuCIfK1X3XxPSiZgD6SXGEAsr4thcNV06ozi5s="
         }
       },
       "is_incremental": false,
@@ -6084,11 +5892,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "manual/5.see other players.md",
+      "source_relative_path": "manual/2d.see other players.md",
       "output": {
         ".html": {
-          "relative_path": "manual/5.see other players.html",
-          "hash": "5iQzljjnNd8U5TnS9U9C5COsEQO0Uu5yvmNgrVWGFSw="
+          "relative_path": "manual/2d.see other players.html",
+          "hash": "hTWA+Z4rjxbIus1WJ2Sy77zQ0sBdHGX2e8HR26jNu/A="
         }
       },
       "is_incremental": false,
@@ -6096,11 +5904,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "manual/6.backPack.md",
+      "source_relative_path": "manual/2e.backPack.md",
       "output": {
         ".html": {
-          "relative_path": "manual/6.backPack.html",
-          "hash": "lRFh/kSKvW+hGwmNW8lg1XCCShdDb+WMYNSCY4So7iU="
+          "relative_path": "manual/2e.backPack.html",
+          "hash": "wWvutug3sAFE2bQjdJLCzytXKYL1Wdlf+Nyu2i73wUo="
         }
       },
       "is_incremental": false,
@@ -6108,11 +5916,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "manual/7.dialogueSystem.md",
+      "source_relative_path": "manual/2f.dialogueSystem.md",
       "output": {
         ".html": {
-          "relative_path": "manual/7.dialogueSystem.html",
-          "hash": "GTSG3pM0ZB4/dw56tV2/4Wsyag84EqMz2EICQ3ruvcM="
+          "relative_path": "manual/2f.dialogueSystem.html",
+          "hash": "Ufgp5aWslVHWNjH3dFes1LUJv914HRDEdq51KDnZuog="
         }
       },
       "is_incremental": false,
@@ -6120,11 +5928,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "manual/8.shinseiInteraction.md",
+      "source_relative_path": "manual/2g.shinseiInteraction copy.md",
       "output": {
         ".html": {
-          "relative_path": "manual/8.shinseiInteraction.html",
-          "hash": "Ns/tsbQyuaOiSgr3/TDESr3KdDDhNUrCde9kPiysTTI="
+          "relative_path": "manual/2g.shinseiInteraction copy.html",
+          "hash": "RYRbgVENYSXnjnr+blTa3qPj931SheaUWuaClIcJKYg="
         }
       },
       "is_incremental": false,
@@ -6132,23 +5940,98 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "manual/9.dayNightCycle.md",
+      "source_relative_path": "manual/2h.dayNightCycle.md",
       "output": {
         ".html": {
-          "relative_path": "manual/9.dayNightCycle.html",
-          "hash": "iw11RQtqlkyXSrX6dm8ars8Wo4wh3DdcWWkz5lh0Ffg="
+          "relative_path": "manual/2h.dayNightCycle.html",
+          "hash": "T3BLWYzWvjLH/ZOiAITRiDAMMtWUDv96TDmCcDKiDJs="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "manual/2i.bar.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/2i.bar.html",
+          "hash": "4sfyFxTd4jc5a4W2FD63e5F1ZTAI+bFFcAPZjQPgz1k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/2j.lobbyServer.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/2j.lobbyServer.html",
+          "hash": "OpavKCSo/WWa7EuaFhmi6Ty/LDt76f5T1YBLSvICEWI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/2k.tournament.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/2k.tournament.html",
+          "hash": "CwFFBG90Pk74a9HXVemMcaR2XxxxoXnIQj8PI3Uh0wY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/3a.battleSystem.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/3a.battleSystem.html",
+          "hash": "gH0EupxrOD3idRvsP5Lfxu+X8RO6Us+wo8Gc8hJEqDc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/3b.battleServerMain.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/3b.battleServerMain.html",
+          "hash": "gJH0ElcbpCumnm7//TD56gqi0RQSh5UM6igvphfWiNk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/4.shinseiGenerator.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/4.shinseiGenerator.html",
+          "hash": "3hh7aB9N81WhIXGA/a3lbFr+KNl51I+9VWEP0YwRzv0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Toc",
       "source_relative_path": "manual/toc.yml",
       "output": {
         ".html": {
           "relative_path": "manual/toc.html",
-          "hash": "We42MSPLhKkOQvCUt7TORaJRjlQ4sHXFoa+hL4epL3M="
+          "hash": "kNUs+t6oGTDTPF/Ma8z4oCXQnrsoX7Ule/Y564+c29g="
         }
       },
       "is_incremental": false,
@@ -6573,12 +6456,133 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "resources/folderArena.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/folderArena.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/folderContent.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/folderContent.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/folderLobby.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/folderLobby.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/folderSacred.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/folderSacred.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/folderScripts.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/folderScripts.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/folderTimba.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/folderTimba.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/folders1.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/folders1.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/lobbySceneCam.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/lobbySceneCam.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/lobbySceneCore.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/lobbySceneCore.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/lobbySceneEnv.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/lobbySceneEnv.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/lobbySceneUI.png",
+      "output": {
+        "resource": {
+          "relative_path": "resources/lobbySceneUI.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "wAZAbbGwkQqxurblVGrtzgtmlfeO5MZ3B3WlRCm2gU0="
+          "hash": "N1oYhlmv+y6zKa3sBWO1+F/aq/6uIMGPIzVKNcZhRyk="
         }
       },
       "is_incremental": false,
@@ -6588,25 +6592,23 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because config changed.",
+        "can_incremental": true,
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "ConfigChanged"
+        "skipped_file_count": 0
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 13,
-          "skipped_file_count": 0
+          "total_file_count": 19,
+          "skipped_file_count": 16
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 496,
-          "skipped_file_count": 0
+          "total_file_count": 480,
+          "skipped_file_count": 480
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,

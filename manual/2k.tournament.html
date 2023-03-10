@@ -1,0 +1,421 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Torunament system | Example Unity documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Torunament system | Example Unity documentation ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../LogoSacred.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="torunament-system">Torunament system</h1>
+
+<p>The tournament system is a complex system that has to handle multiple cases and states of the users in order to garantee a correct flow of the tournament. We have to check the state of the whole tournament and the state of each bracket. The state of the players if they are ready or not to fight. The disconnection of players. A lot of variables to take in consideration. Here is a general flow of the system: </p>
+<p><img src="../resources/TournamentFlow.png" alt="TournamentSystem"></p>
+<h1 id="tournament-system-unity">🥇🏠Tournament system unity</h1>
+<p>We start by requesting the tournament list in the bar. We request and display them with the <a href="">SearchAndShow.cs</a> filtering the ones that hasn&#39;t finished yet and then let the user decide one of them. Once the user decides we execute the <a href="">JoinTournament()</a> in the <a href="">TournamentSlot.cs</a>. If the joining was a success, we proceed to hide all the things that should be hidden in a tournament such as searching for matches or changing the shinseis position in our vault. </p>
+<p>Then we start the timer to wait for the tournament to initiate in the <a href="">ShowTimerInitTournament()</a> of the <a href="">TournamentReadyController.cs</a>. This method checks if the tournament has started already, if it doesn&#39;t then it proceeds to show the countdown to initiate the tournament. If it has, proceeds to show the ready button for the player to start his current match in the tournament with the <a href="">StartReadyButton()</a>. This method sets the timer to get ready for the match before a disqualification. If the players clicks on the ready button then the <a href="">MarkAsReady()</a> method start to execute every X seconds. This method will send a petiton to the azure server to check if the other player also accepted the match. In this method we also check if the player won by default and, if so, then we proceed to show him the time left for the next round to begin with the <a href="">ShowPendingTimeAfterMatch()</a> . Otherwise, if the two players get ready for the match, the match starts.</p>
+<p>Once they finished the match we proceed to check the tournament state every 3 seconds with the method <a href="">CheckTournamentState()</a> of <a href="">CheckTournamentState.cs</a>. In this method we send a petion to the server and in it&#39;s response we check a variaty of states, ranging from winner of tournament, second place, loser of match and finally winner of match. It&#39;s this last case, were we show the player the <a href="">ShowPendingTimeAfterMatch()</a> method from before, so that he can see the time to end the match. But we keep asking the server if the round has ended before time(if all players have already played their matches). If so then we show again the [StartReadyButton()] and the cycle begins again until there is a winner in the tournament.</p>
+<h1 id="tournaments-system-server">🥇🌐Tournaments system server</h1>
+<p>Sacred tails allows the creation of a Knock Out tournaments between players in the form of elimination.</p>
+<h2 id="create-tournament">Create Tournament</h2>
+<p>This function creates a sharegroup and initializes the necessary values to add a user to this tournament.</p>
+<pre><code class="lang-js">module.exports = function (context, req) {
+    PlayFabServer.CreateSharedGroup(request, (error, result) =&gt; {
+        if (error !== null) {
+          // Return error to client...
+          return;
+        }
+
+        request[&quot;Data&quot;] = {
+            initTimeStage_1: ...,
+            tournamentName: ...,
+            maxPlayer: ...,
+            tournamentDuration: ...,
+            currentStage: 0
+        };
+
+        PlayFabServer.UpdateSharedGroupData(request, (error, result) =&gt; {
+            if (error !== null) {
+              // Return error to client...
+              return;
+            }
+
+            // Update also the data in the available tournament playerData
+            // In order to the client to later get the tournament list
+            requestData[tournamentId] = JSON.stringify(displayTournamentData);
+            let displayRequest = { PlayFabId: availableTournamentPID, Data: requestData }
+            PlayFabServer.UpdateUserData( displayRequest, (error, result) =&gt; {
+                if (error !== null){
+                  // Return error to client...
+                  return;
+                }
+
+                // Return success to client...
+            });
+        });
+    });
+}
+</code></pre><p>These are the possible responses for the Create Tournament function:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Success</th>
+<th>Message</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>true</td>
+<td>&#39;Tournament Created&#39;</td>
+<td>tournamentData</td>
+</tr>
+<tr>
+<td>1</td>
+<td>false</td>
+<td>&#39;Could not set display data tournament&#39;</td>
+<td>null</td>
+</tr>
+<tr>
+<td>2</td>
+<td>false</td>
+<td>&#39;Could set data of tournament&#39;</td>
+<td>null</td>
+</tr>
+<tr>
+<td>3</td>
+<td>false</td>
+<td>&#39;Could not create tournament&#39;</td>
+<td>null</td>
+</tr>
+<tr>
+<td>20</td>
+<td>false</td>
+<td>&#39;Please send valid data&#39;</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<p>*Tournament data example:</p>
+<pre><code class="lang-json">{
+  &quot;TD-6-123&quot;: {
+    &quot;initTimeStage_1&quot;: &quot;2022-12-30T19:44:30.000Z&quot;,
+    &quot;tournamentName&quot;: &quot;PRUEBA&quot;,
+    &quot;maxPlayer&quot;: 8
+  }
+}
+</code></pre><h2 id="get-tournament-list">Get Tournament List</h2>
+<p>With this function, users from the game can see which tournaments are active at the moment and request to join them by code. When a tournament is created, a fake user is added that saves the existing tournaments in its keys, this function downloads all these keys, filters them by hour and displays them.</p>
+<pre><code class="lang-js">module.exports = function (context, req) {
+    let getTounrnamentDataRequest = { PlayFabId: availableTournamentPID }
+
+    PlayFabServer.GetUserData(getTounrnamentDataRequest, (error, result) =&gt; {
+      if(error != null){
+        // Return error to client...
+        return;
+      }
+
+      // Get all the available tournaments data and add it the torunamentId as part of the data
+      let data = [];
+      Object.keys(result.data.Data).forEach(key =&gt; {
+          let tournamentData = JSON.parse(result.data.Data[key].Value);
+          tournamentData.tournamentId = key;
+          data.push(tournamentData);
+      })
+      //Return data to client
+    });
+}
+</code></pre><p>These are the possible responses for the GetTorunamentList function:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Success</th>
+<th>Message</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>true</td>
+<td>&quot;here is all tournaments&quot;</td>
+<td>tournamentList*</td>
+</tr>
+<tr>
+<td>404</td>
+<td>false</td>
+<td><error on="" promise=""></error></td>
+<td>err.data</td>
+</tr>
+<tr>
+<td>20</td>
+<td>false</td>
+<td>&#39;Please send valid data&#39;</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<p>*TournamentList beign a list of tournaments like these:</p>
+<pre><code class="lang-json">{
+  [
+    ...
+    {
+      &quot;initTimeStage_1&quot;: &quot;2023-01-23T21:45:45Z&quot;,
+      &quot;tournamentName&quot;: &quot;TName&quot;,
+      &quot;maxPlayer&quot;: 4,
+      &quot;tournamentId&quot;: &quot;TName_1UVLDn9TZb3&quot;
+    },
+    ...
+  ]
+}
+</code></pre><h2 id="get-brackets-data">Get Brackets Data</h2>
+<p>Tournaments have their own function to check the state of the tournament at certain times and that function is this.</p>
+<p>The first thing it does is check if this function was called by both players, the player can call it using the ready button within the game, when the function is called it verifies the maximum time limit to notify that it is ready and if one of the two has not called the function, the one who did wins, and if neither of them called it, the game decides that there will be a default winner in the next bracket.</p>
+<p>The first time a request arrives where both are marked as ready, the lobby is notified that a fight is ready and what the match ID of that fight is for the tournament, then both players enter a fight.</p>
+<p>After everything is processed like in a normal game, the game notifies that there was a winner and the winning player stays calling the function GetCurrentBracketsData</p>
+<p>These are the possible responses for the GetBracktsData function:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Success</th>
+<th>Message</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>true</td>
+<td>&quot;Players are ready&quot;</td>
+<td>bracketData</td>
+</tr>
+<tr>
+<td>1</td>
+<td>false</td>
+<td>&quot;Other player is not ready&quot;</td>
+<td>bracketData</td>
+</tr>
+<tr>
+<td>2</td>
+<td>false</td>
+<td>&quot;Player already marked as ready, other player is not ready yet&quot;</td>
+<td>bracketData</td>
+</tr>
+<tr>
+<td>3</td>
+<td>false</td>
+<td>&quot;Check ready state success&quot;</td>
+<td>bracketData</td>
+</tr>
+<tr>
+<td>4</td>
+<td>false</td>
+<td>&quot;Tournament hasn&#39;t started yet&quot;</td>
+<td>null</td>
+</tr>
+<tr>
+<td>5</td>
+<td>false</td>
+<td>&quot;Could not send ready to tournament&quot;</td>
+<td>null</td>
+</tr>
+<tr>
+<td>20</td>
+<td>false</td>
+<td>&#39;Please send valid data&#39;</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<p>*Being bracketData something like this:</p>
+<pre><code class="lang-json">{
+  &quot;PID1&quot;: &quot;B2DF0D8F88E6053E&quot;,
+  &quot;PID2&quot;: &quot;2C332300EEA8B647&quot;,
+  &quot;matchId&quot;: &quot;T97_B2DF0D8F88E6053E_2C332300EEA8B647&quot;,
+  &quot;p1Joined&quot;: true,
+  &quot;p2Joined&quot;: true,
+  &quot;displayName1&quot;: &quot;jiufen&quot;,
+  &quot;displayName2&quot;: &quot;dardranight&quot;
+}
+</code></pre><h2 id="get-current-brackets-data">Get Current Brackets Data</h2>
+<p>In this function, the server verifies that all games have a winner in order to proceed to update the state of the tournament and create the next branches.</p>
+<p>These are the possible responses for the GetBracktsData function:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Success</th>
+<th>Message</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>true</td>
+<td>&quot;Getting current stage brackets success&quot;</td>
+<td>stageBracketsData</td>
+</tr>
+<tr>
+<td>2</td>
+<td>true</td>
+<td>&quot;The tournament has not begun&quot;</td>
+<td>null</td>
+</tr>
+<tr>
+<td>1</td>
+<td>false</td>
+<td>&quot;Error getting current stage of tournament&quot;</td>
+<td>null</td>
+</tr>
+<tr>
+<td>3</td>
+<td>false</td>
+<td>&quot;Error getting brackets&quot;</td>
+<td>null</td>
+</tr>
+<tr>
+<td>4</td>
+<td>false</td>
+<td>&quot;Error getting usersData&quot;</td>
+<td>null</td>
+</tr>
+<tr>
+<td>20</td>
+<td>false</td>
+<td>&#39;Please send valid data&#39;</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<p>*Being stageBracketsData a list of stages with brackets like this:</p>
+<pre><code class="lang-json">{
+ &quot;stages&quot;: {
+    &quot;stage_1&quot;: {
+      &quot;brackets&quot;: {
+        &quot;bracket_1&quot;: {
+        &quot;PID1&quot;: &quot;jiufen&quot;,
+        &quot;PID2&quot;: &quot;dardranight&quot;,
+        &quot;matchId&quot;: &quot;T-2-1_B2DF0D8F88E6053E_2C332300EEA8B647&quot;,
+        &quot;p1Joined&quot;: false,
+        &quot;p2Joined&quot;: false
+        },
+        ...
+      }
+    },
+    &quot;stage_2&quot;:{
+      ...
+    }
+  }
+}
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Example Unity documentation
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

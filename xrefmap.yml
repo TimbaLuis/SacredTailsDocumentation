@@ -155,6 +155,12 @@ references:
   commentId: F:Global.ActionTypeEnum.TerrainChange
   fullName: ActionTypeEnum.TerrainChange
   nameWithType: ActionTypeEnum.TerrainChange
+- uid: Global.ActionTypeEnum.TMP
+  name: TMP
+  href: api/Global.ActionTypeEnum.html#Global_ActionTypeEnum_TMP
+  commentId: F:Global.ActionTypeEnum.TMP
+  fullName: ActionTypeEnum.TMP
+  nameWithType: ActionTypeEnum.TMP
 - uid: Global.AESEncryption
   name: AESEncryption
   href: api/Global.AESEncryption.html
@@ -199,6 +205,60 @@ references:
   commentId: F:Global.AESEncryption.Key
   fullName: AESEncryption.Key
   nameWithType: AESEncryption.Key
+- uid: Global.AlteredStateController
+  name: AlteredStateController
+  href: api/Global.AlteredStateController.html
+  commentId: T:Global.AlteredStateController
+  fullName: AlteredStateController
+  nameWithType: AlteredStateController
+- uid: Global.AlteredStateController.alteredStates
+  name: alteredStates
+  href: api/Global.AlteredStateController.html#Global_AlteredStateController_alteredStates
+  commentId: F:Global.AlteredStateController.alteredStates
+  fullName: AlteredStateController.alteredStates
+  nameWithType: AlteredStateController.alteredStates
+- uid: Global.AlteredStateController.CheckAlteredStates(System.Boolean,ActionCardDto)
+  name: CheckAlteredStates(Boolean, ActionCardDto)
+  href: api/Global.AlteredStateController.html#Global_AlteredStateController_CheckAlteredStates_System_Boolean_ActionCardDto_
+  commentId: M:Global.AlteredStateController.CheckAlteredStates(System.Boolean,ActionCardDto)
+  fullName: AlteredStateController.CheckAlteredStates(System.Boolean, ActionCardDto)
+  nameWithType: AlteredStateController.CheckAlteredStates(Boolean, ActionCardDto)
+- uid: Global.AlteredStateController.CheckAlteredStates*
+  name: CheckAlteredStates
+  href: api/Global.AlteredStateController.html#Global_AlteredStateController_CheckAlteredStates_
+  commentId: Overload:Global.AlteredStateController.CheckAlteredStates
+  isSpec: "True"
+  fullName: AlteredStateController.CheckAlteredStates
+  nameWithType: AlteredStateController.CheckAlteredStates
+- uid: Global.AlteredStateController.InitAlteredStateController(BattleGameMode,BattleUIController)
+  name: InitAlteredStateController(BattleGameMode, BattleUIController)
+  href: api/Global.AlteredStateController.html#Global_AlteredStateController_InitAlteredStateController_BattleGameMode_BattleUIController_
+  commentId: M:Global.AlteredStateController.InitAlteredStateController(BattleGameMode,BattleUIController)
+  fullName: AlteredStateController.InitAlteredStateController(BattleGameMode, BattleUIController)
+  nameWithType: AlteredStateController.InitAlteredStateController(BattleGameMode, BattleUIController)
+- uid: Global.AlteredStateController.InitAlteredStateController*
+  name: InitAlteredStateController
+  href: api/Global.AlteredStateController.html#Global_AlteredStateController_InitAlteredStateController_
+  commentId: Overload:Global.AlteredStateController.InitAlteredStateController
+  isSpec: "True"
+  fullName: AlteredStateController.InitAlteredStateController
+  nameWithType: AlteredStateController.InitAlteredStateController
+- uid: Global.AlteredStateController.InitNewAlteredStates(System.Boolean,System.Collections.Generic.Dictionary{AlteredStateEnum,AlteredStateData},System.Collections.Generic.Dictionary{AlteredStateEnum,AlteredStateData},System.Boolean)
+  name: InitNewAlteredStates(Boolean, Dictionary<AlteredStateEnum, AlteredStateData>, Dictionary<AlteredStateEnum, AlteredStateData>, Boolean)
+  href: api/Global.AlteredStateController.html#Global_AlteredStateController_InitNewAlteredStates_System_Boolean_System_Collections_Generic_Dictionary_AlteredStateEnum_AlteredStateData__System_Collections_Generic_Dictionary_AlteredStateEnum_AlteredStateData__System_Boolean_
+  commentId: M:Global.AlteredStateController.InitNewAlteredStates(System.Boolean,System.Collections.Generic.Dictionary{AlteredStateEnum,AlteredStateData},System.Collections.Generic.Dictionary{AlteredStateEnum,AlteredStateData},System.Boolean)
+  name.vb: InitNewAlteredStates(Boolean, Dictionary(Of AlteredStateEnum, AlteredStateData), Dictionary(Of AlteredStateEnum, AlteredStateData), Boolean)
+  fullName: AlteredStateController.InitNewAlteredStates(System.Boolean, System.Collections.Generic.Dictionary<AlteredStateEnum, AlteredStateData>, System.Collections.Generic.Dictionary<AlteredStateEnum, AlteredStateData>, System.Boolean)
+  fullName.vb: AlteredStateController.InitNewAlteredStates(System.Boolean, System.Collections.Generic.Dictionary(Of AlteredStateEnum, AlteredStateData), System.Collections.Generic.Dictionary(Of AlteredStateEnum, AlteredStateData), System.Boolean)
+  nameWithType: AlteredStateController.InitNewAlteredStates(Boolean, Dictionary<AlteredStateEnum, AlteredStateData>, Dictionary<AlteredStateEnum, AlteredStateData>, Boolean)
+  nameWithType.vb: AlteredStateController.InitNewAlteredStates(Boolean, Dictionary(Of AlteredStateEnum, AlteredStateData), Dictionary(Of AlteredStateEnum, AlteredStateData), Boolean)
+- uid: Global.AlteredStateController.InitNewAlteredStates*
+  name: InitNewAlteredStates
+  href: api/Global.AlteredStateController.html#Global_AlteredStateController_InitNewAlteredStates_
+  commentId: Overload:Global.AlteredStateController.InitNewAlteredStates
+  isSpec: "True"
+  fullName: AlteredStateController.InitNewAlteredStates
+  nameWithType: AlteredStateController.InitNewAlteredStates
 - uid: Global.AlteredStateData
   name: AlteredStateData
   href: api/Global.AlteredStateData.html
@@ -211,6 +271,19 @@ references:
   commentId: F:Global.AlteredStateData.amount
   fullName: AlteredStateData.amount
   nameWithType: AlteredStateData.amount
+- uid: Global.AlteredStateData.HasPassedATurn
+  name: HasPassedATurn()
+  href: api/Global.AlteredStateData.html#Global_AlteredStateData_HasPassedATurn
+  commentId: M:Global.AlteredStateData.HasPassedATurn
+  fullName: AlteredStateData.HasPassedATurn()
+  nameWithType: AlteredStateData.HasPassedATurn()
+- uid: Global.AlteredStateData.HasPassedATurn*
+  name: HasPassedATurn
+  href: api/Global.AlteredStateData.html#Global_AlteredStateData_HasPassedATurn_
+  commentId: Overload:Global.AlteredStateData.HasPassedATurn
+  isSpec: "True"
+  fullName: AlteredStateData.HasPassedATurn
+  nameWithType: AlteredStateData.HasPassedATurn
 - uid: Global.AlteredStateData.isTargetLocalPlayer
   name: isTargetLocalPlayer
   href: api/Global.AlteredStateData.html#Global_AlteredStateData_isTargetLocalPlayer
@@ -820,6 +893,12 @@ references:
   isSpec: "True"
   fullName: BattleActionData.Clone
   nameWithType: BattleActionData.Clone
+- uid: Global.BattleActionData.copiedIndex
+  name: copiedIndex
+  href: api/Global.BattleActionData.html#Global_BattleActionData_copiedIndex
+  commentId: F:Global.BattleActionData.copiedIndex
+  fullName: BattleActionData.copiedIndex
+  nameWithType: BattleActionData.copiedIndex
 - uid: Global.BattleActionData.criticsPercentChange
   name: criticsPercentChange
   href: api/Global.BattleActionData.html#Global_BattleActionData_criticsPercentChange
@@ -1353,12 +1432,12 @@ references:
   isSpec: "True"
   fullName: BattleAlteredStateBase.ExecuteAlteredState
   nameWithType: BattleAlteredStateBase.ExecuteAlteredState
-- uid: Global.BattleAlteredStateBase.InitAlteredState(System.Boolean,UserInfo,BattleGameMode,BattleUIController)
-  name: InitAlteredState(Boolean, UserInfo, BattleGameMode, BattleUIController)
-  href: api/Global.BattleAlteredStateBase.html#Global_BattleAlteredStateBase_InitAlteredState_System_Boolean_UserInfo_BattleGameMode_BattleUIController_
-  commentId: M:Global.BattleAlteredStateBase.InitAlteredState(System.Boolean,UserInfo,BattleGameMode,BattleUIController)
-  fullName: BattleAlteredStateBase.InitAlteredState(System.Boolean, UserInfo, BattleGameMode, BattleUIController)
-  nameWithType: BattleAlteredStateBase.InitAlteredState(Boolean, UserInfo, BattleGameMode, BattleUIController)
+- uid: Global.BattleAlteredStateBase.InitAlteredState(System.Boolean,UserInfo,BattleGameMode,BattleUIController,System.Boolean)
+  name: InitAlteredState(Boolean, UserInfo, BattleGameMode, BattleUIController, Boolean)
+  href: api/Global.BattleAlteredStateBase.html#Global_BattleAlteredStateBase_InitAlteredState_System_Boolean_UserInfo_BattleGameMode_BattleUIController_System_Boolean_
+  commentId: M:Global.BattleAlteredStateBase.InitAlteredState(System.Boolean,UserInfo,BattleGameMode,BattleUIController,System.Boolean)
+  fullName: BattleAlteredStateBase.InitAlteredState(System.Boolean, UserInfo, BattleGameMode, BattleUIController, System.Boolean)
+  nameWithType: BattleAlteredStateBase.InitAlteredState(Boolean, UserInfo, BattleGameMode, BattleUIController, Boolean)
 - uid: Global.BattleAlteredStateBase.InitAlteredState*
   name: InitAlteredState
   href: api/Global.BattleAlteredStateBase.html#Global_BattleAlteredStateBase_InitAlteredState_
@@ -1366,6 +1445,12 @@ references:
   isSpec: "True"
   fullName: BattleAlteredStateBase.InitAlteredState
   nameWithType: BattleAlteredStateBase.InitAlteredState
+- uid: Global.BattleAlteredStateBase.muzzleAnimation
+  name: muzzleAnimation
+  href: api/Global.BattleAlteredStateBase.html#Global_BattleAlteredStateBase_muzzleAnimation
+  commentId: F:Global.BattleAlteredStateBase.muzzleAnimation
+  fullName: BattleAlteredStateBase.muzzleAnimation
+  nameWithType: BattleAlteredStateBase.muzzleAnimation
 - uid: Global.BattleAlteredStateBleeding
   name: BattleAlteredStateBleeding
   href: api/Global.BattleAlteredStateBleeding.html
@@ -1402,6 +1487,12 @@ references:
   commentId: F:Global.BattleAlteredStateDataSO.endMessage
   fullName: BattleAlteredStateDataSO.endMessage
   nameWithType: BattleAlteredStateDataSO.endMessage
+- uid: Global.BattleAlteredStateDataSO.startMessage
+  name: startMessage
+  href: api/Global.BattleAlteredStateDataSO.html#Global_BattleAlteredStateDataSO_startMessage
+  commentId: F:Global.BattleAlteredStateDataSO.startMessage
+  fullName: BattleAlteredStateDataSO.startMessage
+  nameWithType: BattleAlteredStateDataSO.startMessage
 - uid: Global.BattleAlteredStateEvasionChange
   name: BattleAlteredStateEvasionChange
   href: api/Global.BattleAlteredStateEvasionChange.html
@@ -1437,12 +1528,12 @@ references:
   isSpec: "True"
   fullName: BattleAlteredStateEvasionChange.ExecuteAlteredState
   nameWithType: BattleAlteredStateEvasionChange.ExecuteAlteredState
-- uid: Global.BattleAlteredStateEvasionChange.InitAlteredState(System.Boolean,UserInfo,BattleGameMode,BattleUIController)
-  name: InitAlteredState(Boolean, UserInfo, BattleGameMode, BattleUIController)
-  href: api/Global.BattleAlteredStateEvasionChange.html#Global_BattleAlteredStateEvasionChange_InitAlteredState_System_Boolean_UserInfo_BattleGameMode_BattleUIController_
-  commentId: M:Global.BattleAlteredStateEvasionChange.InitAlteredState(System.Boolean,UserInfo,BattleGameMode,BattleUIController)
-  fullName: BattleAlteredStateEvasionChange.InitAlteredState(System.Boolean, UserInfo, BattleGameMode, BattleUIController)
-  nameWithType: BattleAlteredStateEvasionChange.InitAlteredState(Boolean, UserInfo, BattleGameMode, BattleUIController)
+- uid: Global.BattleAlteredStateEvasionChange.InitAlteredState(System.Boolean,UserInfo,BattleGameMode,BattleUIController,System.Boolean)
+  name: InitAlteredState(Boolean, UserInfo, BattleGameMode, BattleUIController, Boolean)
+  href: api/Global.BattleAlteredStateEvasionChange.html#Global_BattleAlteredStateEvasionChange_InitAlteredState_System_Boolean_UserInfo_BattleGameMode_BattleUIController_System_Boolean_
+  commentId: M:Global.BattleAlteredStateEvasionChange.InitAlteredState(System.Boolean,UserInfo,BattleGameMode,BattleUIController,System.Boolean)
+  fullName: BattleAlteredStateEvasionChange.InitAlteredState(System.Boolean, UserInfo, BattleGameMode, BattleUIController, System.Boolean)
+  nameWithType: BattleAlteredStateEvasionChange.InitAlteredState(Boolean, UserInfo, BattleGameMode, BattleUIController, Boolean)
 - uid: Global.BattleAlteredStateEvasionChange.InitAlteredState*
   name: InitAlteredState
   href: api/Global.BattleAlteredStateEvasionChange.html#Global_BattleAlteredStateEvasionChange_InitAlteredState_
@@ -1786,6 +1877,18 @@ references:
   isSpec: "True"
   fullName: BoneAnimationTracker.VerifyAllMatAnimations
   nameWithType: BoneAnimationTracker.VerifyAllMatAnimations
+- uid: Global.BotPlayfabIdsList
+  name: BotPlayfabIdsList
+  href: api/Global.BotPlayfabIdsList.html
+  commentId: T:Global.BotPlayfabIdsList
+  fullName: BotPlayfabIdsList
+  nameWithType: BotPlayfabIdsList
+- uid: Global.BotPlayfabIdsList.playfabIdList
+  name: playfabIdList
+  href: api/Global.BotPlayfabIdsList.html#Global_BotPlayfabIdsList_playfabIdList
+  commentId: F:Global.BotPlayfabIdsList.playfabIdList
+  fullName: BotPlayfabIdsList.playfabIdList
+  nameWithType: BotPlayfabIdsList.playfabIdList
 - uid: Global.BracketsData
   name: BracketsData
   href: api/Global.BracketsData.html
@@ -1916,6 +2019,25 @@ references:
   isSpec: "True"
   fullName: BracketsTournamentManager.IsReady
   nameWithType: BracketsTournamentManager.IsReady
+- uid: Global.BracketsTournamentManager.onTournamentEnded
+  name: onTournamentEnded
+  href: api/Global.BracketsTournamentManager.html#Global_BracketsTournamentManager_onTournamentEnded
+  commentId: F:Global.BracketsTournamentManager.onTournamentEnded
+  fullName: BracketsTournamentManager.onTournamentEnded
+  nameWithType: BracketsTournamentManager.onTournamentEnded
+- uid: Global.BracketsTournamentManager.OnTournamentEnded
+  name: OnTournamentEnded
+  href: api/Global.BracketsTournamentManager.html#Global_BracketsTournamentManager_OnTournamentEnded
+  commentId: P:Global.BracketsTournamentManager.OnTournamentEnded
+  fullName: BracketsTournamentManager.OnTournamentEnded
+  nameWithType: BracketsTournamentManager.OnTournamentEnded
+- uid: Global.BracketsTournamentManager.OnTournamentEnded*
+  name: OnTournamentEnded
+  href: api/Global.BracketsTournamentManager.html#Global_BracketsTournamentManager_OnTournamentEnded_
+  commentId: Overload:Global.BracketsTournamentManager.OnTournamentEnded
+  isSpec: "True"
+  fullName: BracketsTournamentManager.OnTournamentEnded
+  nameWithType: BracketsTournamentManager.OnTournamentEnded
 - uid: Global.BracketsTournamentManager.RecheckConection
   name: RecheckConection()
   href: api/Global.BracketsTournamentManager.html#Global_BracketsTournamentManager_RecheckConection
@@ -2130,6 +2252,12 @@ references:
   isSpec: "True"
   fullName: ChallengePlayerController.BackButtonLogic
   nameWithType: ChallengePlayerController.BackButtonLogic
+- uid: Global.ChallengePlayerController.bothConfirmed
+  name: bothConfirmed
+  href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_bothConfirmed
+  commentId: F:Global.ChallengePlayerController.bothConfirmed
+  fullName: ChallengePlayerController.bothConfirmed
+  nameWithType: ChallengePlayerController.bothConfirmed
 - uid: Global.ChallengePlayerController.CheckChallenge
   name: CheckChallenge()
   href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_CheckChallenge
@@ -2143,12 +2271,18 @@ references:
   isSpec: "True"
   fullName: ChallengePlayerController.CheckChallenge
   nameWithType: ChallengePlayerController.CheckChallenge
-- uid: Global.ChallengePlayerController.ConfirmMatch(System.String,System.String,System.String)
-  name: ConfirmMatch(String, String, String)
-  href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_ConfirmMatch_System_String_System_String_System_String_
-  commentId: M:Global.ChallengePlayerController.ConfirmMatch(System.String,System.String,System.String)
-  fullName: ChallengePlayerController.ConfirmMatch(System.String, System.String, System.String)
-  nameWithType: ChallengePlayerController.ConfirmMatch(String, String, String)
+- uid: Global.ChallengePlayerController.checkCount
+  name: checkCount
+  href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_checkCount
+  commentId: F:Global.ChallengePlayerController.checkCount
+  fullName: ChallengePlayerController.checkCount
+  nameWithType: ChallengePlayerController.checkCount
+- uid: Global.ChallengePlayerController.ConfirmMatch(System.String)
+  name: ConfirmMatch(String)
+  href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_ConfirmMatch_System_String_
+  commentId: M:Global.ChallengePlayerController.ConfirmMatch(System.String)
+  fullName: ChallengePlayerController.ConfirmMatch(System.String)
+  nameWithType: ChallengePlayerController.ConfirmMatch(String)
 - uid: Global.ChallengePlayerController.ConfirmMatch*
   name: ConfirmMatch
   href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_ConfirmMatch_
@@ -2156,6 +2290,45 @@ references:
   isSpec: "True"
   fullName: ChallengePlayerController.ConfirmMatch
   nameWithType: ChallengePlayerController.ConfirmMatch
+- uid: Global.ChallengePlayerController.GenerateRandomMatchId
+  name: GenerateRandomMatchId()
+  href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_GenerateRandomMatchId
+  commentId: M:Global.ChallengePlayerController.GenerateRandomMatchId
+  fullName: ChallengePlayerController.GenerateRandomMatchId()
+  nameWithType: ChallengePlayerController.GenerateRandomMatchId()
+- uid: Global.ChallengePlayerController.GenerateRandomMatchId*
+  name: GenerateRandomMatchId
+  href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_GenerateRandomMatchId_
+  commentId: Overload:Global.ChallengePlayerController.GenerateRandomMatchId
+  isSpec: "True"
+  fullName: ChallengePlayerController.GenerateRandomMatchId
+  nameWithType: ChallengePlayerController.GenerateRandomMatchId
+- uid: Global.ChallengePlayerController.GetMatchId(System.String)
+  name: GetMatchId(String)
+  href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_GetMatchId_System_String_
+  commentId: M:Global.ChallengePlayerController.GetMatchId(System.String)
+  fullName: ChallengePlayerController.GetMatchId(System.String)
+  nameWithType: ChallengePlayerController.GetMatchId(String)
+- uid: Global.ChallengePlayerController.GetMatchId*
+  name: GetMatchId
+  href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_GetMatchId_
+  commentId: Overload:Global.ChallengePlayerController.GetMatchId
+  isSpec: "True"
+  fullName: ChallengePlayerController.GetMatchId
+  nameWithType: ChallengePlayerController.GetMatchId
+- uid: Global.ChallengePlayerController.GetMatchResultPayload
+  name: GetMatchResultPayload()
+  href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_GetMatchResultPayload
+  commentId: M:Global.ChallengePlayerController.GetMatchResultPayload
+  fullName: ChallengePlayerController.GetMatchResultPayload()
+  nameWithType: ChallengePlayerController.GetMatchResultPayload()
+- uid: Global.ChallengePlayerController.GetMatchResultPayload*
+  name: GetMatchResultPayload
+  href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_GetMatchResultPayload_
+  commentId: Overload:Global.ChallengePlayerController.GetMatchResultPayload
+  isSpec: "True"
+  fullName: ChallengePlayerController.GetMatchResultPayload
+  nameWithType: ChallengePlayerController.GetMatchResultPayload
 - uid: Global.ChallengePlayerController.isRecivingChallenge
   name: isRecivingChallenge
   href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_isRecivingChallenge
@@ -2188,6 +2361,12 @@ references:
   isSpec: "True"
   fullName: ChallengePlayerController.MatchCanceledWait
   nameWithType: ChallengePlayerController.MatchCanceledWait
+- uid: Global.ChallengePlayerController.onChallengeAgain
+  name: onChallengeAgain
+  href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_onChallengeAgain
+  commentId: F:Global.ChallengePlayerController.onChallengeAgain
+  fullName: ChallengePlayerController.onChallengeAgain
+  nameWithType: ChallengePlayerController.onChallengeAgain
 - uid: Global.ChallengePlayerController.RecieveChallenge(ThirdPersonController,System.String)
   name: RecieveChallenge(ThirdPersonController, String)
   href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_RecieveChallenge_ThirdPersonController_System_String_
@@ -2214,6 +2393,32 @@ references:
   isSpec: "True"
   fullName: ChallengePlayerController.ResetAlreadyHasChallenge
   nameWithType: ChallengePlayerController.ResetAlreadyHasChallenge
+- uid: Global.ChallengePlayerController.SetMatchIdAndChallengeInPlayerData(System.String)
+  name: SetMatchIdAndChallengeInPlayerData(String)
+  href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_SetMatchIdAndChallengeInPlayerData_System_String_
+  commentId: M:Global.ChallengePlayerController.SetMatchIdAndChallengeInPlayerData(System.String)
+  fullName: ChallengePlayerController.SetMatchIdAndChallengeInPlayerData(System.String)
+  nameWithType: ChallengePlayerController.SetMatchIdAndChallengeInPlayerData(String)
+- uid: Global.ChallengePlayerController.SetMatchIdAndChallengeInPlayerData*
+  name: SetMatchIdAndChallengeInPlayerData
+  href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_SetMatchIdAndChallengeInPlayerData_
+  commentId: Overload:Global.ChallengePlayerController.SetMatchIdAndChallengeInPlayerData
+  isSpec: "True"
+  fullName: ChallengePlayerController.SetMatchIdAndChallengeInPlayerData
+  nameWithType: ChallengePlayerController.SetMatchIdAndChallengeInPlayerData
+- uid: Global.ChallengePlayerController.SetOtherPlayerInfo(System.String,System.String)
+  name: SetOtherPlayerInfo(String, String)
+  href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_SetOtherPlayerInfo_System_String_System_String_
+  commentId: M:Global.ChallengePlayerController.SetOtherPlayerInfo(System.String,System.String)
+  fullName: ChallengePlayerController.SetOtherPlayerInfo(System.String, System.String)
+  nameWithType: ChallengePlayerController.SetOtherPlayerInfo(String, String)
+- uid: Global.ChallengePlayerController.SetOtherPlayerInfo*
+  name: SetOtherPlayerInfo
+  href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_SetOtherPlayerInfo_
+  commentId: Overload:Global.ChallengePlayerController.SetOtherPlayerInfo
+  isSpec: "True"
+  fullName: ChallengePlayerController.SetOtherPlayerInfo
+  nameWithType: ChallengePlayerController.SetOtherPlayerInfo
 - uid: Global.ChallengePlayerController.TimingAcceptChallenge(System.String,System.Collections.Generic.Dictionary{PopupManager.ButtonType,Action},System.Boolean)
   name: TimingAcceptChallenge(String, Dictionary<PopupManager.ButtonType, Action>, Boolean)
   href: api/Global.ChallengePlayerController.html#Global_ChallengePlayerController_TimingAcceptChallenge_System_String_System_Collections_Generic_Dictionary_PopupManager_ButtonType_Action__System_Boolean_
@@ -3071,6 +3276,12 @@ references:
   isSpec: "True"
   fullName: CheckTournamentStateController.CheckTournamentState
   nameWithType: CheckTournamentStateController.CheckTournamentState
+- uid: Global.CheckTournamentStateController.petitonTimeRate
+  name: petitonTimeRate
+  href: api/Global.CheckTournamentStateController.html#Global_CheckTournamentStateController_petitonTimeRate
+  commentId: F:Global.CheckTournamentStateController.petitonTimeRate
+  fullName: CheckTournamentStateController.petitonTimeRate
+  nameWithType: CheckTournamentStateController.petitonTimeRate
 - uid: Global.CheckTournamentStateController.WaitForSeconds(System.Single,Action)
   name: WaitForSeconds(Single, Action)
   href: api/Global.CheckTournamentStateController.html#Global_CheckTournamentStateController_WaitForSeconds_System_Single_Action_
@@ -3188,79 +3399,6 @@ references:
   commentId: F:Global.ColorSwapper.partVisuals
   fullName: ColorSwapper.partVisuals
   nameWithType: ColorSwapper.partVisuals
-- uid: Global.CombatFirebasePetitions
-  name: CombatFirebasePetitions
-  href: api/Global.CombatFirebasePetitions.html
-  commentId: T:Global.CombatFirebasePetitions
-  fullName: CombatFirebasePetitions
-  nameWithType: CombatFirebasePetitions
-- uid: Global.CombatFirebasePetitions.currentMatchId
-  name: currentMatchId
-  href: api/Global.CombatFirebasePetitions.html#Global_CombatFirebasePetitions_currentMatchId
-  commentId: F:Global.CombatFirebasePetitions.currentMatchId
-  fullName: CombatFirebasePetitions.currentMatchId
-  nameWithType: CombatFirebasePetitions.currentMatchId
-- uid: Global.CombatFirebasePetitions.DeleteDataPetition(Action{System.Boolean},System.String)
-  name: DeleteDataPetition(Action<Boolean>, String)
-  href: api/Global.CombatFirebasePetitions.html#Global_CombatFirebasePetitions_DeleteDataPetition_Action_System_Boolean__System_String_
-  commentId: M:Global.CombatFirebasePetitions.DeleteDataPetition(Action{System.Boolean},System.String)
-  name.vb: DeleteDataPetition(Action(Of Boolean), String)
-  fullName: CombatFirebasePetitions.DeleteDataPetition(Action<System.Boolean>, System.String)
-  fullName.vb: CombatFirebasePetitions.DeleteDataPetition(Action(Of System.Boolean), System.String)
-  nameWithType: CombatFirebasePetitions.DeleteDataPetition(Action<Boolean>, String)
-  nameWithType.vb: CombatFirebasePetitions.DeleteDataPetition(Action(Of Boolean), String)
-- uid: Global.CombatFirebasePetitions.DeleteDataPetition*
-  name: DeleteDataPetition
-  href: api/Global.CombatFirebasePetitions.html#Global_CombatFirebasePetitions_DeleteDataPetition_
-  commentId: Overload:Global.CombatFirebasePetitions.DeleteDataPetition
-  isSpec: "True"
-  fullName: CombatFirebasePetitions.DeleteDataPetition
-  nameWithType: CombatFirebasePetitions.DeleteDataPetition
-- uid: Global.CombatFirebasePetitions.GetDataPetition(Action{System.Boolean},Action{System.Collections.Generic.Dictionary{System.String,OrderMessage}})
-  name: GetDataPetition(Action<Boolean>, Action<Dictionary<String, OrderMessage>>)
-  href: api/Global.CombatFirebasePetitions.html#Global_CombatFirebasePetitions_GetDataPetition_Action_System_Boolean__Action_System_Collections_Generic_Dictionary_System_String_OrderMessage___
-  commentId: M:Global.CombatFirebasePetitions.GetDataPetition(Action{System.Boolean},Action{System.Collections.Generic.Dictionary{System.String,OrderMessage}})
-  name.vb: GetDataPetition(Action(Of Boolean), Action(Of Dictionary(Of String, OrderMessage)))
-  fullName: CombatFirebasePetitions.GetDataPetition(Action<System.Boolean>, Action<System.Collections.Generic.Dictionary<System.String, OrderMessage>>)
-  fullName.vb: CombatFirebasePetitions.GetDataPetition(Action(Of System.Boolean), Action(Of System.Collections.Generic.Dictionary(Of System.String, OrderMessage)))
-  nameWithType: CombatFirebasePetitions.GetDataPetition(Action<Boolean>, Action<Dictionary<String, OrderMessage>>)
-  nameWithType.vb: CombatFirebasePetitions.GetDataPetition(Action(Of Boolean), Action(Of Dictionary(Of String, OrderMessage)))
-- uid: Global.CombatFirebasePetitions.GetDataPetition*
-  name: GetDataPetition
-  href: api/Global.CombatFirebasePetitions.html#Global_CombatFirebasePetitions_GetDataPetition_
-  commentId: Overload:Global.CombatFirebasePetitions.GetDataPetition
-  isSpec: "True"
-  fullName: CombatFirebasePetitions.GetDataPetition
-  nameWithType: CombatFirebasePetitions.GetDataPetition
-- uid: Global.CombatFirebasePetitions.SetMatchId(System.String)
-  name: SetMatchId(String)
-  href: api/Global.CombatFirebasePetitions.html#Global_CombatFirebasePetitions_SetMatchId_System_String_
-  commentId: M:Global.CombatFirebasePetitions.SetMatchId(System.String)
-  fullName: CombatFirebasePetitions.SetMatchId(System.String)
-  nameWithType: CombatFirebasePetitions.SetMatchId(String)
-- uid: Global.CombatFirebasePetitions.SetMatchId*
-  name: SetMatchId
-  href: api/Global.CombatFirebasePetitions.html#Global_CombatFirebasePetitions_SetMatchId_
-  commentId: Overload:Global.CombatFirebasePetitions.SetMatchId
-  isSpec: "True"
-  fullName: CombatFirebasePetitions.SetMatchId
-  nameWithType: CombatFirebasePetitions.SetMatchId
-- uid: Global.CombatFirebasePetitions.UpdateDataPetition(OrderMessage,Action{System.Boolean})
-  name: UpdateDataPetition(OrderMessage, Action<Boolean>)
-  href: api/Global.CombatFirebasePetitions.html#Global_CombatFirebasePetitions_UpdateDataPetition_OrderMessage_Action_System_Boolean__
-  commentId: M:Global.CombatFirebasePetitions.UpdateDataPetition(OrderMessage,Action{System.Boolean})
-  name.vb: UpdateDataPetition(OrderMessage, Action(Of Boolean))
-  fullName: CombatFirebasePetitions.UpdateDataPetition(OrderMessage, Action<System.Boolean>)
-  fullName.vb: CombatFirebasePetitions.UpdateDataPetition(OrderMessage, Action(Of System.Boolean))
-  nameWithType: CombatFirebasePetitions.UpdateDataPetition(OrderMessage, Action<Boolean>)
-  nameWithType.vb: CombatFirebasePetitions.UpdateDataPetition(OrderMessage, Action(Of Boolean))
-- uid: Global.CombatFirebasePetitions.UpdateDataPetition*
-  name: UpdateDataPetition
-  href: api/Global.CombatFirebasePetitions.html#Global_CombatFirebasePetitions_UpdateDataPetition_
-  commentId: Overload:Global.CombatFirebasePetitions.UpdateDataPetition
-  isSpec: "True"
-  fullName: CombatFirebasePetitions.UpdateDataPetition
-  nameWithType: CombatFirebasePetitions.UpdateDataPetition
 - uid: Global.Constants
   name: Constants
   href: api/Global.Constants.html
@@ -3385,6 +3523,82 @@ references:
   isSpec: "True"
   fullName: Courtain.StartFade
   nameWithType: Courtain.StartFade
+- uid: Global.CreateBotsController
+  name: CreateBotsController
+  href: api/Global.CreateBotsController.html
+  commentId: T:Global.CreateBotsController
+  fullName: CreateBotsController
+  nameWithType: CreateBotsController
+- uid: Global.CreateBotsController.botPlayfabIdsList
+  name: botPlayfabIdsList
+  href: api/Global.CreateBotsController.html#Global_CreateBotsController_botPlayfabIdsList
+  commentId: F:Global.CreateBotsController.botPlayfabIdsList
+  fullName: CreateBotsController.botPlayfabIdsList
+  nameWithType: CreateBotsController.botPlayfabIdsList
+- uid: Global.CreateBotsController.CreateBots
+  name: CreateBots()
+  href: api/Global.CreateBotsController.html#Global_CreateBotsController_CreateBots
+  commentId: M:Global.CreateBotsController.CreateBots
+  fullName: CreateBotsController.CreateBots()
+  nameWithType: CreateBotsController.CreateBots()
+- uid: Global.CreateBotsController.CreateBots*
+  name: CreateBots
+  href: api/Global.CreateBotsController.html#Global_CreateBotsController_CreateBots_
+  commentId: Overload:Global.CreateBotsController.CreateBots
+  isSpec: "True"
+  fullName: CreateBotsController.CreateBots
+  nameWithType: CreateBotsController.CreateBots
+- uid: Global.CreateBotsController.lastBotIndex
+  name: lastBotIndex
+  href: api/Global.CreateBotsController.html#Global_CreateBotsController_lastBotIndex
+  commentId: F:Global.CreateBotsController.lastBotIndex
+  fullName: CreateBotsController.lastBotIndex
+  nameWithType: CreateBotsController.lastBotIndex
+- uid: Global.CreateBotsController.numberOfBotsToCreate
+  name: numberOfBotsToCreate
+  href: api/Global.CreateBotsController.html#Global_CreateBotsController_numberOfBotsToCreate
+  commentId: F:Global.CreateBotsController.numberOfBotsToCreate
+  fullName: CreateBotsController.numberOfBotsToCreate
+  nameWithType: CreateBotsController.numberOfBotsToCreate
+- uid: Global.CreateBotsController.SetInitNumber
+  name: SetInitNumber()
+  href: api/Global.CreateBotsController.html#Global_CreateBotsController_SetInitNumber
+  commentId: M:Global.CreateBotsController.SetInitNumber
+  fullName: CreateBotsController.SetInitNumber()
+  nameWithType: CreateBotsController.SetInitNumber()
+- uid: Global.CreateBotsController.SetInitNumber*
+  name: SetInitNumber
+  href: api/Global.CreateBotsController.html#Global_CreateBotsController_SetInitNumber_
+  commentId: Overload:Global.CreateBotsController.SetInitNumber
+  isSpec: "True"
+  fullName: CreateBotsController.SetInitNumber
+  nameWithType: CreateBotsController.SetInitNumber
+- uid: Global.CreateBotsController.SignUp(System.String,System.String,System.String)
+  name: SignUp(String, String, String)
+  href: api/Global.CreateBotsController.html#Global_CreateBotsController_SignUp_System_String_System_String_System_String_
+  commentId: M:Global.CreateBotsController.SignUp(System.String,System.String,System.String)
+  fullName: CreateBotsController.SignUp(System.String, System.String, System.String)
+  nameWithType: CreateBotsController.SignUp(String, String, String)
+- uid: Global.CreateBotsController.SignUp*
+  name: SignUp
+  href: api/Global.CreateBotsController.html#Global_CreateBotsController_SignUp_
+  commentId: Overload:Global.CreateBotsController.SignUp
+  isSpec: "True"
+  fullName: CreateBotsController.SignUp
+  nameWithType: CreateBotsController.SignUp
+- uid: Global.CreateBotsController.Start
+  name: Start()
+  href: api/Global.CreateBotsController.html#Global_CreateBotsController_Start
+  commentId: M:Global.CreateBotsController.Start
+  fullName: CreateBotsController.Start()
+  nameWithType: CreateBotsController.Start()
+- uid: Global.CreateBotsController.Start*
+  name: Start
+  href: api/Global.CreateBotsController.html#Global_CreateBotsController_Start_
+  commentId: Overload:Global.CreateBotsController.Start
+  isSpec: "True"
+  fullName: CreateBotsController.Start
+  nameWithType: CreateBotsController.Start
 - uid: Global.CriticsCheck
   name: CriticsCheck
   href: api/Global.CriticsCheck.html
@@ -4865,6 +5079,30 @@ references:
   commentId: T:Global.EnableWhenEnable
   fullName: EnableWhenEnable
   nameWithType: EnableWhenEnable
+- uid: Global.EndpointsForBots
+  name: EndpointsForBots
+  href: api/Global.EndpointsForBots.html
+  commentId: T:Global.EndpointsForBots
+  fullName: EndpointsForBots
+  nameWithType: EndpointsForBots
+- uid: Global.EndpointsForBots.CREATE_MATCH
+  name: CREATE_MATCH
+  href: api/Global.EndpointsForBots.html#Global_EndpointsForBots_CREATE_MATCH
+  commentId: F:Global.EndpointsForBots.CREATE_MATCH
+  fullName: EndpointsForBots.CREATE_MATCH
+  nameWithType: EndpointsForBots.CREATE_MATCH
+- uid: Global.EndpointsForBots.DELETE_MATCH
+  name: DELETE_MATCH
+  href: api/Global.EndpointsForBots.html#Global_EndpointsForBots_DELETE_MATCH
+  commentId: F:Global.EndpointsForBots.DELETE_MATCH
+  fullName: EndpointsForBots.DELETE_MATCH
+  nameWithType: EndpointsForBots.DELETE_MATCH
+- uid: Global.EndpointsForBots.SELECT_SHINSEIS
+  name: SELECT_SHINSEIS
+  href: api/Global.EndpointsForBots.html#Global_EndpointsForBots_SELECT_SHINSEIS
+  commentId: F:Global.EndpointsForBots.SELECT_SHINSEIS
+  fullName: EndpointsForBots.SELECT_SHINSEIS
+  nameWithType: EndpointsForBots.SELECT_SHINSEIS
 - uid: Global.Extensions
   name: Extensions
   href: api/Global.Extensions.html
@@ -4884,30 +5122,6 @@ references:
   isSpec: "True"
   fullName: Extensions.SetActiveToggle
   nameWithType: Extensions.SetActiveToggle
-- uid: Global.FirebasePetitionType
-  name: FirebasePetitionType
-  href: api/Global.FirebasePetitionType.html
-  commentId: T:Global.FirebasePetitionType
-  fullName: FirebasePetitionType
-  nameWithType: FirebasePetitionType
-- uid: Global.FirebasePetitionType.SendTurn
-  name: SendTurn
-  href: api/Global.FirebasePetitionType.html#Global_FirebasePetitionType_SendTurn
-  commentId: F:Global.FirebasePetitionType.SendTurn
-  fullName: FirebasePetitionType.SendTurn
-  nameWithType: FirebasePetitionType.SendTurn
-- uid: Global.FirebasePetitionType.Surrender
-  name: Surrender
-  href: api/Global.FirebasePetitionType.html#Global_FirebasePetitionType_Surrender
-  commentId: F:Global.FirebasePetitionType.Surrender
-  fullName: FirebasePetitionType.Surrender
-  nameWithType: FirebasePetitionType.Surrender
-- uid: Global.FirebasePetitionType.UpdateParty
-  name: UpdateParty
-  href: api/Global.FirebasePetitionType.html#Global_FirebasePetitionType_UpdateParty
-  commentId: F:Global.FirebasePetitionType.UpdateParty
-  fullName: FirebasePetitionType.UpdateParty
-  nameWithType: FirebasePetitionType.UpdateParty
 - uid: Global.Followpoints
   name: Followpoints
   href: api/Global.Followpoints.html
@@ -5512,6 +5726,19 @@ references:
   isSpec: "True"
   fullName: IBracketsTournament.CheckTournamentStateController
   nameWithType: IBracketsTournament.CheckTournamentStateController
+- uid: Global.IBracketsTournament.OnTournamentEnded
+  name: OnTournamentEnded
+  href: api/Global.IBracketsTournament.html#Global_IBracketsTournament_OnTournamentEnded
+  commentId: P:Global.IBracketsTournament.OnTournamentEnded
+  fullName: IBracketsTournament.OnTournamentEnded
+  nameWithType: IBracketsTournament.OnTournamentEnded
+- uid: Global.IBracketsTournament.OnTournamentEnded*
+  name: OnTournamentEnded
+  href: api/Global.IBracketsTournament.html#Global_IBracketsTournament_OnTournamentEnded_
+  commentId: Overload:Global.IBracketsTournament.OnTournamentEnded
+  isSpec: "True"
+  fullName: IBracketsTournament.OnTournamentEnded
+  nameWithType: IBracketsTournament.OnTournamentEnded
 - uid: Global.IBracketsTournament.SetAlreadyConnection(System.Boolean)
   name: SetAlreadyConnection(Boolean)
   href: api/Global.IBracketsTournament.html#Global_IBracketsTournament_SetAlreadyConnection_System_Boolean_
@@ -5701,68 +5928,6 @@ references:
   commentId: F:Global.JPGGenerator.loadingPanel
   fullName: JPGGenerator.loadingPanel
   nameWithType: JPGGenerator.loadingPanel
-- uid: Global.LeaderboardEntry
-  name: LeaderboardEntry
-  href: api/Global.LeaderboardEntry.html
-  commentId: T:Global.LeaderboardEntry
-  fullName: LeaderboardEntry
-  nameWithType: LeaderboardEntry
-- uid: Global.LeaderboardEntry.SetEntyValues(System.String,System.String,System.String)
-  name: SetEntyValues(String, String, String)
-  href: api/Global.LeaderboardEntry.html#Global_LeaderboardEntry_SetEntyValues_System_String_System_String_System_String_
-  commentId: M:Global.LeaderboardEntry.SetEntyValues(System.String,System.String,System.String)
-  fullName: LeaderboardEntry.SetEntyValues(System.String, System.String, System.String)
-  nameWithType: LeaderboardEntry.SetEntyValues(String, String, String)
-- uid: Global.LeaderboardEntry.SetEntyValues*
-  name: SetEntyValues
-  href: api/Global.LeaderboardEntry.html#Global_LeaderboardEntry_SetEntyValues_
-  commentId: Overload:Global.LeaderboardEntry.SetEntyValues
-  isSpec: "True"
-  fullName: LeaderboardEntry.SetEntyValues
-  nameWithType: LeaderboardEntry.SetEntyValues
-- uid: Global.LeaderboardEntryResult
-  name: LeaderboardEntryResult
-  href: api/Global.LeaderboardEntryResult.html
-  commentId: T:Global.LeaderboardEntryResult
-  fullName: LeaderboardEntryResult
-  nameWithType: LeaderboardEntryResult
-- uid: Global.LeaderboardEntryResult.DisplayName
-  name: DisplayName
-  href: api/Global.LeaderboardEntryResult.html#Global_LeaderboardEntryResult_DisplayName
-  commentId: F:Global.LeaderboardEntryResult.DisplayName
-  fullName: LeaderboardEntryResult.DisplayName
-  nameWithType: LeaderboardEntryResult.DisplayName
-- uid: Global.LeaderboardEntryResult.Position
-  name: Position
-  href: api/Global.LeaderboardEntryResult.html#Global_LeaderboardEntryResult_Position
-  commentId: F:Global.LeaderboardEntryResult.Position
-  fullName: LeaderboardEntryResult.Position
-  nameWithType: LeaderboardEntryResult.Position
-- uid: Global.LeaderboardEntryResult.StatValue
-  name: StatValue
-  href: api/Global.LeaderboardEntryResult.html#Global_LeaderboardEntryResult_StatValue
-  commentId: F:Global.LeaderboardEntryResult.StatValue
-  fullName: LeaderboardEntryResult.StatValue
-  nameWithType: LeaderboardEntryResult.StatValue
-- uid: Global.LeaderBoardManager
-  name: LeaderBoardManager
-  href: api/Global.LeaderBoardManager.html
-  commentId: T:Global.LeaderBoardManager
-  fullName: LeaderBoardManager
-  nameWithType: LeaderBoardManager
-- uid: Global.LeaderBoardManager.Start
-  name: Start()
-  href: api/Global.LeaderBoardManager.html#Global_LeaderBoardManager_Start
-  commentId: M:Global.LeaderBoardManager.Start
-  fullName: LeaderBoardManager.Start()
-  nameWithType: LeaderBoardManager.Start()
-- uid: Global.LeaderBoardManager.Start*
-  name: Start
-  href: api/Global.LeaderBoardManager.html#Global_LeaderBoardManager_Start_
-  commentId: Overload:Global.LeaderBoardManager.Start
-  isSpec: "True"
-  fullName: LeaderBoardManager.Start
-  nameWithType: LeaderBoardManager.Start
 - uid: Global.LightFlickerEffect
   name: LightFlickerEffect
   href: api/Global.LightFlickerEffect.html
@@ -5851,12 +6016,6 @@ references:
   isSpec: "True"
   fullName: LobbyChatView.ShowMessage
   nameWithType: LobbyChatView.ShowMessage
-- uid: Global.LobbyCompanionPanel
-  name: LobbyCompanionPanel
-  href: api/Global.LobbyCompanionPanel.html
-  commentId: T:Global.LobbyCompanionPanel
-  fullName: LobbyCompanionPanel
-  nameWithType: LobbyCompanionPanel
 - uid: Global.LocalPlayerData
   name: LocalPlayerData
   href: api/Global.LocalPlayerData.html
@@ -6124,6 +6283,12 @@ references:
   commentId: F:Global.MatchState.isOwnerLocal
   fullName: MatchState.isOwnerLocal
   nameWithType: MatchState.isOwnerLocal
+- uid: Global.MatchState.playersServerData
+  name: playersServerData
+  href: api/Global.MatchState.html#Global_MatchState_playersServerData
+  commentId: F:Global.MatchState.playersServerData
+  fullName: MatchState.playersServerData
+  nameWithType: MatchState.playersServerData
 - uid: Global.MatchState.playersTurn
   name: playersTurn
   href: api/Global.MatchState.html#Global_MatchState_playersTurn
@@ -6774,127 +6939,6 @@ references:
   commentId: F:Global.OpenUrl.url
   fullName: OpenUrl.url
   nameWithType: OpenUrl.url
-- uid: Global.OrderListener
-  name: OrderListener
-  href: api/Global.OrderListener.html
-  commentId: T:Global.OrderListener
-  fullName: OrderListener
-  nameWithType: OrderListener
-- uid: Global.OrderListener.ChangeShinsei(System.Int32,System.Int32,Combat)
-  name: ChangeShinsei(Int32, Int32, Combat)
-  href: api/Global.OrderListener.html#Global_OrderListener_ChangeShinsei_System_Int32_System_Int32_Combat_
-  commentId: M:Global.OrderListener.ChangeShinsei(System.Int32,System.Int32,Combat)
-  fullName: OrderListener.ChangeShinsei(System.Int32, System.Int32, Combat)
-  nameWithType: OrderListener.ChangeShinsei(Int32, Int32, Combat)
-- uid: Global.OrderListener.ChangeShinsei*
-  name: ChangeShinsei
-  href: api/Global.OrderListener.html#Global_OrderListener_ChangeShinsei_
-  commentId: Overload:Global.OrderListener.ChangeShinsei
-  isSpec: "True"
-  fullName: OrderListener.ChangeShinsei
-  nameWithType: OrderListener.ChangeShinsei
-- uid: Global.OrderListener.KnowPlayerIndex(OrderMessage,Action{System.Int32},Combat)
-  name: KnowPlayerIndex(OrderMessage, Action<Int32>, Combat)
-  href: api/Global.OrderListener.html#Global_OrderListener_KnowPlayerIndex_OrderMessage_Action_System_Int32__Combat_
-  commentId: M:Global.OrderListener.KnowPlayerIndex(OrderMessage,Action{System.Int32},Combat)
-  name.vb: KnowPlayerIndex(OrderMessage, Action(Of Int32), Combat)
-  fullName: OrderListener.KnowPlayerIndex(OrderMessage, Action<System.Int32>, Combat)
-  fullName.vb: OrderListener.KnowPlayerIndex(OrderMessage, Action(Of System.Int32), Combat)
-  nameWithType: OrderListener.KnowPlayerIndex(OrderMessage, Action<Int32>, Combat)
-  nameWithType.vb: OrderListener.KnowPlayerIndex(OrderMessage, Action(Of Int32), Combat)
-- uid: Global.OrderListener.KnowPlayerIndex*
-  name: KnowPlayerIndex
-  href: api/Global.OrderListener.html#Global_OrderListener_KnowPlayerIndex_
-  commentId: Overload:Global.OrderListener.KnowPlayerIndex
-  isSpec: "True"
-  fullName: OrderListener.KnowPlayerIndex
-  nameWithType: OrderListener.KnowPlayerIndex
-- uid: Global.OrderListener.UpdateOrdersFromNet
-  name: UpdateOrdersFromNet()
-  href: api/Global.OrderListener.html#Global_OrderListener_UpdateOrdersFromNet
-  commentId: M:Global.OrderListener.UpdateOrdersFromNet
-  fullName: OrderListener.UpdateOrdersFromNet()
-  nameWithType: OrderListener.UpdateOrdersFromNet()
-- uid: Global.OrderListener.UpdateOrdersFromNet*
-  name: UpdateOrdersFromNet
-  href: api/Global.OrderListener.html#Global_OrderListener_UpdateOrdersFromNet_
-  commentId: Overload:Global.OrderListener.UpdateOrdersFromNet
-  isSpec: "True"
-  fullName: OrderListener.UpdateOrdersFromNet
-  nameWithType: OrderListener.UpdateOrdersFromNet
-- uid: Global.OrderListener.UpdateTurn(OrderMessage,System.Int32,Combat)
-  name: UpdateTurn(OrderMessage, Int32, Combat)
-  href: api/Global.OrderListener.html#Global_OrderListener_UpdateTurn_OrderMessage_System_Int32_Combat_
-  commentId: M:Global.OrderListener.UpdateTurn(OrderMessage,System.Int32,Combat)
-  fullName: OrderListener.UpdateTurn(OrderMessage, System.Int32, Combat)
-  nameWithType: OrderListener.UpdateTurn(OrderMessage, Int32, Combat)
-- uid: Global.OrderListener.UpdateTurn*
-  name: UpdateTurn
-  href: api/Global.OrderListener.html#Global_OrderListener_UpdateTurn_
-  commentId: Overload:Global.OrderListener.UpdateTurn
-  isSpec: "True"
-  fullName: OrderListener.UpdateTurn
-  nameWithType: OrderListener.UpdateTurn
-- uid: Global.OrderMessage
-  name: OrderMessage
-  href: api/Global.OrderMessage.html
-  commentId: T:Global.OrderMessage
-  fullName: OrderMessage
-  nameWithType: OrderMessage
-- uid: Global.OrderMessage.data
-  name: data
-  href: api/Global.OrderMessage.html#Global_OrderMessage_data
-  commentId: F:Global.OrderMessage.data
-  fullName: OrderMessage.data
-  nameWithType: OrderMessage.data
-- uid: Global.OrderMessage.matchId
-  name: matchId
-  href: api/Global.OrderMessage.html#Global_OrderMessage_matchId
-  commentId: F:Global.OrderMessage.matchId
-  fullName: OrderMessage.matchId
-  nameWithType: OrderMessage.matchId
-- uid: Global.OrderMessage.messageType
-  name: messageType
-  href: api/Global.OrderMessage.html#Global_OrderMessage_messageType
-  commentId: F:Global.OrderMessage.messageType
-  fullName: OrderMessage.messageType
-  nameWithType: OrderMessage.messageType
-- uid: Global.OrderMessage.playerPlayfabId
-  name: playerPlayfabId
-  href: api/Global.OrderMessage.html#Global_OrderMessage_playerPlayfabId
-  commentId: F:Global.OrderMessage.playerPlayfabId
-  fullName: OrderMessage.playerPlayfabId
-  nameWithType: OrderMessage.playerPlayfabId
-- uid: Global.OrderMessageType
-  name: OrderMessageType
-  href: api/Global.OrderMessageType.html
-  commentId: T:Global.OrderMessageType
-  fullName: OrderMessageType
-  nameWithType: OrderMessageType
-- uid: Global.OrderMessageType.CREATE_MATCH_DATA
-  name: CREATE_MATCH_DATA
-  href: api/Global.OrderMessageType.html#Global_OrderMessageType_CREATE_MATCH_DATA
-  commentId: F:Global.OrderMessageType.CREATE_MATCH_DATA
-  fullName: OrderMessageType.CREATE_MATCH_DATA
-  nameWithType: OrderMessageType.CREATE_MATCH_DATA
-- uid: Global.OrderMessageType.PLAYER_SURRENDER
-  name: PLAYER_SURRENDER
-  href: api/Global.OrderMessageType.html#Global_OrderMessageType_PLAYER_SURRENDER
-  commentId: F:Global.OrderMessageType.PLAYER_SURRENDER
-  fullName: OrderMessageType.PLAYER_SURRENDER
-  nameWithType: OrderMessageType.PLAYER_SURRENDER
-- uid: Global.OrderMessageType.SEND_TURN
-  name: SEND_TURN
-  href: api/Global.OrderMessageType.html#Global_OrderMessageType_SEND_TURN
-  commentId: F:Global.OrderMessageType.SEND_TURN
-  fullName: OrderMessageType.SEND_TURN
-  nameWithType: OrderMessageType.SEND_TURN
-- uid: Global.OrderMessageType.SEND_UPDATE_PARTY
-  name: SEND_UPDATE_PARTY
-  href: api/Global.OrderMessageType.html#Global_OrderMessageType_SEND_UPDATE_PARTY
-  commentId: F:Global.OrderMessageType.SEND_UPDATE_PARTY
-  fullName: OrderMessageType.SEND_UPDATE_PARTY
-  nameWithType: OrderMessageType.SEND_UPDATE_PARTY
 - uid: Global.OwnBattleTracker
   name: OwnBattleTracker
   href: api/Global.OwnBattleTracker.html
@@ -7784,6 +7828,12 @@ references:
   commentId: T:Global.PlayerDataManager
   fullName: PlayerDataManager
   nameWithType: PlayerDataManager
+- uid: Global.PlayerDataManager.botChallengeId
+  name: botChallengeId
+  href: api/Global.PlayerDataManager.html#Global_PlayerDataManager_botChallengeId
+  commentId: F:Global.PlayerDataManager.botChallengeId
+  fullName: PlayerDataManager.botChallengeId
+  nameWithType: PlayerDataManager.botChallengeId
 - uid: Global.PlayerDataManager.ButtonChangeShinseis
   name: ButtonChangeShinseis()
   href: api/Global.PlayerDataManager.html#Global_PlayerDataManager_ButtonChangeShinseis
@@ -7911,6 +7961,18 @@ references:
   isSpec: "True"
   fullName: PlayerDataManager.InitPlayerData
   nameWithType: PlayerDataManager.InitPlayerData
+- uid: Global.PlayerDataManager.isBot
+  name: isBot
+  href: api/Global.PlayerDataManager.html#Global_PlayerDataManager_isBot
+  commentId: F:Global.PlayerDataManager.isBot
+  fullName: PlayerDataManager.isBot
+  nameWithType: PlayerDataManager.isBot
+- uid: Global.PlayerDataManager.isBotCreatorOfTournaments
+  name: isBotCreatorOfTournaments
+  href: api/Global.PlayerDataManager.html#Global_PlayerDataManager_isBotCreatorOfTournaments
+  commentId: F:Global.PlayerDataManager.isBotCreatorOfTournaments
+  fullName: PlayerDataManager.isBotCreatorOfTournaments
+  nameWithType: PlayerDataManager.isBotCreatorOfTournaments
 - uid: Global.PlayerDataManager.isFrenchKeyboardLayout
   name: isFrenchKeyboardLayout
   href: api/Global.PlayerDataManager.html#Global_PlayerDataManager_isFrenchKeyboardLayout
@@ -7935,6 +7997,12 @@ references:
   commentId: F:Global.PlayerDataManager.localPlayerGameObject
   fullName: PlayerDataManager.localPlayerGameObject
   nameWithType: PlayerDataManager.localPlayerGameObject
+- uid: Global.PlayerDataManager.numberOfBots
+  name: numberOfBots
+  href: api/Global.PlayerDataManager.html#Global_PlayerDataManager_numberOfBots
+  commentId: F:Global.PlayerDataManager.numberOfBots
+  fullName: PlayerDataManager.numberOfBots
+  nameWithType: PlayerDataManager.numberOfBots
 - uid: Global.PlayerDataManager.OnDataObtained
   name: OnDataObtained
   href: api/Global.PlayerDataManager.html#Global_PlayerDataManager_OnDataObtained
@@ -8226,56 +8294,6 @@ references:
   isSpec: "True"
   fullName: PlayerUI.WaitforOpponentToConfirm
   nameWithType: PlayerUI.WaitforOpponentToConfirm
-- uid: Global.PlayFabGetLeaderboard
-  name: PlayFabGetLeaderboard
-  href: api/Global.PlayFabGetLeaderboard.html
-  commentId: T:Global.PlayFabGetLeaderboard
-  fullName: PlayFabGetLeaderboard
-  nameWithType: PlayFabGetLeaderboard
-- uid: Global.PlayFabGetLeaderboard.GetLeaderboardEntries(System.Int32,System.Int32,System.String)
-  name: GetLeaderboardEntries(Int32, Int32, String)
-  href: api/Global.PlayFabGetLeaderboard.html#Global_PlayFabGetLeaderboard_GetLeaderboardEntries_System_Int32_System_Int32_System_String_
-  commentId: M:Global.PlayFabGetLeaderboard.GetLeaderboardEntries(System.Int32,System.Int32,System.String)
-  fullName: PlayFabGetLeaderboard.GetLeaderboardEntries(System.Int32, System.Int32, System.String)
-  nameWithType: PlayFabGetLeaderboard.GetLeaderboardEntries(Int32, Int32, String)
-- uid: Global.PlayFabGetLeaderboard.GetLeaderboardEntries*
-  name: GetLeaderboardEntries
-  href: api/Global.PlayFabGetLeaderboard.html#Global_PlayFabGetLeaderboard_GetLeaderboardEntries_
-  commentId: Overload:Global.PlayFabGetLeaderboard.GetLeaderboardEntries
-  isSpec: "True"
-  fullName: PlayFabGetLeaderboard.GetLeaderboardEntries
-  nameWithType: PlayFabGetLeaderboard.GetLeaderboardEntries
-- uid: Global.PlayFabGetLeaderboard.OnSuccess
-  name: OnSuccess
-  href: api/Global.PlayFabGetLeaderboard.html#Global_PlayFabGetLeaderboard_OnSuccess
-  commentId: E:Global.PlayFabGetLeaderboard.OnSuccess
-  fullName: PlayFabGetLeaderboard.OnSuccess
-  nameWithType: PlayFabGetLeaderboard.OnSuccess
-- uid: Global.PlayFabGetLeaderboardAroundPlayer
-  name: PlayFabGetLeaderboardAroundPlayer
-  href: api/Global.PlayFabGetLeaderboardAroundPlayer.html
-  commentId: T:Global.PlayFabGetLeaderboardAroundPlayer
-  fullName: PlayFabGetLeaderboardAroundPlayer
-  nameWithType: PlayFabGetLeaderboardAroundPlayer
-- uid: Global.PlayFabGetLeaderboardAroundPlayer.GetLeaderboardAroundPlayer(System.String,System.Int32,System.String)
-  name: GetLeaderboardAroundPlayer(String, Int32, String)
-  href: api/Global.PlayFabGetLeaderboardAroundPlayer.html#Global_PlayFabGetLeaderboardAroundPlayer_GetLeaderboardAroundPlayer_System_String_System_Int32_System_String_
-  commentId: M:Global.PlayFabGetLeaderboardAroundPlayer.GetLeaderboardAroundPlayer(System.String,System.Int32,System.String)
-  fullName: PlayFabGetLeaderboardAroundPlayer.GetLeaderboardAroundPlayer(System.String, System.Int32, System.String)
-  nameWithType: PlayFabGetLeaderboardAroundPlayer.GetLeaderboardAroundPlayer(String, Int32, String)
-- uid: Global.PlayFabGetLeaderboardAroundPlayer.GetLeaderboardAroundPlayer*
-  name: GetLeaderboardAroundPlayer
-  href: api/Global.PlayFabGetLeaderboardAroundPlayer.html#Global_PlayFabGetLeaderboardAroundPlayer_GetLeaderboardAroundPlayer_
-  commentId: Overload:Global.PlayFabGetLeaderboardAroundPlayer.GetLeaderboardAroundPlayer
-  isSpec: "True"
-  fullName: PlayFabGetLeaderboardAroundPlayer.GetLeaderboardAroundPlayer
-  nameWithType: PlayFabGetLeaderboardAroundPlayer.GetLeaderboardAroundPlayer
-- uid: Global.PlayFabGetLeaderboardAroundPlayer.OnSuccess
-  name: OnSuccess
-  href: api/Global.PlayFabGetLeaderboardAroundPlayer.html#Global_PlayFabGetLeaderboardAroundPlayer_OnSuccess
-  commentId: E:Global.PlayFabGetLeaderboardAroundPlayer.OnSuccess
-  fullName: PlayFabGetLeaderboardAroundPlayer.OnSuccess
-  nameWithType: PlayFabGetLeaderboardAroundPlayer.OnSuccess
 - uid: Global.PlayfabManager
   name: PlayfabManager
   href: api/Global.PlayfabManager.html
@@ -8343,15 +8361,15 @@ references:
   isSpec: "True"
   fullName: PlayfabManager.BattleServerCreateMatch
   nameWithType: PlayfabManager.BattleServerCreateMatch
-- uid: Global.PlayfabManager.BattleServerGetMatchState(System.String,System.Boolean,Action{ExecuteFunctionResult},System.Boolean)
-  name: BattleServerGetMatchState(String, Boolean, Action<ExecuteFunctionResult>, Boolean)
-  href: api/Global.PlayfabManager.html#Global_PlayfabManager_BattleServerGetMatchState_System_String_System_Boolean_Action_ExecuteFunctionResult__System_Boolean_
-  commentId: M:Global.PlayfabManager.BattleServerGetMatchState(System.String,System.Boolean,Action{ExecuteFunctionResult},System.Boolean)
-  name.vb: BattleServerGetMatchState(String, Boolean, Action(Of ExecuteFunctionResult), Boolean)
-  fullName: PlayfabManager.BattleServerGetMatchState(System.String, System.Boolean, Action<ExecuteFunctionResult>, System.Boolean)
-  fullName.vb: PlayfabManager.BattleServerGetMatchState(System.String, System.Boolean, Action(Of ExecuteFunctionResult), System.Boolean)
-  nameWithType: PlayfabManager.BattleServerGetMatchState(String, Boolean, Action<ExecuteFunctionResult>, Boolean)
-  nameWithType.vb: PlayfabManager.BattleServerGetMatchState(String, Boolean, Action(Of ExecuteFunctionResult), Boolean)
+- uid: Global.PlayfabManager.BattleServerGetMatchState(System.String,System.Boolean,Action{ExecuteFunctionResult},System.Boolean,System.Boolean)
+  name: BattleServerGetMatchState(String, Boolean, Action<ExecuteFunctionResult>, Boolean, Boolean)
+  href: api/Global.PlayfabManager.html#Global_PlayfabManager_BattleServerGetMatchState_System_String_System_Boolean_Action_ExecuteFunctionResult__System_Boolean_System_Boolean_
+  commentId: M:Global.PlayfabManager.BattleServerGetMatchState(System.String,System.Boolean,Action{ExecuteFunctionResult},System.Boolean,System.Boolean)
+  name.vb: BattleServerGetMatchState(String, Boolean, Action(Of ExecuteFunctionResult), Boolean, Boolean)
+  fullName: PlayfabManager.BattleServerGetMatchState(System.String, System.Boolean, Action<ExecuteFunctionResult>, System.Boolean, System.Boolean)
+  fullName.vb: PlayfabManager.BattleServerGetMatchState(System.String, System.Boolean, Action(Of ExecuteFunctionResult), System.Boolean, System.Boolean)
+  nameWithType: PlayfabManager.BattleServerGetMatchState(String, Boolean, Action<ExecuteFunctionResult>, Boolean, Boolean)
+  nameWithType.vb: PlayfabManager.BattleServerGetMatchState(String, Boolean, Action(Of ExecuteFunctionResult), Boolean, Boolean)
 - uid: Global.PlayfabManager.BattleServerGetMatchState*
   name: BattleServerGetMatchState
   href: api/Global.PlayfabManager.html#Global_PlayfabManager_BattleServerGetMatchState_
@@ -8375,15 +8393,15 @@ references:
   isSpec: "True"
   fullName: PlayfabManager.BattleServerSelectShinseis
   nameWithType: PlayfabManager.BattleServerSelectShinseis
-- uid: Global.PlayfabManager.BattleServerSendTurn(System.String,System.Int32,Action{ExecuteFunctionResult},System.Int32)
-  name: BattleServerSendTurn(String, Int32, Action<ExecuteFunctionResult>, Int32)
-  href: api/Global.PlayfabManager.html#Global_PlayfabManager_BattleServerSendTurn_System_String_System_Int32_Action_ExecuteFunctionResult__System_Int32_
-  commentId: M:Global.PlayfabManager.BattleServerSendTurn(System.String,System.Int32,Action{ExecuteFunctionResult},System.Int32)
-  name.vb: BattleServerSendTurn(String, Int32, Action(Of ExecuteFunctionResult), Int32)
-  fullName: PlayfabManager.BattleServerSendTurn(System.String, System.Int32, Action<ExecuteFunctionResult>, System.Int32)
-  fullName.vb: PlayfabManager.BattleServerSendTurn(System.String, System.Int32, Action(Of ExecuteFunctionResult), System.Int32)
-  nameWithType: PlayfabManager.BattleServerSendTurn(String, Int32, Action<ExecuteFunctionResult>, Int32)
-  nameWithType.vb: PlayfabManager.BattleServerSendTurn(String, Int32, Action(Of ExecuteFunctionResult), Int32)
+- uid: Global.PlayfabManager.BattleServerSendTurn(System.String,System.Int32,Action{ExecuteFunctionResult},System.Int32,System.Int32)
+  name: BattleServerSendTurn(String, Int32, Action<ExecuteFunctionResult>, Int32, Int32)
+  href: api/Global.PlayfabManager.html#Global_PlayfabManager_BattleServerSendTurn_System_String_System_Int32_Action_ExecuteFunctionResult__System_Int32_System_Int32_
+  commentId: M:Global.PlayfabManager.BattleServerSendTurn(System.String,System.Int32,Action{ExecuteFunctionResult},System.Int32,System.Int32)
+  name.vb: BattleServerSendTurn(String, Int32, Action(Of ExecuteFunctionResult), Int32, Int32)
+  fullName: PlayfabManager.BattleServerSendTurn(System.String, System.Int32, Action<ExecuteFunctionResult>, System.Int32, System.Int32)
+  fullName.vb: PlayfabManager.BattleServerSendTurn(System.String, System.Int32, Action(Of ExecuteFunctionResult), System.Int32, System.Int32)
+  nameWithType: PlayfabManager.BattleServerSendTurn(String, Int32, Action<ExecuteFunctionResult>, Int32, Int32)
+  nameWithType.vb: PlayfabManager.BattleServerSendTurn(String, Int32, Action(Of ExecuteFunctionResult), Int32, Int32)
 - uid: Global.PlayfabManager.BattleServerSendTurn*
   name: BattleServerSendTurn
   href: api/Global.PlayfabManager.html#Global_PlayfabManager_BattleServerSendTurn_
@@ -8816,25 +8834,6 @@ references:
   isSpec: "True"
   fullName: PlayfabManager.UpdateStatistic
   nameWithType: PlayfabManager.UpdateStatistic
-- uid: Global.PlayFabUpdatePlayerStatistics
-  name: PlayFabUpdatePlayerStatistics
-  href: api/Global.PlayFabUpdatePlayerStatistics.html
-  commentId: T:Global.PlayFabUpdatePlayerStatistics
-  fullName: PlayFabUpdatePlayerStatistics
-  nameWithType: PlayFabUpdatePlayerStatistics
-- uid: Global.PlayFabUpdatePlayerStatistics.UpdatePlayerStatistics(System.String,System.Int32)
-  name: UpdatePlayerStatistics(String, Int32)
-  href: api/Global.PlayFabUpdatePlayerStatistics.html#Global_PlayFabUpdatePlayerStatistics_UpdatePlayerStatistics_System_String_System_Int32_
-  commentId: M:Global.PlayFabUpdatePlayerStatistics.UpdatePlayerStatistics(System.String,System.Int32)
-  fullName: PlayFabUpdatePlayerStatistics.UpdatePlayerStatistics(System.String, System.Int32)
-  nameWithType: PlayFabUpdatePlayerStatistics.UpdatePlayerStatistics(String, Int32)
-- uid: Global.PlayFabUpdatePlayerStatistics.UpdatePlayerStatistics*
-  name: UpdatePlayerStatistics
-  href: api/Global.PlayFabUpdatePlayerStatistics.html#Global_PlayFabUpdatePlayerStatistics_UpdatePlayerStatistics_
-  commentId: Overload:Global.PlayFabUpdatePlayerStatistics.UpdatePlayerStatistics
-  isSpec: "True"
-  fullName: PlayFabUpdatePlayerStatistics.UpdatePlayerStatistics
-  nameWithType: PlayFabUpdatePlayerStatistics.UpdatePlayerStatistics
 - uid: Global.PrefabSpawner
   name: PrefabSpawner
   href: api/Global.PrefabSpawner.html
@@ -8983,12 +8982,6 @@ references:
   isSpec: "True"
   fullName: RampGeneratorTDE.UpdateRampTexture
   nameWithType: RampGeneratorTDE.UpdateRampTexture
-- uid: Global.RandomAnim
-  name: RandomAnim
-  href: api/Global.RandomAnim.html
-  commentId: T:Global.RandomAnim
-  fullName: RandomAnim
-  nameWithType: RandomAnim
 - uid: Global.RankRewardDto
   name: RankRewardDto
   href: api/Global.RankRewardDto.html
@@ -9171,12 +9164,6 @@ references:
   commentId: F:Global.RecolorBehavior.possibleColors
   fullName: RecolorBehavior.possibleColors
   nameWithType: RecolorBehavior.possibleColors
-- uid: Global.RecolorBtn
-  name: RecolorBtn
-  href: api/Global.RecolorBtn.html
-  commentId: T:Global.RecolorBtn
-  fullName: RecolorBtn
-  nameWithType: RecolorBtn
 - uid: Global.ReportBug
   name: ReportBug
   href: api/Global.ReportBug.html
@@ -9294,6 +9281,102 @@ references:
   commentId: T:Global.RotatorPillow
   fullName: RotatorPillow
   nameWithType: RotatorPillow
+- uid: Global.SacredTailsLog
+  name: SacredTailsLog
+  href: api/Global.SacredTailsLog.html
+  commentId: T:Global.SacredTailsLog
+  fullName: SacredTailsLog
+  nameWithType: SacredTailsLog
+- uid: Global.SacredTailsLog.Init
+  name: Init()
+  href: api/Global.SacredTailsLog.html#Global_SacredTailsLog_Init
+  commentId: M:Global.SacredTailsLog.Init
+  fullName: SacredTailsLog.Init()
+  nameWithType: SacredTailsLog.Init()
+- uid: Global.SacredTailsLog.Init*
+  name: Init
+  href: api/Global.SacredTailsLog.html#Global_SacredTailsLog_Init_
+  commentId: Overload:Global.SacredTailsLog.Init
+  isSpec: "True"
+  fullName: SacredTailsLog.Init
+  nameWithType: SacredTailsLog.Init
+- uid: Global.SacredTailsLog.isBot
+  name: isBot
+  href: api/Global.SacredTailsLog.html#Global_SacredTailsLog_isBot
+  commentId: F:Global.SacredTailsLog.isBot
+  fullName: SacredTailsLog.isBot
+  nameWithType: SacredTailsLog.isBot
+- uid: Global.SacredTailsLog.LogErrorMessage(System.String,System.Boolean)
+  name: LogErrorMessage(String, Boolean)
+  href: api/Global.SacredTailsLog.html#Global_SacredTailsLog_LogErrorMessage_System_String_System_Boolean_
+  commentId: M:Global.SacredTailsLog.LogErrorMessage(System.String,System.Boolean)
+  fullName: SacredTailsLog.LogErrorMessage(System.String, System.Boolean)
+  nameWithType: SacredTailsLog.LogErrorMessage(String, Boolean)
+- uid: Global.SacredTailsLog.LogErrorMessage*
+  name: LogErrorMessage
+  href: api/Global.SacredTailsLog.html#Global_SacredTailsLog_LogErrorMessage_
+  commentId: Overload:Global.SacredTailsLog.LogErrorMessage
+  isSpec: "True"
+  fullName: SacredTailsLog.LogErrorMessage
+  nameWithType: SacredTailsLog.LogErrorMessage
+- uid: Global.SacredTailsLog.LogErrorMessageForBot(System.String)
+  name: LogErrorMessageForBot(String)
+  href: api/Global.SacredTailsLog.html#Global_SacredTailsLog_LogErrorMessageForBot_System_String_
+  commentId: M:Global.SacredTailsLog.LogErrorMessageForBot(System.String)
+  fullName: SacredTailsLog.LogErrorMessageForBot(System.String)
+  nameWithType: SacredTailsLog.LogErrorMessageForBot(String)
+- uid: Global.SacredTailsLog.LogErrorMessageForBot*
+  name: LogErrorMessageForBot
+  href: api/Global.SacredTailsLog.html#Global_SacredTailsLog_LogErrorMessageForBot_
+  commentId: Overload:Global.SacredTailsLog.LogErrorMessageForBot
+  isSpec: "True"
+  fullName: SacredTailsLog.LogErrorMessageForBot
+  nameWithType: SacredTailsLog.LogErrorMessageForBot
+- uid: Global.SacredTailsLog.LogMessage(System.String,System.Boolean)
+  name: LogMessage(String, Boolean)
+  href: api/Global.SacredTailsLog.html#Global_SacredTailsLog_LogMessage_System_String_System_Boolean_
+  commentId: M:Global.SacredTailsLog.LogMessage(System.String,System.Boolean)
+  fullName: SacredTailsLog.LogMessage(System.String, System.Boolean)
+  nameWithType: SacredTailsLog.LogMessage(String, Boolean)
+- uid: Global.SacredTailsLog.LogMessage*
+  name: LogMessage
+  href: api/Global.SacredTailsLog.html#Global_SacredTailsLog_LogMessage_
+  commentId: Overload:Global.SacredTailsLog.LogMessage
+  isSpec: "True"
+  fullName: SacredTailsLog.LogMessage
+  nameWithType: SacredTailsLog.LogMessage
+- uid: Global.SacredTailsLog.LogMessageForBot(System.String)
+  name: LogMessageForBot(String)
+  href: api/Global.SacredTailsLog.html#Global_SacredTailsLog_LogMessageForBot_System_String_
+  commentId: M:Global.SacredTailsLog.LogMessageForBot(System.String)
+  fullName: SacredTailsLog.LogMessageForBot(System.String)
+  nameWithType: SacredTailsLog.LogMessageForBot(String)
+- uid: Global.SacredTailsLog.LogMessageForBot*
+  name: LogMessageForBot
+  href: api/Global.SacredTailsLog.html#Global_SacredTailsLog_LogMessageForBot_
+  commentId: Overload:Global.SacredTailsLog.LogMessageForBot
+  isSpec: "True"
+  fullName: SacredTailsLog.LogMessageForBot
+  nameWithType: SacredTailsLog.LogMessageForBot
+- uid: Global.SacredTailsLog.messagesLogged
+  name: messagesLogged
+  href: api/Global.SacredTailsLog.html#Global_SacredTailsLog_messagesLogged
+  commentId: F:Global.SacredTailsLog.messagesLogged
+  fullName: SacredTailsLog.messagesLogged
+  nameWithType: SacredTailsLog.messagesLogged
+- uid: Global.SacredTailsLog.OnEnd(System.Int32)
+  name: OnEnd(Int32)
+  href: api/Global.SacredTailsLog.html#Global_SacredTailsLog_OnEnd_System_Int32_
+  commentId: M:Global.SacredTailsLog.OnEnd(System.Int32)
+  fullName: SacredTailsLog.OnEnd(System.Int32)
+  nameWithType: SacredTailsLog.OnEnd(Int32)
+- uid: Global.SacredTailsLog.OnEnd*
+  name: OnEnd
+  href: api/Global.SacredTailsLog.html#Global_SacredTailsLog_OnEnd_
+  commentId: Overload:Global.SacredTailsLog.OnEnd
+  isSpec: "True"
+  fullName: SacredTailsLog.OnEnd
+  nameWithType: SacredTailsLog.OnEnd
 - uid: Global.ScaleChange
   name: ScaleChange
   href: api/Global.ScaleChange.html
@@ -9532,6 +9615,12 @@ references:
   commentId: F:Global.Shinsei.alteredStates
   fullName: Shinsei.alteredStates
   nameWithType: Shinsei.alteredStates
+- uid: Global.Shinsei.didAlteredStateKillShinsei
+  name: didAlteredStateKillShinsei
+  href: api/Global.Shinsei.html#Global_Shinsei_didAlteredStateKillShinsei
+  commentId: F:Global.Shinsei.didAlteredStateKillShinsei
+  fullName: Shinsei.didAlteredStateKillShinsei
+  nameWithType: Shinsei.didAlteredStateKillShinsei
 - uid: Global.Shinsei.evadeChance
   name: evadeChance
   href: api/Global.Shinsei.html#Global_Shinsei_evadeChance
@@ -9544,6 +9633,12 @@ references:
   commentId: F:Global.Shinsei.generation
   fullName: Shinsei.generation
   nameWithType: Shinsei.generation
+- uid: Global.Shinsei.healthAfterAlteredState
+  name: healthAfterAlteredState
+  href: api/Global.Shinsei.html#Global_Shinsei_healthAfterAlteredState
+  commentId: F:Global.Shinsei.healthAfterAlteredState
+  fullName: Shinsei.healthAfterAlteredState
+  nameWithType: Shinsei.healthAfterAlteredState
 - uid: Global.Shinsei.reflectDamage
   name: reflectDamage
   href: api/Global.Shinsei.html#Global_Shinsei_reflectDamage
@@ -9997,55 +10092,6 @@ references:
   isSpec: "True"
   fullName: TargetProjectile.UpdateTarget
   nameWithType: TargetProjectile.UpdateTarget
-- uid: Global.TaskManager
-  name: TaskManager
-  href: api/Global.TaskManager.html
-  commentId: T:Global.TaskManager
-  fullName: TaskManager
-  nameWithType: TaskManager
-- uid: Global.tasks
-  name: tasks
-  href: api/Global.tasks.html
-  commentId: T:Global.tasks
-  fullName: tasks
-  nameWithType: tasks
-- uid: Global.tasks.New(System.Single,Action)
-  name: New(Single, Action)
-  href: api/Global.tasks.html#Global_tasks_New_System_Single_Action_
-  commentId: M:Global.tasks.New(System.Single,Action)
-  fullName: tasks.New(System.Single, Action)
-  nameWithType: tasks.New(Single, Action)
-- uid: Global.tasks.New*
-  name: New
-  href: api/Global.tasks.html#Global_tasks_New_
-  commentId: Overload:Global.tasks.New
-  isSpec: "True"
-  fullName: tasks.New
-  nameWithType: tasks.New
-- uid: Global.tasks.task
-  name: tasks.task
-  href: api/Global.tasks.task.html
-  commentId: T:Global.tasks.task
-  fullName: tasks.task
-  nameWithType: tasks.task
-- uid: Global.tasks.task.action
-  name: action
-  href: api/Global.tasks.task.html#Global_tasks_task_action
-  commentId: F:Global.tasks.task.action
-  fullName: tasks.task.action
-  nameWithType: tasks.task.action
-- uid: Global.tasks.task.startTime
-  name: startTime
-  href: api/Global.tasks.task.html#Global_tasks_task_startTime
-  commentId: F:Global.tasks.task.startTime
-  fullName: tasks.task.startTime
-  nameWithType: tasks.task.startTime
-- uid: Global.tasks.tasksList
-  name: tasksList
-  href: api/Global.tasks.html#Global_tasks_tasksList
-  commentId: F:Global.tasks.tasksList
-  fullName: tasks.tasksList
-  nameWithType: tasks.tasksList
 - uid: Global.TerrainChangesDataSO
   name: TerrainChangesDataSO
   href: api/Global.TerrainChangesDataSO.html
@@ -10071,25 +10117,105 @@ references:
   commentId: F:Global.TerrainChangesDataSO.terrainChanges
   fullName: TerrainChangesDataSO.terrainChanges
   nameWithType: TerrainChangesDataSO.terrainChanges
-- uid: Global.TestExplorer
-  name: TestExplorer
-  href: api/Global.TestExplorer.html
-  commentId: T:Global.TestExplorer
-  fullName: TestExplorer
-  nameWithType: TestExplorer
-- uid: Global.TestExplorer.OPEN(System.String)
-  name: OPEN(String)
-  href: api/Global.TestExplorer.html#Global_TestExplorer_OPEN_System_String_
-  commentId: M:Global.TestExplorer.OPEN(System.String)
-  fullName: TestExplorer.OPEN(System.String)
-  nameWithType: TestExplorer.OPEN(String)
-- uid: Global.TestExplorer.OPEN*
-  name: OPEN
-  href: api/Global.TestExplorer.html#Global_TestExplorer_OPEN_
-  commentId: Overload:Global.TestExplorer.OPEN
+- uid: Global.TestBotController
+  name: TestBotController
+  href: api/Global.TestBotController.html
+  commentId: T:Global.TestBotController
+  fullName: TestBotController
+  nameWithType: TestBotController
+- uid: Global.TestBotController.authController
+  name: authController
+  href: api/Global.TestBotController.html#Global_TestBotController_authController
+  commentId: F:Global.TestBotController.authController
+  fullName: TestBotController.authController
+  nameWithType: TestBotController.authController
+- uid: Global.TestBotController.botPlayfabIdsList
+  name: botPlayfabIdsList
+  href: api/Global.TestBotController.html#Global_TestBotController_botPlayfabIdsList
+  commentId: F:Global.TestBotController.botPlayfabIdsList
+  fullName: TestBotController.botPlayfabIdsList
+  nameWithType: TestBotController.botPlayfabIdsList
+- uid: Global.TestBotController.challengePlayerController
+  name: challengePlayerController
+  href: api/Global.TestBotController.html#Global_TestBotController_challengePlayerController
+  commentId: F:Global.TestBotController.challengePlayerController
+  fullName: TestBotController.challengePlayerController
+  nameWithType: TestBotController.challengePlayerController
+- uid: Global.TestBotController.CreateNewTournament(Action)
+  name: CreateNewTournament(Action)
+  href: api/Global.TestBotController.html#Global_TestBotController_CreateNewTournament_Action_
+  commentId: M:Global.TestBotController.CreateNewTournament(Action)
+  fullName: TestBotController.CreateNewTournament(Action)
+  nameWithType: TestBotController.CreateNewTournament(Action)
+- uid: Global.TestBotController.CreateNewTournament*
+  name: CreateNewTournament
+  href: api/Global.TestBotController.html#Global_TestBotController_CreateNewTournament_
+  commentId: Overload:Global.TestBotController.CreateNewTournament
   isSpec: "True"
-  fullName: TestExplorer.OPEN
-  nameWithType: TestExplorer.OPEN
+  fullName: TestBotController.CreateNewTournament
+  nameWithType: TestBotController.CreateNewTournament
+- uid: Global.TestBotController.localBotIndex
+  name: localBotIndex
+  href: api/Global.TestBotController.html#Global_TestBotController_localBotIndex
+  commentId: F:Global.TestBotController.localBotIndex
+  fullName: TestBotController.localBotIndex
+  nameWithType: TestBotController.localBotIndex
+- uid: Global.TestBotController.MAX_NUMBER_OF_BOT
+  name: MAX_NUMBER_OF_BOT
+  href: api/Global.TestBotController.html#Global_TestBotController_MAX_NUMBER_OF_BOT
+  commentId: F:Global.TestBotController.MAX_NUMBER_OF_BOT
+  fullName: TestBotController.MAX_NUMBER_OF_BOT
+  nameWithType: TestBotController.MAX_NUMBER_OF_BOT
+- uid: Global.TestBotController.numberOfBots
+  name: numberOfBots
+  href: api/Global.TestBotController.html#Global_TestBotController_numberOfBots
+  commentId: F:Global.TestBotController.numberOfBots
+  fullName: TestBotController.numberOfBots
+  nameWithType: TestBotController.numberOfBots
+- uid: Global.TestBotController.searchTournament
+  name: searchTournament
+  href: api/Global.TestBotController.html#Global_TestBotController_searchTournament
+  commentId: F:Global.TestBotController.searchTournament
+  fullName: TestBotController.searchTournament
+  nameWithType: TestBotController.searchTournament
+- uid: Global.TestBotController.Start
+  name: Start()
+  href: api/Global.TestBotController.html#Global_TestBotController_Start
+  commentId: M:Global.TestBotController.Start
+  fullName: TestBotController.Start()
+  nameWithType: TestBotController.Start()
+- uid: Global.TestBotController.Start*
+  name: Start
+  href: api/Global.TestBotController.html#Global_TestBotController_Start_
+  commentId: Overload:Global.TestBotController.Start
+  isSpec: "True"
+  fullName: TestBotController.Start
+  nameWithType: TestBotController.Start
+- uid: Global.TestBotController.StartNewMatch
+  name: StartNewMatch()
+  href: api/Global.TestBotController.html#Global_TestBotController_StartNewMatch
+  commentId: M:Global.TestBotController.StartNewMatch
+  fullName: TestBotController.StartNewMatch()
+  nameWithType: TestBotController.StartNewMatch()
+- uid: Global.TestBotController.StartNewMatch*
+  name: StartNewMatch
+  href: api/Global.TestBotController.html#Global_TestBotController_StartNewMatch_
+  commentId: Overload:Global.TestBotController.StartNewMatch
+  isSpec: "True"
+  fullName: TestBotController.StartNewMatch
+  nameWithType: TestBotController.StartNewMatch
+- uid: Global.TestBotController.timeToWaitForTournamentCreation
+  name: timeToWaitForTournamentCreation
+  href: api/Global.TestBotController.html#Global_TestBotController_timeToWaitForTournamentCreation
+  commentId: F:Global.TestBotController.timeToWaitForTournamentCreation
+  fullName: TestBotController.timeToWaitForTournamentCreation
+  nameWithType: TestBotController.timeToWaitForTournamentCreation
+- uid: Global.TestBotController.tournamentCreationController
+  name: tournamentCreationController
+  href: api/Global.TestBotController.html#Global_TestBotController_tournamentCreationController
+  commentId: F:Global.TestBotController.tournamentCreationController
+  fullName: TestBotController.tournamentCreationController
+  nameWithType: TestBotController.tournamentCreationController
 - uid: Global.ThirdPersonController
   name: ThirdPersonController
   href: api/Global.ThirdPersonController.html
@@ -10394,24 +10520,6 @@ references:
   isSpec: "True"
   fullName: TournamentCamera.Show
   nameWithType: TournamentCamera.Show
-- uid: Global.TrackSwitcher
-  name: TrackSwitcher
-  href: api/Global.TrackSwitcher.html
-  commentId: T:Global.TrackSwitcher
-  fullName: TrackSwitcher
-  nameWithType: TrackSwitcher
-- uid: Global.TrackSwitcher.alternativePaths
-  name: alternativePaths
-  href: api/Global.TrackSwitcher.html#Global_TrackSwitcher_alternativePaths
-  commentId: F:Global.TrackSwitcher.alternativePaths
-  fullName: TrackSwitcher.alternativePaths
-  nameWithType: TrackSwitcher.alternativePaths
-- uid: Global.TrackSwitcher.startPath
-  name: startPath
-  href: api/Global.TrackSwitcher.html#Global_TrackSwitcher_startPath
-  commentId: F:Global.TrackSwitcher.startPath
-  fullName: TrackSwitcher.startPath
-  nameWithType: TrackSwitcher.startPath
 - uid: Global.TranslateMove
   name: TranslateMove
   href: api/Global.TranslateMove.html
@@ -10794,24 +10902,6 @@ references:
   commentId: F:Global.UnlockedCharacterStyleInfo.unlockedParts
   fullName: UnlockedCharacterStyleInfo.unlockedParts
   nameWithType: UnlockedCharacterStyleInfo.unlockedParts
-- uid: Global.UpdateTurnData
-  name: UpdateTurnData
-  href: api/Global.UpdateTurnData.html
-  commentId: T:Global.UpdateTurnData
-  fullName: UpdateTurnData
-  nameWithType: UpdateTurnData
-- uid: Global.UpdateTurnData.addToBattleCurrentActions
-  name: addToBattleCurrentActions
-  href: api/Global.UpdateTurnData.html#Global_UpdateTurnData_addToBattleCurrentActions
-  commentId: F:Global.UpdateTurnData.addToBattleCurrentActions
-  fullName: UpdateTurnData.addToBattleCurrentActions
-  nameWithType: UpdateTurnData.addToBattleCurrentActions
-- uid: Global.UpdateTurnData.indexCard
-  name: indexCard
-  href: api/Global.UpdateTurnData.html#Global_UpdateTurnData_indexCard
-  commentId: F:Global.UpdateTurnData.indexCard
-  fullName: UpdateTurnData.indexCard
-  nameWithType: UpdateTurnData.indexCard
 - uid: Global.Vector3Extensions
   name: Vector3Extensions
   href: api/Global.Vector3Extensions.html
@@ -12219,18 +12309,6 @@ references:
   isSpec: "True"
   fullName: Timba.Games.DynamicCamera.CameraPlaneController.WaitForSecondsToCallback
   nameWithType: CameraPlaneController.WaitForSecondsToCallback
-- uid: Timba.Games.Networking.Testing
-  name: Timba.Games.Networking.Testing
-  href: api/Timba.Games.Networking.Testing.html
-  commentId: N:Timba.Games.Networking.Testing
-  fullName: Timba.Games.Networking.Testing
-  nameWithType: Timba.Games.Networking.Testing
-- uid: Timba.Games.Networking.Testing.NetworkingTestUI
-  name: NetworkingTestUI
-  href: api/Timba.Games.Networking.Testing.NetworkingTestUI.html
-  commentId: T:Timba.Games.Networking.Testing.NetworkingTestUI
-  fullName: Timba.Games.Networking.Testing.NetworkingTestUI
-  nameWithType: NetworkingTestUI
 - uid: Timba.Games.Recolor
   name: Timba.Games.Recolor
   href: api/Timba.Games.Recolor.html
@@ -16336,6 +16414,19 @@ references:
   commentId: T:Timba.SacredTails.Arena.BattleUIController
   fullName: Timba.SacredTails.Arena.BattleUIController
   nameWithType: BattleUIController
+- uid: Timba.SacredTails.Arena.BattleUIController.AddPing(System.Int32)
+  name: AddPing(Int32)
+  href: api/Timba.SacredTails.Arena.BattleUIController.html#Timba_SacredTails_Arena_BattleUIController_AddPing_System_Int32_
+  commentId: M:Timba.SacredTails.Arena.BattleUIController.AddPing(System.Int32)
+  fullName: Timba.SacredTails.Arena.BattleUIController.AddPing(System.Int32)
+  nameWithType: BattleUIController.AddPing(Int32)
+- uid: Timba.SacredTails.Arena.BattleUIController.AddPing*
+  name: AddPing
+  href: api/Timba.SacredTails.Arena.BattleUIController.html#Timba_SacredTails_Arena_BattleUIController_AddPing_
+  commentId: Overload:Timba.SacredTails.Arena.BattleUIController.AddPing
+  isSpec: "True"
+  fullName: Timba.SacredTails.Arena.BattleUIController.AddPing
+  nameWithType: BattleUIController.AddPing
 - uid: Timba.SacredTails.Arena.BattleUIController.ApplyEnergyChange(System.Int32,System.Int32)
   name: ApplyEnergyChange(Int32, Int32)
   href: api/Timba.SacredTails.Arena.BattleUIController.html#Timba_SacredTails_Arena_BattleUIController_ApplyEnergyChange_System_Int32_System_Int32_
@@ -16399,6 +16490,19 @@ references:
   isSpec: "True"
   fullName: Timba.SacredTails.Arena.BattleUIController.ChangeHealthColorBar
   nameWithType: BattleUIController.ChangeHealthColorBar
+- uid: Timba.SacredTails.Arena.BattleUIController.EndMatchCheck(System.Boolean)
+  name: EndMatchCheck(Boolean)
+  href: api/Timba.SacredTails.Arena.BattleUIController.html#Timba_SacredTails_Arena_BattleUIController_EndMatchCheck_System_Boolean_
+  commentId: M:Timba.SacredTails.Arena.BattleUIController.EndMatchCheck(System.Boolean)
+  fullName: Timba.SacredTails.Arena.BattleUIController.EndMatchCheck(System.Boolean)
+  nameWithType: BattleUIController.EndMatchCheck(Boolean)
+- uid: Timba.SacredTails.Arena.BattleUIController.EndMatchCheck*
+  name: EndMatchCheck
+  href: api/Timba.SacredTails.Arena.BattleUIController.html#Timba_SacredTails_Arena_BattleUIController_EndMatchCheck_
+  commentId: Overload:Timba.SacredTails.Arena.BattleUIController.EndMatchCheck
+  isSpec: "True"
+  fullName: Timba.SacredTails.Arena.BattleUIController.EndMatchCheck
+  nameWithType: BattleUIController.EndMatchCheck
 - uid: Timba.SacredTails.Arena.BattleUIController.HideEverythingForWatchMatch(System.Boolean)
   name: HideEverythingForWatchMatch(Boolean)
   href: api/Timba.SacredTails.Arena.BattleUIController.html#Timba_SacredTails_Arena_BattleUIController_HideEverythingForWatchMatch_System_Boolean_
@@ -16476,12 +16580,12 @@ references:
   commentId: F:Timba.SacredTails.Arena.BattleUIController.titleEndMatchPanel
   fullName: Timba.SacredTails.Arena.BattleUIController.titleEndMatchPanel
   nameWithType: BattleUIController.titleEndMatchPanel
-- uid: Timba.SacredTails.Arena.BattleUIController.ToggleWaitingPrompt(System.Boolean)
-  name: ToggleWaitingPrompt(Boolean)
-  href: api/Timba.SacredTails.Arena.BattleUIController.html#Timba_SacredTails_Arena_BattleUIController_ToggleWaitingPrompt_System_Boolean_
-  commentId: M:Timba.SacredTails.Arena.BattleUIController.ToggleWaitingPrompt(System.Boolean)
-  fullName: Timba.SacredTails.Arena.BattleUIController.ToggleWaitingPrompt(System.Boolean)
-  nameWithType: BattleUIController.ToggleWaitingPrompt(Boolean)
+- uid: Timba.SacredTails.Arena.BattleUIController.ToggleWaitingPrompt(System.Boolean,System.Boolean)
+  name: ToggleWaitingPrompt(Boolean, Boolean)
+  href: api/Timba.SacredTails.Arena.BattleUIController.html#Timba_SacredTails_Arena_BattleUIController_ToggleWaitingPrompt_System_Boolean_System_Boolean_
+  commentId: M:Timba.SacredTails.Arena.BattleUIController.ToggleWaitingPrompt(System.Boolean,System.Boolean)
+  fullName: Timba.SacredTails.Arena.BattleUIController.ToggleWaitingPrompt(System.Boolean, System.Boolean)
+  nameWithType: BattleUIController.ToggleWaitingPrompt(Boolean, Boolean)
 - uid: Timba.SacredTails.Arena.BattleUIController.ToggleWaitingPrompt*
   name: ToggleWaitingPrompt
   href: api/Timba.SacredTails.Arena.BattleUIController.html#Timba_SacredTails_Arena_BattleUIController_ToggleWaitingPrompt_
@@ -16495,6 +16599,19 @@ references:
   commentId: F:Timba.SacredTails.Arena.BattleUIController.uIDisolver
   fullName: Timba.SacredTails.Arena.BattleUIController.uIDisolver
   nameWithType: BattleUIController.uIDisolver
+- uid: Timba.SacredTails.Arena.BattleUIController.UpdatePing(System.Int32)
+  name: UpdatePing(Int32)
+  href: api/Timba.SacredTails.Arena.BattleUIController.html#Timba_SacredTails_Arena_BattleUIController_UpdatePing_System_Int32_
+  commentId: M:Timba.SacredTails.Arena.BattleUIController.UpdatePing(System.Int32)
+  fullName: Timba.SacredTails.Arena.BattleUIController.UpdatePing(System.Int32)
+  nameWithType: BattleUIController.UpdatePing(Int32)
+- uid: Timba.SacredTails.Arena.BattleUIController.UpdatePing*
+  name: UpdatePing
+  href: api/Timba.SacredTails.Arena.BattleUIController.html#Timba_SacredTails_Arena_BattleUIController_UpdatePing_
+  commentId: Overload:Timba.SacredTails.Arena.BattleUIController.UpdatePing
+  isSpec: "True"
+  fullName: Timba.SacredTails.Arena.BattleUIController.UpdatePing
+  nameWithType: BattleUIController.UpdatePing
 - uid: Timba.SacredTails.Arena.BattleUIController.UpdateShinseiPicture(System.Int32,Shinsei)
   name: UpdateShinseiPicture(Int32, Shinsei)
   href: api/Timba.SacredTails.Arena.BattleUIController.html#Timba_SacredTails_Arena_BattleUIController_UpdateShinseiPicture_System_Int32_Shinsei_
@@ -16508,12 +16625,12 @@ references:
   isSpec: "True"
   fullName: Timba.SacredTails.Arena.BattleUIController.UpdateShinseiPicture
   nameWithType: BattleUIController.UpdateShinseiPicture
-- uid: Timba.SacredTails.Arena.BattleUIController.UpdateTimer(System.Single,System.String)
-  name: UpdateTimer(Single, String)
-  href: api/Timba.SacredTails.Arena.BattleUIController.html#Timba_SacredTails_Arena_BattleUIController_UpdateTimer_System_Single_System_String_
-  commentId: M:Timba.SacredTails.Arena.BattleUIController.UpdateTimer(System.Single,System.String)
-  fullName: Timba.SacredTails.Arena.BattleUIController.UpdateTimer(System.Single, System.String)
-  nameWithType: BattleUIController.UpdateTimer(Single, String)
+- uid: Timba.SacredTails.Arena.BattleUIController.UpdateTimer(System.Single,System.String,System.Boolean)
+  name: UpdateTimer(Single, String, Boolean)
+  href: api/Timba.SacredTails.Arena.BattleUIController.html#Timba_SacredTails_Arena_BattleUIController_UpdateTimer_System_Single_System_String_System_Boolean_
+  commentId: M:Timba.SacredTails.Arena.BattleUIController.UpdateTimer(System.Single,System.String,System.Boolean)
+  fullName: Timba.SacredTails.Arena.BattleUIController.UpdateTimer(System.Single, System.String, System.Boolean)
+  nameWithType: BattleUIController.UpdateTimer(Single, String, Boolean)
 - uid: Timba.SacredTails.Arena.BattleUIController.UpdateTimer*
   name: UpdateTimer
   href: api/Timba.SacredTails.Arena.BattleUIController.html#Timba_SacredTails_Arena_BattleUIController_UpdateTimer_
@@ -17037,12 +17154,18 @@ references:
   isSpec: "True"
   fullName: Timba.SacredTails.Arena.GameSceneManager.GetClosestBattleSpawn
   nameWithType: GameSceneManager.GetClosestBattleSpawn
-- uid: Timba.SacredTails.Arena.GameSceneManager.SendBattle(GetMatchResult,System.String,System.Int32,System.Boolean)
-  name: SendBattle(GetMatchResult, String, Int32, Boolean)
-  href: api/Timba.SacredTails.Arena.GameSceneManager.html#Timba_SacredTails_Arena_GameSceneManager_SendBattle_GetMatchResult_System_String_System_Int32_System_Boolean_
-  commentId: M:Timba.SacredTails.Arena.GameSceneManager.SendBattle(GetMatchResult,System.String,System.Int32,System.Boolean)
-  fullName: Timba.SacredTails.Arena.GameSceneManager.SendBattle(GetMatchResult, System.String, System.Int32, System.Boolean)
-  nameWithType: GameSceneManager.SendBattle(GetMatchResult, String, Int32, Boolean)
+- uid: Timba.SacredTails.Arena.GameSceneManager.onEndBattle
+  name: onEndBattle
+  href: api/Timba.SacredTails.Arena.GameSceneManager.html#Timba_SacredTails_Arena_GameSceneManager_onEndBattle
+  commentId: F:Timba.SacredTails.Arena.GameSceneManager.onEndBattle
+  fullName: Timba.SacredTails.Arena.GameSceneManager.onEndBattle
+  nameWithType: GameSceneManager.onEndBattle
+- uid: Timba.SacredTails.Arena.GameSceneManager.SendBattle(GetMatchResult,System.String,System.Int32,System.Boolean,System.Boolean)
+  name: SendBattle(GetMatchResult, String, Int32, Boolean, Boolean)
+  href: api/Timba.SacredTails.Arena.GameSceneManager.html#Timba_SacredTails_Arena_GameSceneManager_SendBattle_GetMatchResult_System_String_System_Int32_System_Boolean_System_Boolean_
+  commentId: M:Timba.SacredTails.Arena.GameSceneManager.SendBattle(GetMatchResult,System.String,System.Int32,System.Boolean,System.Boolean)
+  fullName: Timba.SacredTails.Arena.GameSceneManager.SendBattle(GetMatchResult, System.String, System.Int32, System.Boolean, System.Boolean)
+  nameWithType: GameSceneManager.SendBattle(GetMatchResult, String, Int32, Boolean, Boolean)
 - uid: Timba.SacredTails.Arena.GameSceneManager.SendBattle*
   name: SendBattle
   href: api/Timba.SacredTails.Arena.GameSceneManager.html#Timba_SacredTails_Arena_GameSceneManager_SendBattle_
@@ -17767,12 +17890,18 @@ references:
   commentId: T:Timba.SacredTails.Arena.TurnsController
   fullName: Timba.SacredTails.Arena.TurnsController
   nameWithType: TurnsController
-- uid: Timba.SacredTails.Arena.TurnsController.alteredStates
-  name: alteredStates
-  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_alteredStates
-  commentId: F:Timba.SacredTails.Arena.TurnsController.alteredStates
-  fullName: Timba.SacredTails.Arena.TurnsController.alteredStates
-  nameWithType: TurnsController.alteredStates
+- uid: Timba.SacredTails.Arena.TurnsController.alreadyCheckWinnerOnSend
+  name: alreadyCheckWinnerOnSend
+  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_alreadyCheckWinnerOnSend
+  commentId: F:Timba.SacredTails.Arena.TurnsController.alreadyCheckWinnerOnSend
+  fullName: Timba.SacredTails.Arena.TurnsController.alreadyCheckWinnerOnSend
+  nameWithType: TurnsController.alreadyCheckWinnerOnSend
+- uid: Timba.SacredTails.Arena.TurnsController.alteredStateController
+  name: alteredStateController
+  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_alteredStateController
+  commentId: F:Timba.SacredTails.Arena.TurnsController.alteredStateController
+  fullName: Timba.SacredTails.Arena.TurnsController.alteredStateController
+  nameWithType: TurnsController.alteredStateController
 - uid: Timba.SacredTails.Arena.TurnsController.battleEnemyCurrentActions
   name: battleEnemyCurrentActions
   href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_battleEnemyCurrentActions
@@ -17848,25 +17977,28 @@ references:
   commentId: F:Timba.SacredTails.Arena.TurnsController.cardToTest
   fullName: Timba.SacredTails.Arena.TurnsController.cardToTest
   nameWithType: TurnsController.cardToTest
-- uid: Timba.SacredTails.Arena.TurnsController.CheckAlteredStates(System.Boolean,ActionCardDto)
-  name: CheckAlteredStates(Boolean, ActionCardDto)
-  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_CheckAlteredStates_System_Boolean_ActionCardDto_
-  commentId: M:Timba.SacredTails.Arena.TurnsController.CheckAlteredStates(System.Boolean,ActionCardDto)
-  fullName: Timba.SacredTails.Arena.TurnsController.CheckAlteredStates(System.Boolean, ActionCardDto)
-  nameWithType: TurnsController.CheckAlteredStates(Boolean, ActionCardDto)
-- uid: Timba.SacredTails.Arena.TurnsController.CheckAlteredStates*
-  name: CheckAlteredStates
-  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_CheckAlteredStates_
-  commentId: Overload:Timba.SacredTails.Arena.TurnsController.CheckAlteredStates
+- uid: Timba.SacredTails.Arena.TurnsController.ChangeShinseiFromServer(System.Boolean,System.Object,Timba.SacredTails.Arena.UserInfo@)
+  name: ChangeShinseiFromServer(Boolean, Object, ref UserInfo)
+  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_ChangeShinseiFromServer_System_Boolean_System_Object_Timba_SacredTails_Arena_UserInfo__
+  commentId: M:Timba.SacredTails.Arena.TurnsController.ChangeShinseiFromServer(System.Boolean,System.Object,Timba.SacredTails.Arena.UserInfo@)
+  name.vb: ChangeShinseiFromServer(Boolean, Object, ByRef UserInfo)
+  fullName: Timba.SacredTails.Arena.TurnsController.ChangeShinseiFromServer(System.Boolean, System.Object, ref Timba.SacredTails.Arena.UserInfo)
+  fullName.vb: Timba.SacredTails.Arena.TurnsController.ChangeShinseiFromServer(System.Boolean, System.Object, ByRef Timba.SacredTails.Arena.UserInfo)
+  nameWithType: TurnsController.ChangeShinseiFromServer(Boolean, Object, ref UserInfo)
+  nameWithType.vb: TurnsController.ChangeShinseiFromServer(Boolean, Object, ByRef UserInfo)
+- uid: Timba.SacredTails.Arena.TurnsController.ChangeShinseiFromServer*
+  name: ChangeShinseiFromServer
+  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_ChangeShinseiFromServer_
+  commentId: Overload:Timba.SacredTails.Arena.TurnsController.ChangeShinseiFromServer
   isSpec: "True"
-  fullName: Timba.SacredTails.Arena.TurnsController.CheckAlteredStates
-  nameWithType: TurnsController.CheckAlteredStates
-- uid: Timba.SacredTails.Arena.TurnsController.CheckDeadTime(System.Int32,System.Int32)
-  name: CheckDeadTime(Int32, Int32)
-  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_CheckDeadTime_System_Int32_System_Int32_
-  commentId: M:Timba.SacredTails.Arena.TurnsController.CheckDeadTime(System.Int32,System.Int32)
-  fullName: Timba.SacredTails.Arena.TurnsController.CheckDeadTime(System.Int32, System.Int32)
-  nameWithType: TurnsController.CheckDeadTime(Int32, Int32)
+  fullName: Timba.SacredTails.Arena.TurnsController.ChangeShinseiFromServer
+  nameWithType: TurnsController.ChangeShinseiFromServer
+- uid: Timba.SacredTails.Arena.TurnsController.CheckDeadTime(System.Int32)
+  name: CheckDeadTime(Int32)
+  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_CheckDeadTime_System_Int32_
+  commentId: M:Timba.SacredTails.Arena.TurnsController.CheckDeadTime(System.Int32)
+  fullName: Timba.SacredTails.Arena.TurnsController.CheckDeadTime(System.Int32)
+  nameWithType: TurnsController.CheckDeadTime(Int32)
 - uid: Timba.SacredTails.Arena.TurnsController.CheckDeadTime*
   name: CheckDeadTime
   href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_CheckDeadTime_
@@ -17948,6 +18080,19 @@ references:
   commentId: F:Timba.SacredTails.Arena.TurnsController.deathTime
   fullName: Timba.SacredTails.Arena.TurnsController.deathTime
   nameWithType: TurnsController.deathTime
+- uid: Timba.SacredTails.Arena.TurnsController.DoDeathVerification(System.Boolean)
+  name: DoDeathVerification(Boolean)
+  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_DoDeathVerification_System_Boolean_
+  commentId: M:Timba.SacredTails.Arena.TurnsController.DoDeathVerification(System.Boolean)
+  fullName: Timba.SacredTails.Arena.TurnsController.DoDeathVerification(System.Boolean)
+  nameWithType: TurnsController.DoDeathVerification(Boolean)
+- uid: Timba.SacredTails.Arena.TurnsController.DoDeathVerification*
+  name: DoDeathVerification
+  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_DoDeathVerification_
+  commentId: Overload:Timba.SacredTails.Arena.TurnsController.DoDeathVerification
+  isSpec: "True"
+  fullName: Timba.SacredTails.Arena.TurnsController.DoDeathVerification
+  nameWithType: TurnsController.DoDeathVerification
 - uid: Timba.SacredTails.Arena.TurnsController.ExecuteServerAction(System.Collections.Generic.List{ActionCardDto},System.Boolean)
   name: ExecuteServerAction(List<ActionCardDto>, Boolean)
   href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_ExecuteServerAction_System_Collections_Generic_List_ActionCardDto__System_Boolean_
@@ -18003,19 +18148,6 @@ references:
   isSpec: "True"
   fullName: Timba.SacredTails.Arena.TurnsController.Init
   nameWithType: TurnsController.Init
-- uid: Timba.SacredTails.Arena.TurnsController.InitCountDown
-  name: InitCountDown()
-  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_InitCountDown
-  commentId: M:Timba.SacredTails.Arena.TurnsController.InitCountDown
-  fullName: Timba.SacredTails.Arena.TurnsController.InitCountDown()
-  nameWithType: TurnsController.InitCountDown()
-- uid: Timba.SacredTails.Arena.TurnsController.InitCountDown*
-  name: InitCountDown
-  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_InitCountDown_
-  commentId: Overload:Timba.SacredTails.Arena.TurnsController.InitCountDown
-  isSpec: "True"
-  fullName: Timba.SacredTails.Arena.TurnsController.InitCountDown
-  nameWithType: TurnsController.InitCountDown
 - uid: Timba.SacredTails.Arena.TurnsController.InitNewTurn
   name: InitNewTurn()
   href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_InitNewTurn
@@ -18085,6 +18217,28 @@ references:
   isSpec: "True"
   fullName: Timba.SacredTails.Arena.TurnsController.ReduceForbiddenActionsDuration
   nameWithType: TurnsController.ReduceForbiddenActionsDuration
+- uid: Timba.SacredTails.Arena.TurnsController.ReplaceUserLocalDataWithServerData(System.Boolean,System.Object,Timba.SacredTails.Arena.UserInfo@)
+  name: ReplaceUserLocalDataWithServerData(Boolean, Object, ref UserInfo)
+  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_ReplaceUserLocalDataWithServerData_System_Boolean_System_Object_Timba_SacredTails_Arena_UserInfo__
+  commentId: M:Timba.SacredTails.Arena.TurnsController.ReplaceUserLocalDataWithServerData(System.Boolean,System.Object,Timba.SacredTails.Arena.UserInfo@)
+  name.vb: ReplaceUserLocalDataWithServerData(Boolean, Object, ByRef UserInfo)
+  fullName: Timba.SacredTails.Arena.TurnsController.ReplaceUserLocalDataWithServerData(System.Boolean, System.Object, ref Timba.SacredTails.Arena.UserInfo)
+  fullName.vb: Timba.SacredTails.Arena.TurnsController.ReplaceUserLocalDataWithServerData(System.Boolean, System.Object, ByRef Timba.SacredTails.Arena.UserInfo)
+  nameWithType: TurnsController.ReplaceUserLocalDataWithServerData(Boolean, Object, ref UserInfo)
+  nameWithType.vb: TurnsController.ReplaceUserLocalDataWithServerData(Boolean, Object, ByRef UserInfo)
+- uid: Timba.SacredTails.Arena.TurnsController.ReplaceUserLocalDataWithServerData*
+  name: ReplaceUserLocalDataWithServerData
+  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_ReplaceUserLocalDataWithServerData_
+  commentId: Overload:Timba.SacredTails.Arena.TurnsController.ReplaceUserLocalDataWithServerData
+  isSpec: "True"
+  fullName: Timba.SacredTails.Arena.TurnsController.ReplaceUserLocalDataWithServerData
+  nameWithType: TurnsController.ReplaceUserLocalDataWithServerData
+- uid: Timba.SacredTails.Arena.TurnsController.secondsToSendTurnAfterTurnInit
+  name: secondsToSendTurnAfterTurnInit
+  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_secondsToSendTurnAfterTurnInit
+  commentId: F:Timba.SacredTails.Arena.TurnsController.secondsToSendTurnAfterTurnInit
+  fullName: Timba.SacredTails.Arena.TurnsController.secondsToSendTurnAfterTurnInit
+  nameWithType: TurnsController.secondsToSendTurnAfterTurnInit
 - uid: Timba.SacredTails.Arena.TurnsController.SendMyTurn(System.Int32)
   name: SendMyTurn(Int32)
   href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_SendMyTurn_System_Int32_
@@ -18098,12 +18252,12 @@ references:
   isSpec: "True"
   fullName: Timba.SacredTails.Arena.TurnsController.SendMyTurn
   nameWithType: TurnsController.SendMyTurn
-- uid: Timba.SacredTails.Arena.TurnsController.SendTurnRequest(System.Int32,System.Int32)
-  name: SendTurnRequest(Int32, Int32)
-  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_SendTurnRequest_System_Int32_System_Int32_
-  commentId: M:Timba.SacredTails.Arena.TurnsController.SendTurnRequest(System.Int32,System.Int32)
-  fullName: Timba.SacredTails.Arena.TurnsController.SendTurnRequest(System.Int32, System.Int32)
-  nameWithType: TurnsController.SendTurnRequest(Int32, Int32)
+- uid: Timba.SacredTails.Arena.TurnsController.SendTurnRequest(System.Int32,System.Int32,Action,Action)
+  name: SendTurnRequest(Int32, Int32, Action, Action)
+  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_SendTurnRequest_System_Int32_System_Int32_Action_Action_
+  commentId: M:Timba.SacredTails.Arena.TurnsController.SendTurnRequest(System.Int32,System.Int32,Action,Action)
+  fullName: Timba.SacredTails.Arena.TurnsController.SendTurnRequest(System.Int32, System.Int32, Action, Action)
+  nameWithType: TurnsController.SendTurnRequest(Int32, Int32, Action, Action)
 - uid: Timba.SacredTails.Arena.TurnsController.SendTurnRequest*
   name: SendTurnRequest
   href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_SendTurnRequest_
@@ -18192,6 +18346,19 @@ references:
   isSpec: "True"
   fullName: Timba.SacredTails.Arena.TurnsController.WaitForSeconds
   nameWithType: TurnsController.WaitForSeconds
+- uid: Timba.SacredTails.Arena.TurnsController.WaitForSecondsAndDoActionEachSecond(System.Int32,System.Int32,Action,Action)
+  name: WaitForSecondsAndDoActionEachSecond(Int32, Int32, Action, Action)
+  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_WaitForSecondsAndDoActionEachSecond_System_Int32_System_Int32_Action_Action_
+  commentId: M:Timba.SacredTails.Arena.TurnsController.WaitForSecondsAndDoActionEachSecond(System.Int32,System.Int32,Action,Action)
+  fullName: Timba.SacredTails.Arena.TurnsController.WaitForSecondsAndDoActionEachSecond(System.Int32, System.Int32, Action, Action)
+  nameWithType: TurnsController.WaitForSecondsAndDoActionEachSecond(Int32, Int32, Action, Action)
+- uid: Timba.SacredTails.Arena.TurnsController.WaitForSecondsAndDoActionEachSecond*
+  name: WaitForSecondsAndDoActionEachSecond
+  href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_WaitForSecondsAndDoActionEachSecond_
+  commentId: Overload:Timba.SacredTails.Arena.TurnsController.WaitForSecondsAndDoActionEachSecond
+  isSpec: "True"
+  fullName: Timba.SacredTails.Arena.TurnsController.WaitForSecondsAndDoActionEachSecond
+  nameWithType: TurnsController.WaitForSecondsAndDoActionEachSecond
 - uid: Timba.SacredTails.Arena.TurnsController.WaitOponentTurn
   name: WaitOponentTurn()
   href: api/Timba.SacredTails.Arena.TurnsController.html#Timba_SacredTails_Arena_TurnsController_WaitOponentTurn
@@ -18271,6 +18438,12 @@ references:
   commentId: F:Timba.SacredTails.Arena.VfxInfo.isVfxReversed
   fullName: Timba.SacredTails.Arena.VfxInfo.isVfxReversed
   nameWithType: VfxInfo.isVfxReversed
+- uid: Timba.SacredTails.Arena.VfxInfo.vfxBeforeHit
+  name: vfxBeforeHit
+  href: api/Timba.SacredTails.Arena.VfxInfo.html#Timba_SacredTails_Arena_VfxInfo_vfxBeforeHit
+  commentId: F:Timba.SacredTails.Arena.VfxInfo.vfxBeforeHit
+  fullName: Timba.SacredTails.Arena.VfxInfo.vfxBeforeHit
+  nameWithType: VfxInfo.vfxBeforeHit
 - uid: Timba.SacredTails.Arena.VfxInfo.vfxDuration
   name: vfxDuration
   href: api/Timba.SacredTails.Arena.VfxInfo.html#Timba_SacredTails_Arena_VfxInfo_vfxDuration
@@ -19899,6 +20072,19 @@ references:
   isSpec: "True"
   fullName: Timba.SacredTails.Database.AuthController.SetIP
   nameWithType: AuthController.SetIP
+- uid: Timba.SacredTails.Database.AuthController.SetLoginInfo(System.String,System.String,System.Int32)
+  name: SetLoginInfo(String, String, Int32)
+  href: api/Timba.SacredTails.Database.AuthController.html#Timba_SacredTails_Database_AuthController_SetLoginInfo_System_String_System_String_System_Int32_
+  commentId: M:Timba.SacredTails.Database.AuthController.SetLoginInfo(System.String,System.String,System.Int32)
+  fullName: Timba.SacredTails.Database.AuthController.SetLoginInfo(System.String, System.String, System.Int32)
+  nameWithType: AuthController.SetLoginInfo(String, String, Int32)
+- uid: Timba.SacredTails.Database.AuthController.SetLoginInfo*
+  name: SetLoginInfo
+  href: api/Timba.SacredTails.Database.AuthController.html#Timba_SacredTails_Database_AuthController_SetLoginInfo_
+  commentId: Overload:Timba.SacredTails.Database.AuthController.SetLoginInfo
+  isSpec: "True"
+  fullName: Timba.SacredTails.Database.AuthController.SetLoginInfo
+  nameWithType: AuthController.SetLoginInfo
 - uid: Timba.SacredTails.Database.AuthController.SignUp
   name: SignUp()
   href: api/Timba.SacredTails.Database.AuthController.html#Timba_SacredTails_Database_AuthController_SignUp
@@ -21385,6 +21571,19 @@ references:
   isSpec: "True"
   fullName: Timba.SacredTails.TournamentBehavior.TournamentCreationController.CreateTournament
   nameWithType: TournamentCreationController.CreateTournament
+- uid: Timba.SacredTails.TournamentBehavior.TournamentCreationController.FillBotData
+  name: FillBotData()
+  href: api/Timba.SacredTails.TournamentBehavior.TournamentCreationController.html#Timba_SacredTails_TournamentBehavior_TournamentCreationController_FillBotData
+  commentId: M:Timba.SacredTails.TournamentBehavior.TournamentCreationController.FillBotData
+  fullName: Timba.SacredTails.TournamentBehavior.TournamentCreationController.FillBotData()
+  nameWithType: TournamentCreationController.FillBotData()
+- uid: Timba.SacredTails.TournamentBehavior.TournamentCreationController.FillBotData*
+  name: FillBotData
+  href: api/Timba.SacredTails.TournamentBehavior.TournamentCreationController.html#Timba_SacredTails_TournamentBehavior_TournamentCreationController_FillBotData_
+  commentId: Overload:Timba.SacredTails.TournamentBehavior.TournamentCreationController.FillBotData
+  isSpec: "True"
+  fullName: Timba.SacredTails.TournamentBehavior.TournamentCreationController.FillBotData
+  nameWithType: TournamentCreationController.FillBotData
 - uid: Timba.SacredTails.TournamentBehavior.TournamentCreationController.GenerateTournamentId
   name: GenerateTournamentId()
   href: api/Timba.SacredTails.TournamentBehavior.TournamentCreationController.html#Timba_SacredTails_TournamentBehavior_TournamentCreationController_GenerateTournamentId
@@ -21416,6 +21615,12 @@ references:
   commentId: F:Timba.SacredTails.TournamentBehavior.TournamentCreationController.onLoginSuccess
   fullName: Timba.SacredTails.TournamentBehavior.TournamentCreationController.onLoginSuccess
   nameWithType: TournamentCreationController.onLoginSuccess
+- uid: Timba.SacredTails.TournamentBehavior.TournamentCreationController.onTournamentCreation
+  name: onTournamentCreation
+  href: api/Timba.SacredTails.TournamentBehavior.TournamentCreationController.html#Timba_SacredTails_TournamentBehavior_TournamentCreationController_onTournamentCreation
+  commentId: F:Timba.SacredTails.TournamentBehavior.TournamentCreationController.onTournamentCreation
+  fullName: Timba.SacredTails.TournamentBehavior.TournamentCreationController.onTournamentCreation
+  nameWithType: TournamentCreationController.onTournamentCreation
 - uid: Timba.SacredTails.TournamentBehavior.TournamentCreationController.tournamentName
   name: tournamentName
   href: api/Timba.SacredTails.TournamentBehavior.TournamentCreationController.html#Timba_SacredTails_TournamentBehavior_TournamentCreationController_tournamentName
@@ -21487,6 +21692,12 @@ references:
   isSpec: "True"
   fullName: Timba.SacredTails.TournamentBehavior.TournamentReadyController.CreateMatch
   nameWithType: TournamentReadyController.CreateMatch
+- uid: Timba.SacredTails.TournamentBehavior.TournamentReadyController.currentCountdownDate
+  name: currentCountdownDate
+  href: api/Timba.SacredTails.TournamentBehavior.TournamentReadyController.html#Timba_SacredTails_TournamentBehavior_TournamentReadyController_currentCountdownDate
+  commentId: F:Timba.SacredTails.TournamentBehavior.TournamentReadyController.currentCountdownDate
+  fullName: Timba.SacredTails.TournamentBehavior.TournamentReadyController.currentCountdownDate
+  nameWithType: TournamentReadyController.currentCountdownDate
 - uid: Timba.SacredTails.TournamentBehavior.TournamentReadyController.currentStageTime
   name: currentStageTime
   href: api/Timba.SacredTails.TournamentBehavior.TournamentReadyController.html#Timba_SacredTails_TournamentBehavior_TournamentReadyController_currentStageTime
@@ -22742,6 +22953,19 @@ references:
   isSpec: "True"
   fullName: Timba.SacredTails.VFXController.VFXInstancer.GetVfx
   nameWithType: VFXInstancer.GetVfx
+- uid: Timba.SacredTails.VFXController.VFXInstancer.GetVfxHitDelay(System.Int32)
+  name: GetVfxHitDelay(Int32)
+  href: api/Timba.SacredTails.VFXController.VFXInstancer.html#Timba_SacredTails_VFXController_VFXInstancer_GetVfxHitDelay_System_Int32_
+  commentId: M:Timba.SacredTails.VFXController.VFXInstancer.GetVfxHitDelay(System.Int32)
+  fullName: Timba.SacredTails.VFXController.VFXInstancer.GetVfxHitDelay(System.Int32)
+  nameWithType: VFXInstancer.GetVfxHitDelay(Int32)
+- uid: Timba.SacredTails.VFXController.VFXInstancer.GetVfxHitDelay*
+  name: GetVfxHitDelay
+  href: api/Timba.SacredTails.VFXController.VFXInstancer.html#Timba_SacredTails_VFXController_VFXInstancer_GetVfxHitDelay_
+  commentId: Overload:Timba.SacredTails.VFXController.VFXInstancer.GetVfxHitDelay
+  isSpec: "True"
+  fullName: Timba.SacredTails.VFXController.VFXInstancer.GetVfxHitDelay
+  nameWithType: VFXInstancer.GetVfxHitDelay
 - uid: Timba.SacredTails.VFXController.VFXInstancer.GetVfxIsReversed(System.Int32)
   name: GetVfxIsReversed(Int32)
   href: api/Timba.SacredTails.VFXController.VFXInstancer.html#Timba_SacredTails_VFXController_VFXInstancer_GetVfxIsReversed_System_Int32_

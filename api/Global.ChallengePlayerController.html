@@ -100,6 +100,54 @@
   </h3>
   
   
+  <h4 id="Global_ChallengePlayerController_bothConfirmed" data-uid="Global.ChallengePlayerController.bothConfirmed">bothConfirmed</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool bothConfirmed</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Global_ChallengePlayerController_checkCount" data-uid="Global.ChallengePlayerController.checkCount">checkCount</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int checkCount</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <h4 id="Global_ChallengePlayerController_isRecivingChallenge" data-uid="Global.ChallengePlayerController.isRecivingChallenge">isRecivingChallenge</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
@@ -118,6 +166,30 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Global_ChallengePlayerController_onChallengeAgain" data-uid="Global.ChallengePlayerController.onChallengeAgain">onChallengeAgain</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Action onChallengeAgain</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Action</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -164,12 +236,12 @@
   
   
   <a id="Global_ChallengePlayerController_ConfirmMatch_" data-uid="Global.ChallengePlayerController.ConfirmMatch*"></a>
-  <h4 id="Global_ChallengePlayerController_ConfirmMatch_System_String_System_String_System_String_" data-uid="Global.ChallengePlayerController.ConfirmMatch(System.String,System.String,System.String)">ConfirmMatch(String, String, String)</h4>
+  <h4 id="Global_ChallengePlayerController_ConfirmMatch_System_String_" data-uid="Global.ChallengePlayerController.ConfirmMatch(System.String)">ConfirmMatch(String)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ConfirmMatch(string message, string otherPlayerPlayfabId, string otherPlayerDisplayName)</code></pre>
+    <pre><code class="lang-csharp hljs">public void ConfirmMatch(string message)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -186,14 +258,96 @@
         <td><span class="parametername">message</span></td>
         <td></td>
       </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_ChallengePlayerController_GenerateRandomMatchId_" data-uid="Global.ChallengePlayerController.GenerateRandomMatchId*"></a>
+  <h4 id="Global_ChallengePlayerController_GenerateRandomMatchId" data-uid="Global.ChallengePlayerController.GenerateRandomMatchId">GenerateRandomMatchId()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GenerateRandomMatchId()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">otherPlayerPlayfabId</span></td>
         <td></td>
       </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_ChallengePlayerController_GetMatchId_" data-uid="Global.ChallengePlayerController.GetMatchId*"></a>
+  <h4 id="Global_ChallengePlayerController_GetMatchId_System_String_" data-uid="Global.ChallengePlayerController.GetMatchId(System.String)">GetMatchId(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetMatchId(string randomNumber = &quot;&quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><span class="parametername">otherPlayerDisplayName</span></td>
+        <td><span class="parametername">randomNumber</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_ChallengePlayerController_GetMatchResultPayload_" data-uid="Global.ChallengePlayerController.GetMatchResultPayload*"></a>
+  <h4 id="Global_ChallengePlayerController_GetMatchResultPayload" data-uid="Global.ChallengePlayerController.GetMatchResultPayload">GetMatchResultPayload()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GetMatchResult GetMatchResultPayload()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GetMatchResult</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -309,6 +463,65 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void ResetAlreadyHasChallenge()</code></pre>
   </div>
+  
+  
+  <a id="Global_ChallengePlayerController_SetMatchIdAndChallengeInPlayerData_" data-uid="Global.ChallengePlayerController.SetMatchIdAndChallengeInPlayerData*"></a>
+  <h4 id="Global_ChallengePlayerController_SetMatchIdAndChallengeInPlayerData_System_String_" data-uid="Global.ChallengePlayerController.SetMatchIdAndChallengeInPlayerData(System.String)">SetMatchIdAndChallengeInPlayerData(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetMatchIdAndChallengeInPlayerData(string popupMessage)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">popupMessage</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Global_ChallengePlayerController_SetOtherPlayerInfo_" data-uid="Global.ChallengePlayerController.SetOtherPlayerInfo*"></a>
+  <h4 id="Global_ChallengePlayerController_SetOtherPlayerInfo_System_String_System_String_" data-uid="Global.ChallengePlayerController.SetOtherPlayerInfo(System.String,System.String)">SetOtherPlayerInfo(String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetOtherPlayerInfo(string otherPlayerId, string otherPlayerName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">otherPlayerId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">otherPlayerName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   
   
   <a id="Global_ChallengePlayerController_TimingAcceptChallenge_" data-uid="Global.ChallengePlayerController.TimingAcceptChallenge*"></a>

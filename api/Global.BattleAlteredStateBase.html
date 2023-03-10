@@ -126,6 +126,30 @@
       </tr>
     </tbody>
   </table>
+  
+  
+  <h4 id="Global_BattleAlteredStateBase_muzzleAnimation" data-uid="Global.BattleAlteredStateBase.muzzleAnimation">muzzleAnimation</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AttacksAnimation muzzleAnimation</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">AttacksAnimation</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   
@@ -200,12 +224,12 @@
   
   
   <a id="Global_BattleAlteredStateBase_InitAlteredState_" data-uid="Global.BattleAlteredStateBase.InitAlteredState*"></a>
-  <h4 id="Global_BattleAlteredStateBase_InitAlteredState_System_Boolean_UserInfo_BattleGameMode_BattleUIController_" data-uid="Global.BattleAlteredStateBase.InitAlteredState(System.Boolean,UserInfo,BattleGameMode,BattleUIController)">InitAlteredState(Boolean, UserInfo, BattleGameMode, BattleUIController)</h4>
+  <h4 id="Global_BattleAlteredStateBase_InitAlteredState_System_Boolean_UserInfo_BattleGameMode_BattleUIController_System_Boolean_" data-uid="Global.BattleAlteredStateBase.InitAlteredState(System.Boolean,UserInfo,BattleGameMode,BattleUIController,System.Boolean)">InitAlteredState(Boolean, UserInfo, BattleGameMode, BattleUIController, Boolean)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void InitAlteredState(bool isLocal, UserInfo _targetInfo, BattleGameMode _battleGameMode, BattleUIController _battleUIController)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void InitAlteredState(bool isLocal, UserInfo _targetInfo, BattleGameMode _battleGameMode, BattleUIController _battleUIController, bool justReplace = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -235,6 +259,11 @@
       <tr>
         <td><span class="xref">BattleUIController</span></td>
         <td><span class="parametername">_battleUIController</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">justReplace</span></td>
         <td></td>
       </tr>
     </tbody>

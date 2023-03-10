@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Chat system | Example Unity documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Chat system | Example Unity documentation ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../LogoSacred.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="chat-system">Chat system</h1>
+
+<p>The chats system flow has three parts: sending messages, recieving messages and the bad word filter.</p>
+<ul>
+<li><a href="#chat-system">Chat system</a><ul>
+<li><a href="#recieving-message">Recieving message</a></li>
+<li><a href="#sending-a-message">Sending a message</a></li>
+<li><a href="#bad-word-filter">Bad word filter</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="recieving-message">Recieving message</h2>
+<p>Recieving message flow starts when the lobby gets the messages from the player, in the <a href="/SacredTailsDocumentation/api/Timba.Games.SacredTails.LobbyNetworking.LobbyNetworkingController.html#Timba_Games_SacredTails_LobbyNetworking_LobbyNetworkingController_ManageLobbyPlayers_System_Collections_Generic_Dictionary_System_String_LobbyPlayerBasePayload__">ManageLobby()</a> method inside the <a href="/SacredTailsDocumentation/api/Timba.Games.SacredTails.LobbyNetworking.LobbyNetworkingController.html">LobbyNetworkingController.cs</a>. Basically, it order the messages by their timestamp and then send them in the chat textbox with the <a href="/api/Global.ChatTextBox.html">ChatTextBox.cs</a></p>
+<pre><code class="lang-cs">    ...
+
+    List&lt;ChatMessagePayload&gt; chatMesssagesSorted = item.Value.chatMessages?.OrderBy(o =&gt; o.timeStamp).ToList();
+    if (chatMesssagesSorted != null)
+        foreach (var chatMessage in chatMesssagesSorted)
+            chatTextBox.SendMessage(chatMessage, item.Value.displayName, item.Key.Equals(&quot;54BB079356042E83&quot;));
+
+    ...
+</code></pre><p>The <a href="/api/Global.ChatTextBox.html#Global_ChatTextBox_SendMessage_ChatMessagePayload_System_String_">SendMessage()</a> methods sends the message verifiyng if it&#39;s already writter, has bad words or if it&#39;s an admin.</p>
+<pre><code class="lang-cs">    public void SendMessage(ChatMessagePayload chatMessage, string displayName, bool isAdmin = false)
+    {
+        if (alreadyWriteMessages.Contains(chatMessage.id))
+            return;
+
+        if (PlayerPrefs.GetInt(&quot;BadWordFilterOption&quot;, 1) == 1)
+            chatMessage.message = CheckForBadWords(chatMessage.message);
+
+        alreadyWriteMessages.Add(chatMessage.id);
+        if (isAdmin)
+            AddText($&quot;&lt;color=red&gt;[ADMIN] &lt;/color&gt;: {chatMessage.message}&quot;);
+        else
+            AddText($&quot;&lt;color=#EFEBCE&gt;[Server] ({displayName}): {chatMessage.message}&lt;/color&gt;&quot;);
+    }
+</code></pre><h2 id="sending-a-message">Sending a message</h2>
+<p>The <a href="/api/Global.ChatTextBox.html#Global_ChatTextBox_SendLocalMessage">SendLocalMessage</a> method handles the sending of a message in the chat. Checks if has bad words, check if it&#39;s directed to someone and then add it to the list of messages of the player in order to send it on the next update of the server.</p>
+<pre><code class="lang-cs">    public void SendLocalMessage()
+    {
+        if (String.IsNullOrWhiteSpace(chatInput.text))
+            return;
+
+        if (PlayerPrefs.GetInt(&quot;BadWordFilterOption&quot;, 1) == 1)
+            chatInput.text = CheckForBadWords(chatInput.text);
+
+        // Whisper verification
+        if (!chatInput.text.Contains(&quot;/r &quot;))
+            AddText($&quot;&lt;color=#DFDBC0&gt;[Server] ({PlayerDataManager.Singleton.localPlayerData.playerName}): {chatInput.text}&lt;/color&gt;&quot;);
+        else
+        {
+            string[] trimText = chatInput.text.Split(&#39; &#39;);
+            AddText($&quot;&lt;color=#E146CD&gt;[To] ({trimText[1]}): {(chatInput.text).Replace(&quot;/r &quot; + trimText[1],&quot;&quot;)}&lt;/color&gt;&quot;);
+            PlayerPrefs.SetString(&quot;LastWhisper&quot;, trimText[1]);
+        }
+
+        //Add to list of player messages in order to send it on the next update of the server.
+        PlayerDataManager.Singleton.localPlayerData.currentChatMessages.Add(new ChatMessagePayload() { message = chatInput.text, timeStamp = DateTime.UtcNow.ToString(&quot;o&quot;, CultureInfo.InvariantCulture) });
+
+        chatInput.text = &quot;&quot;;
+        chatInput.Select();
+        chatInput.ActivateInputField();
+    }
+</code></pre><p>The server only conserves the messages for X time and then deletes them from the player in order to not store huge amounts of data.</p>
+<h2 id="bad-word-filter">Bad word filter</h2>
+<p>The bad world filter takes a dictionary previosly initialize from a json file and takes the message and check if the message contains a word that is a bad word in any of the languages and return the messages with the bad words filtered.</p>
+<pre><code class="lang-cs">    public ChatBadWordsDB badWordsDB;
+
+    public struct ChatBadWordsDB
+    {
+        public List&lt;List&lt;string&gt;&gt; listOfBadWords;
+    }
+
+    public string CheckForBadWords(string message)
+    {
+        string[] messageWords = message.Split(&#39; &#39;);
+
+        for (int i = 0; i &lt; messageWords.Length; i++)
+        {
+            string word = messageWords[i];
+            foreach (List&lt;string&gt; languageBadWords in badWordsDB.listOfBadWords)
+            {
+                if (languageBadWords.Contains(word.ToLower()) )
+                {
+                    messageWords[i] = &quot;****&quot;;
+                    break;
+                }
+            }
+        }
+
+        string resultAfterFilter = &quot;&quot;;
+        foreach (var word in messageWords)
+            resultAfterFilter += $&quot;{word} &quot;;
+
+        return resultAfterFilter;
+    }
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Example Unity documentation
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

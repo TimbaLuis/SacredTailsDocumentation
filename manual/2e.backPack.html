@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Back pack | Example Unity documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Back pack | Example Unity documentation ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../LogoSacred.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="back-pack">Back pack</h1>
+
+<ul>
+<li><a href="#back-pack">Back pack</a><ul>
+<li><a href="#shinsei-vault-system">Shinsei Vault System</a></li>
+<li><a href="#shinsei-card-exchange-system">Shinsei Card exchange system</a></li>
+<li><a href="#character-customization-system">Character Customization system</a></li>
+<li><a href="#materialreskincs">MaterialReskin.cs</a></li>
+<li><a href="#characterrecolorcs">CharacterRecolor.cs</a></li>
+<li><a href="#bodystylecs">BodyStyle.cs</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="shinsei-vault-system">Shinsei Vault System</h2>
+<p>The data of the shinsei vault it&#39;s recieved or created and uploaded by the <a href="">PlayerDataManager.cs</a>. In the <a href="">InitPlayerData()</a> we check if we already have data in playfab to download, if we do we download it and set it. If we don&#39;t we use the method <a href="">FillPlayerData()</a> to create new data for the player, including the shinsei vault.</p>
+<p>The class <a href="">ShinseiVaultController.cs</a> it is the manager class of the majority the shinsei vault logic in game. The flow starts when the user request to see the shinsie vault. The vault is drawn an set with the data of the user that is located in the <a href="">PlayerDataManager.cs</a>. Upon this, we create a callback to the method <a href="">OnVaultShinseiSelected()</a> where we basically select it and then store it in a temp shinsei, if we select another shinsei then we swapped them and update the player data in the server.</p>
+<h2 id="shinsei-card-exchange-system">Shinsei Card exchange system</h2>
+<p>The data of the shinsei&#39;s(and also it&#39;s cards) it&#39;s recieved or created and uploaded by the <a href="">PlayerDataManager.cs</a>. In the <a href="">InitPlayerData()</a> we check if we already have data in playfab to download, if we do we download it and set it. If we don&#39;t we use the method <a href="">FillPlayerData()</a> to create new data for the player, including the shinsei.</p>
+<p><a href="">CardManagementController.cs</a> it&#39;s the class that manges all the shinsei card visualization and exchange. The flow starts in the method <a href="">InitCardManager()</a> where it initalizes all the cards in the inventory and all the cards on the shinseis. Also sets some information like the shinsei type in the background and the images and stats of the shinseis. Then in this same class we use a vairaty of methods like AddCardInDeck, RemoveCardInDeck, AddSelectedCard, etc to basically interchange the cards from the vault . </p>
+<h2 id="character-customization-system">Character Customization system</h2>
+<p>In sacred tails you can customize your character in a few of forms
+The first form is Genre, you can choose between male and female</p>
+<p>Male:</p>
+<p><img src="../resources/Male.png" alt="Male"></p>
+<p>Female:</p>
+<p><img src="../resources/Female.png" alt="Female"></p>
+<p>Also you can change the color of clothes and model, in this first implementation only exist one sweat for each genre but the system works.</p>
+<p>This system works using a single material that replicates over all parts of character avoiding big number of batches when render multiple players at time</p>
+<p><img src="../resources/Material.png" alt="Material"></p>
+<p>The input values for this material is injected by script, the textures are injected using a script called MaterialReskin.cs</p>
+<h2 id="materialreskincs">MaterialReskin.cs</h2>
+<p>The most important part of MaterialReskin.cs is the Init function, first create a texture and store in a list, first Difuse then normal, metallic and finally Ambien Oclusion after that create a new material and asign the new created textures, initialize the CharacterRecolor and apply that material to all parts of character like a torso, head, legs and arms</p>
+<pre><code class="lang-cs">  ...
+  public void Init()
+    {
+        mergeTextures.Add(new Texture2D(skinList[0].Difuse.width, skinList[0].Difuse.height, skinList[0].Difuse.format, true));
+        mergeTextures[0].SetPixels(skinList[0].Difuse.GetPixels());
+        mergeTextures.Add(new Texture2D(skinList[0].Normal.width, skinList[0].Normal.height, skinList[0].Normal.format, true));
+        mergeTextures[1].SetPixels(skinList[0].Normal.GetPixels());
+        mergeTextures.Add(new Texture2D(skinList[0].Metallic.width, skinList[0].Metallic.height, skinList[0].Metallic.format, true));
+        mergeTextures[2].SetPixels(skinList[0].Metallic.GetPixels());
+        mergeTextures.Add(new Texture2D(skinList[0].AmbientOclusion.width, skinList[0].AmbientOclusion.height, skinList[0].AmbientOclusion.format, true));
+        mergeTextures[3].SetPixels(skinList[0].AmbientOclusion.GetPixels());
+
+        horizontalTextureSize = mergeTextures[0].width / horizontalSplitParts;
+        verticalTextureSize = mergeTextures[0].height / verticalSplitParts;
+
+        //Create new material
+        Material material = meshRenderers[0].material;
+        material.SetTexture(mainTexture, mergeTextures[0]);
+        material.SetTexture(normalMap, mergeTextures[1]);
+        material.SetTexture(metallicGloss, mergeTextures[2]);
+        material.SetTexture(ambientOclussion, mergeTextures[3]);
+        material.EnableKeyword(&quot;_NORMALMAP&quot;);
+        targetMaterial = material;
+        characterRecolor.Init(targetMaterial);
+
+        //Apply new material to all parts :D
+        for (int i = 0; i &lt; meshRenderers.Count; i++)
+            meshRenderers[i].material = targetMaterial;
+        //Verify if split numbers are even
+        if (horizontalSplitParts % 2 != 0)
+            horizontalSplitParts += 1;
+        if (verticalSplitParts % 2 != 0)
+            verticalSplitParts += 1;
+        //Add the position of textures in a list
+        for (int i = 0; i &lt; horizontalSplitParts; i++)
+            for (int a = 0; a &lt; verticalSplitParts; a++)
+                texturePosition.Add(new Vector2Int(i * horizontalTextureSize, a * verticalTextureSize));
+        isInit = true;
+    }
+  ...
+</code></pre><h2 id="characterrecolorcs">CharacterRecolor.cs</h2>
+<p>Character recolor is in charge of set the _NewColor Parameters of material in a human conversion, first create a dictionary of convensions from PartOfCharacter to string and will be called using ChangeMaterialColors function, receives a part of character and desired color</p>
+<pre><code class="lang-cs">public class CharacterRecolor : MonoBehaviour
+    {
+        private Dictionary&lt;PartsOfCharacter, string&gt; materialColor = new Dictionary&lt;PartsOfCharacter, string&gt;() {
+        {PartsOfCharacter.SKIN,&quot;_NewColor1&quot;},
+        {PartsOfCharacter.HAIR,&quot;_NewColor2&quot;},
+        {PartsOfCharacter.PRIMARY_COLOR,&quot;_NewColor3&quot;},
+        {PartsOfCharacter.SECONDARY_COLOR,&quot;_NewColor4&quot;},
+        {PartsOfCharacter.DETAILS,&quot;_NewColor6&quot;},
+        {PartsOfCharacter.HANDS,&quot;_NewColor5&quot;},
+        {PartsOfCharacter.LEGS,&quot;_NewColor5&quot;}
+    };
+        private List&lt;Material&gt; newMaterials = new List&lt;Material&gt;();
+
+        public void Init(Material target)
+        {
+            if (!newMaterials.Contains(target))
+                newMaterials.Add(target);
+            if (lastColor != null)
+                ChangeMaterialColors(lastPart, lastColor);
+        }
+        private PartsOfCharacter lastPart;
+        private Color lastColor;
+        public void ChangeMaterialColors(PartsOfCharacter part, Color color)
+        {
+            lastPart = part;
+            lastColor = color;
+            foreach (var material in newMaterials)
+                material.SetColor(materialColor[part], color);
+        }
+    }
+</code></pre><p> Each part of character have a UI panel designed for change material values by user and replicate that to all players</p>
+<p> <img src="../resources/Skin.png" alt="Skin"></p>
+<p> Skin manipulate the _NewColor1 parameter of material using predesigned values but you can use any value that you need</p>
+<p> <img src="../resources/Color.png" alt="Color"></p>
+<p> Color manipulate the other parameters that be asigned to the clothes and details</p>
+<p> And finally the charge of change 3D models is </p>
+<h2 id="bodystylecs">BodyStyle.cs</h2>
+<pre><code class="lang-cs">  public class BodyStyle : MonoBehaviour
+{
+    public List&lt;BodyPartDressable&gt; bodyParts = new List&lt;BodyPartDressable&gt;();
+
+    [System.Serializable]
+    public class BodyPartDressable
+    {
+        [SerializeField] string name;
+        [SerializeField] PartsOfCharacter part;
+        [SerializeField] List&lt;GameObject&gt; possibleParts = new List&lt;GameObject&gt;();
+        [SerializeField] List&lt;GameObject&gt; possiblePartsMale = new List&lt;GameObject&gt;();
+
+        public void SelectObject(int index, bool isLocal = false)
+        {
+            for (int i = 0; i &lt; possibleParts.Count; i++)
+                possibleParts[i].gameObject.SetActive(false);
+            possibleParts[index].SetActive(true);
+            for (int i = 0; i &lt; possiblePartsMale.Count; i++)
+                possiblePartsMale[i].gameObject.SetActive(false);
+            possiblePartsMale[index].SetActive(true);
+            if (isLocal)
+                CharacterStyleController.UpdatePartOfCharacter(part,index);
+        }
+    }
+}
+</code></pre><p>This script store the all posible parts of character and allow to change them using the function called SelectObject</p>
+<p>The change hair is an example of Body Style</p>
+<p> <img src="../resources/Color.png" alt="Color"></p>
+<p>The combination of all systems allow the player change style</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Example Unity documentation
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -96,6 +96,32 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class GameSceneManager : NetworkBehaviour</code></pre>
   </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="Timba_SacredTails_Arena_GameSceneManager_onEndBattle" data-uid="Timba.SacredTails.Arena.GameSceneManager.onEndBattle">onEndBattle</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UnityEvent onEndBattle</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEvent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   
@@ -136,12 +162,12 @@
   
   
   <a id="Timba_SacredTails_Arena_GameSceneManager_SendBattle_" data-uid="Timba.SacredTails.Arena.GameSceneManager.SendBattle*"></a>
-  <h4 id="Timba_SacredTails_Arena_GameSceneManager_SendBattle_GetMatchResult_System_String_System_Int32_System_Boolean_" data-uid="Timba.SacredTails.Arena.GameSceneManager.SendBattle(GetMatchResult,System.String,System.Int32,System.Boolean)">SendBattle(GetMatchResult, String, Int32, Boolean)</h4>
+  <h4 id="Timba_SacredTails_Arena_GameSceneManager_SendBattle_GetMatchResult_System_String_System_Int32_System_Boolean_System_Boolean_" data-uid="Timba.SacredTails.Arena.GameSceneManager.SendBattle(GetMatchResult,System.String,System.Int32,System.Boolean,System.Boolean)">SendBattle(GetMatchResult, String, Int32, Boolean, Boolean)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SendBattle(GetMatchResult getMatchResult = null, string matchId = null, int _closestSpawnPoint = -1, bool isViewing = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public void SendBattle(GetMatchResult getMatchResult = null, string matchId = null, int _closestSpawnPoint = -1, bool isViewing = false, bool isBotFight = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -171,6 +197,11 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">isViewing</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">isBotFight</span></td>
         <td></td>
       </tr>
     </tbody>

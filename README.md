@@ -1,2 +1,0 @@
-# SacredTailsDocumentation
-A documentation

@@ -693,12 +693,12 @@
   
   
   <a id="Global_PlayfabManager_BattleServerGetMatchState_" data-uid="Global.PlayfabManager.BattleServerGetMatchState*"></a>
-  <h4 id="Global_PlayfabManager_BattleServerGetMatchState_System_String_System_Boolean_Action_ExecuteFunctionResult__System_Boolean_" data-uid="Global.PlayfabManager.BattleServerGetMatchState(System.String,System.Boolean,Action{ExecuteFunctionResult},System.Boolean)">BattleServerGetMatchState(String, Boolean, Action&lt;ExecuteFunctionResult&gt;, Boolean)</h4>
+  <h4 id="Global_PlayfabManager_BattleServerGetMatchState_System_String_System_Boolean_Action_ExecuteFunctionResult__System_Boolean_System_Boolean_" data-uid="Global.PlayfabManager.BattleServerGetMatchState(System.String,System.Boolean,Action{ExecuteFunctionResult},System.Boolean,System.Boolean)">BattleServerGetMatchState(String, Boolean, Action&lt;ExecuteFunctionResult&gt;, Boolean, Boolean)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void BattleServerGetMatchState(string matchId, bool isViewer = false, Action&lt;ExecuteFunctionResult&gt; resultCallback = null, bool retryEndMatch = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public void BattleServerGetMatchState(string matchId, bool isViewer = false, Action&lt;ExecuteFunctionResult&gt; resultCallback = null, bool retryEndMatch = false, bool enemyDisconnected = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -728,6 +728,11 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td><span class="parametername">retryEndMatch</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">enemyDisconnected</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -782,12 +787,12 @@
   
   
   <a id="Global_PlayfabManager_BattleServerSendTurn_" data-uid="Global.PlayfabManager.BattleServerSendTurn*"></a>
-  <h4 id="Global_PlayfabManager_BattleServerSendTurn_System_String_System_Int32_Action_ExecuteFunctionResult__System_Int32_" data-uid="Global.PlayfabManager.BattleServerSendTurn(System.String,System.Int32,Action{ExecuteFunctionResult},System.Int32)">BattleServerSendTurn(String, Int32, Action&lt;ExecuteFunctionResult&gt;, Int32)</h4>
+  <h4 id="Global_PlayfabManager_BattleServerSendTurn_System_String_System_Int32_Action_ExecuteFunctionResult__System_Int32_System_Int32_" data-uid="Global.PlayfabManager.BattleServerSendTurn(System.String,System.Int32,Action{ExecuteFunctionResult},System.Int32,System.Int32)">BattleServerSendTurn(String, Int32, Action&lt;ExecuteFunctionResult&gt;, Int32, Int32)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void BattleServerSendTurn(string matchId, int indexOfCard, Action&lt;ExecuteFunctionResult&gt; resultCallback, int counter = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public void BattleServerSendTurn(string matchId, int indexOfCard, Action&lt;ExecuteFunctionResult&gt; resultCallback, int counter = 0, int currentShinsei = 0)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -817,6 +822,11 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
         <td><span class="parametername">counter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">currentShinsei</span></td>
         <td></td>
       </tr>
     </tbody>
