@@ -5928,11 +5928,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "manual/2g.shinseiInteraction copy.md",
+      "source_relative_path": "manual/2g.shinseiInteraction.md",
       "output": {
         ".html": {
-          "relative_path": "manual/2g.shinseiInteraction copy.html",
-          "hash": "RYRbgVENYSXnjnr+blTa3qPj931SheaUWuaClIcJKYg="
+          "relative_path": "manual/2g.shinseiInteraction.html",
+          "hash": "bZU0ouNA2DdA2xo6Pa3xxaBwSiNGY5e8qyXvMg1ivPk="
         }
       },
       "is_incremental": false,
@@ -6023,15 +6023,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Toc",
       "source_relative_path": "manual/toc.yml",
       "output": {
         ".html": {
           "relative_path": "manual/toc.html",
-          "hash": "kNUs+t6oGTDTPF/Ma8z4oCXQnrsoX7Ule/Y564+c29g="
+          "hash": "OlvkL6WsCCsM/+5nz3hKbLh6NAfLnmtH7m3yV32/6iQ="
         }
       },
       "is_incremental": false,
@@ -6608,7 +6605,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 480,
-          "skipped_file_count": 164
+          "skipped_file_count": 480
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
